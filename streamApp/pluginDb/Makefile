@@ -25,26 +25,26 @@ DB += pluginTIFF.db
 DB += pluginTransform.db
 
 # Install viewer cmd scripts
-DB_INSTALLS += commonPlugins.cmd
-DB_INSTALLS += MonoBin2Viewer.cmd
-DB_INSTALLS += MonoBin4Viewer.cmd
-DB_INSTALLS += MonoFullViewer.cmd
-DB_INSTALLS += pcdsPlugins.cmd
-DB_INSTALLS += pluginColorConvert.cmd
-DB_INSTALLS += pluginFileMPEG.cmd
-DB_INSTALLS += pluginHDF5.cmd
-DB_INSTALLS += pluginImage.cmd
-DB_INSTALLS += pluginJPEG.cmd
-DB_INSTALLS += pluginMagick.cmd
-DB_INSTALLS += pluginMJPG.cmd
-DB_INSTALLS += pluginNetCDF.cmd
-DB_INSTALLS += pluginNexus.cmd
-DB_INSTALLS += pluginOverlay.cmd
-DB_INSTALLS += pluginProcess.cmd
-DB_INSTALLS += pluginROI.cmd
-DB_INSTALLS += pluginStats.cmd
-DB_INSTALLS += pluginTIFF.cmd
-DB_INSTALLS += pluginTransform.cmd
+DB_INSTALLS += $(TOP)/streamApp/pluginDb/commonPlugins.cmd
+DB_INSTALLS += $(TOP)/streamApp/pluginDb/MonoBin2Viewer.cmd
+DB_INSTALLS += $(TOP)/streamApp/pluginDb/MonoBin4Viewer.cmd
+DB_INSTALLS += $(TOP)/streamApp/pluginDb/MonoFullViewer.cmd
+DB_INSTALLS += $(TOP)/streamApp/pluginDb/pcdsPlugins.cmd
+DB_INSTALLS += $(TOP)/streamApp/pluginDb/pluginColorConvert.cmd
+DB_INSTALLS += $(TOP)/streamApp/pluginDb/pluginFileMPEG.cmd
+DB_INSTALLS += $(TOP)/streamApp/pluginDb/pluginHDF5.cmd
+DB_INSTALLS += $(TOP)/streamApp/pluginDb/pluginImage.cmd
+DB_INSTALLS += $(TOP)/streamApp/pluginDb/pluginJPEG.cmd
+DB_INSTALLS += $(TOP)/streamApp/pluginDb/pluginMagick.cmd
+DB_INSTALLS += $(TOP)/streamApp/pluginDb/pluginMJPG.cmd
+DB_INSTALLS += $(TOP)/streamApp/pluginDb/pluginNetCDF.cmd
+DB_INSTALLS += $(TOP)/streamApp/pluginDb/pluginNexus.cmd
+DB_INSTALLS += $(TOP)/streamApp/pluginDb/pluginOverlay.cmd
+DB_INSTALLS += $(TOP)/streamApp/pluginDb/pluginProcess.cmd
+DB_INSTALLS += $(TOP)/streamApp/pluginDb/pluginROI.cmd
+DB_INSTALLS += $(TOP)/streamApp/pluginDb/pluginStats.cmd
+DB_INSTALLS += $(TOP)/streamApp/pluginDb/pluginTIFF.cmd
+DB_INSTALLS += $(TOP)/streamApp/pluginDb/pluginTransform.cmd
 
 #----------------------------------------------------
 # Create and install (or just install)
