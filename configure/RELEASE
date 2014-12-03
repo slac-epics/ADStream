@@ -27,7 +27,7 @@ CONFIG=$(EPICS_BASE)/configure
 # Define the version(s) of any other needed modules 
 # ===============================================================
 # Example
-ADCORE_MODULE_VERSION		= R2.0-0.6.0
+ADCORE_MODULE_VERSION		= R2.0-0.7.0
 
 # ============================================================
 # External Support module path definitions
@@ -42,7 +42,7 @@ ADCORE_MODULE_VERSION		= R2.0-0.6.0
 #
 # If your build fails, look for these paths in your build output
 # ============================================================
-ADCORE		= $(EPICS_MODULES)/ADCore/$(ADCORE_MODULE_VERSION)
+#ADCORE		= $(EPICS_MODULES)/ADCore/$(ADCORE_MODULE_VERSION)
 
 MY_MODULES	= /reg/neh/home/bhill/wa2/trunk/pcds/epics/modules
 #MY_MODULES	= /u/ey/bhill/wa4/trunk/pcds/epics/modules
