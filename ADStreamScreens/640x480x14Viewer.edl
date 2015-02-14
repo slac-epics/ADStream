@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 755
-y 1479
+x 1924
+y 1272
 w 848
 h 560
 font "helvetica-medium-r-12.0"
@@ -19,7 +19,7 @@ ctlBgColor1 index 0
 ctlBgColor2 index 14
 topShadowColor index 0
 botShadowColor index 14
-title "$(CAM) 640x480x8bit Viewer"
+title "$(CAM) 640x480x14bit Viewer"
 showGrid
 snapToGrid
 gridSize 4
@@ -115,9 +115,9 @@ h 480
 dataPvStr "$(CAM):$(IMAGE):ArrayData"
 widthPvStr "$(CAM):$(IMAGE):ArraySize0_RBV"
 heightPvStr "$(CAM):$(IMAGE):ArraySize1_RBV"
-dataWidth 390
+dataWidth -1
 pvBasedDataSize 1
-nBitsPerPixel 8
+nBitsPerPixel 14
 endObjectProperties
 
 # (Exit Button)
@@ -419,7 +419,7 @@ setPosition {
   0 "parentWindow"
 }
 symbols {
-  0 "CAM=$(CAM),IOC=$(IOC),IMAGE=$(IMAGE),ORIG=ADStreamScreens/640x480x8Viewer.edl"
+  0 "CAM=$(CAM),IOC=$(IOC),IMAGE=$(IMAGE),ORIG=ADStreamScreens/640x480x14Viewer.edl"
 }
 closeDisplay {
   0 1
@@ -1250,7 +1250,7 @@ minor 1
 release 1
 x 236
 y 4
-w 128
+w 280
 h 32
 font "helvetica-bold-r-14.0"
 fontAlign "center"

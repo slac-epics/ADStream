@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1001
-y 1370
+x 1924
+y 1272
 w 848
 h 560
 font "helvetica-medium-r-12.0"
@@ -115,7 +115,7 @@ h 480
 dataPvStr "$(CAM):$(IMAGE):ArrayData"
 widthPvStr "$(CAM):$(IMAGE):ArraySize0_RBV"
 heightPvStr "$(CAM):$(IMAGE):ArraySize1_RBV"
-dataWidth 390
+dataWidth -1
 pvBasedDataSize 1
 nBitsPerPixel 16
 endObjectProperties
@@ -1250,7 +1250,7 @@ minor 1
 release 1
 x 236
 y 4
-w 128
+w 280
 h 32
 font "helvetica-bold-r-14.0"
 fontAlign "center"
