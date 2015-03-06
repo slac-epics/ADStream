@@ -5,14 +5,6 @@
 # default set of plugins
 epicsEnvSet( "QSIZE", "5" )
 
-# Create a couple of Std Image plugins, set to get data from the camera
-epicsEnvSet( "PLUGIN_SRC", "$(CAM_PORT)" )
-epicsEnvSet( "IMAGE_NAME", "IMAGE2" )
-< setupScripts/pluginImage.cmd
-epicsEnvSet( "PLUGIN_SRC", "$(CAM_PORT)" )
-epicsEnvSet( "IMAGE_NAME", "IMAGE3" )
-< setupScripts/pluginImage.cmd
-
 # Create a couple of Color Conversion plugins
 epicsEnvSet( "PLUGIN_SRC", "$(CAM_PORT)" )
 epicsEnvSet( "N", "1" )
