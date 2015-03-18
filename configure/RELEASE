@@ -27,7 +27,7 @@ CONFIG=$(EPICS_BASE)/configure
 # Define the version(s) of any other needed modules 
 # ===============================================================
 # Example
-ADCORE_MODULE_VERSION		= R2.1-0.2.0
+ADCORE_MODULE_VERSION		= R2.1-0.3.0
 
 # ============================================================
 # External Support module path definitions
