@@ -9,12 +9,12 @@ include $(TOP)/configure/CONFIG
 
 # Create and install plugin DB Files
 DB += pluginColorConvert.db
-#DB += pluginFileMPEG.db
+DB += pluginFileMPEG.db
 DB += pluginHDF5.db
 DB += pluginImage.db
 DB += pluginJPEG.db
 DB += pluginMagick.db
-#DB += pluginMJPG.db
+DB += pluginMJPG.db
 DB += pluginNetCDF.db
 DB += pluginNexus.db
 DB += pluginOverlay.db
@@ -52,12 +52,13 @@ DB_INSTALLS += $(TOP)/streamApp/pluginDb/pluginTransform.cmd
 #
 
 # Create and install plugin archive Files
+#ARCHIVE += pcdsPlugins.archive
 #ARCHIVE += pluginColorConvert.archive
-##ARCHIVE += pluginFileMPEG.archive
+#ARCHIVE += pluginFileMPEG.archive
 #ARCHIVE += pluginHDF5.archive
 #ARCHIVE += pluginImage.archive
 #ARCHIVE += pluginJPEG.archive
-##ARCHIVE += pluginMJPG.archive
+#ARCHIVE += pluginMJPG.archive
 #ARCHIVE += pluginMagick.archive
 #ARCHIVE += pluginNetCDF.archive
 #ARCHIVE += pluginNexus.archive
@@ -74,12 +75,13 @@ DB_INSTALLS += $(TOP)/streamApp/pluginDb/pluginTransform.cmd
 #
 
 # Create and install plugin autosave Files
+#REQ += pcdsPlugins.req
 #REQ += pluginColorConvert.req
-##REQ += pluginFileMPEG.req
+#REQ += pluginFileMPEG.req
 #REQ += pluginHDF5.req
 #REQ += pluginImage.req
 #REQ += pluginJPEG.req
-##REQ += pluginMJPG.req
+#REQ += pluginMJPG.req
 #REQ += pluginMagick.req
 #REQ += pluginNetCDF.req
 #REQ += pluginNexus.req
