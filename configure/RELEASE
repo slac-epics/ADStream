@@ -28,7 +28,7 @@ CONFIG=$(EPICS_BASE)/configure
 # ===============================================================
 # Example
 ADCORE_MODULE_VERSION		= R2.1-0.4.0
-FFMPEGSERVER_MODULE_VERSION	= R1.9-1.0.3
+FFMPEGSERVER_MODULE_VERSION	= R1.9-1.0.4
 
 # ============================================================
 # External Support module path definitions
