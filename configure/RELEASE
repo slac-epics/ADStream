@@ -27,8 +27,8 @@ CONFIG=$(EPICS_BASE)/configure
 # Define the version(s) of any other needed modules 
 # ===============================================================
 # Example
-ADCORE_MODULE_VERSION		= R2.1-0.4.0
-FFMPEGSERVER_MODULE_VERSION	= R1.9-1.0.4
+ADCORE_MODULE_VERSION		= R2.1-0.4.1
+#FFMPEGSERVER_MODULE_VERSION	= R1.9-1.0.4
 
 # ============================================================
 # External Support module path definitions
@@ -44,7 +44,7 @@ FFMPEGSERVER_MODULE_VERSION	= R1.9-1.0.4
 # If your build fails, look for these paths in your build output
 # ============================================================
 ADCORE		= $(EPICS_MODULES)/ADCore/$(ADCORE_MODULE_VERSION)
-FFMPEGSERVER= $(EPICS_MODULES)/ffmpegServer/$(FFMPEGSERVER_MODULE_VERSION)
+#FFMPEGSERVER= $(EPICS_MODULES)/ffmpegServer/$(FFMPEGSERVER_MODULE_VERSION)
 
 #MY_MODULES	= /reg/neh/home/bhill/wa2/trunk/pcds/epics/modules
 #ADCORE		= $(MY_MODULES)/ADCore/current
