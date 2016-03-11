@@ -15,10 +15,7 @@
 # 
 
 # Setup edm environment
-# export EPICS_HOST_ARCH=linux-x86
-# source /reg/g/pcds/setup/epicsenv-3.14.9.sh
 source /reg/g/pcds/setup/epicsenv-3.14.12.sh
-export EPICS_CA_MAX_ARRAY_BYTES=10000000
 
 IMG_SIZE_X=`caget -t -f0 ${P}${R}${IMAGE}:ArraySize0_RBV`
 IMG_SIZE_Y=`caget -t -f0 ${P}${R}${IMAGE}:ArraySize1_RBV`
