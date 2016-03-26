@@ -3,6 +3,7 @@
 # EDM Viewer launch script
 #
 # To use, define the following environment variables
+#   HUTCH   Ex: amo, sxr, xpp, ...
 #   IOC	    EPICS PV prefix for iocAdmin PV's
 #   P 	    Prefix for Camera PV's
 #   R 	    Region for Camera PV's
@@ -10,13 +11,14 @@
 #	IMAGE	Image name
 #			Full image PV prefix: $(P)$(R)$(IMAGE)
 # Example:
-# IOC=$(IOC) P=$(P) R=$(R) ADStreamScreens/edmViewer.sh
+# IOC=$(IOC) P=$(P) R=$(R) IMAGE=$(IMAGE) HUTCH=$(HUTCH) ADStreamScreens/edmViewer.sh
 
 # 
 
 # Setup edm environment
 source /reg/g/pcds/setup/epicsenv-3.14.12.sh
 
+echo Creating custom edm viewer for ${P}${R}${IMAGE} ...
 IMG_SIZE_X=`caget -t -f0 ${P}${R}${IMAGE}:ArraySize0_RBV`
 IMG_SIZE_Y=`caget -t -f0 ${P}${R}${IMAGE}:ArraySize1_RBV`
 IMG_N_BITS=`caget -t -f0 ${P}${R}${IMAGE}:BitsPerPixel_RBV`
@@ -57,6 +59,7 @@ cat	ADStreamScreens/${TEMPLATE} | sed \
 chmod a+w /tmp/${IMG_SIZE_X}x${IMG_SIZE_Y}x${IMG_N_BITS}Viewer.edl
 
 # Launch custom viewer
+echo Launching custom viewer: /tmp/${IMG_SIZE_X}x${IMG_SIZE_Y}x${IMG_N_BITS}Viewer.edl
 edm -x -eolc						\
 	-m "IOC=${IOC}"					\
 	-m "P=${P},R=${R}"				\

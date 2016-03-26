@@ -1,0 +1,19 @@
+# viewerStream.sub-arch
+file NDPluginBase.tpl-arch
+{
+    {   P = "$(CAM):",	R = "$(IMAGE_NAME):"		}
+    {   P = "$(CAM):",	R = "$(IMAGE_NAME):ROI:"	}
+    {   P = "$(CAM):",	R = "$(IMAGE_NAME):CC:"		}
+}
+file NDStdArrays.tpl-arch
+{
+    {   P = "$(CAM):",	R = "$(IMAGE_NAME):"		}
+}
+file NDROI.tpl-arch
+{
+    {   P = "$(CAM):",	R = "$(IMAGE_NAME):ROI:"	}
+}
+file NDColorConvert.tpl-arch
+{
+    {   P = "$(CAM):",	R = "$(IMAGE_NAME):CC:"		}
+}

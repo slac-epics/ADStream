@@ -1,6 +1,6 @@
-# MonoBin2Viewer.cmd
+# viewerStream.cmd
 # This script creates, configures, and loads db records for one
-# monochrome viewer w/ 2x2 binning
+# viewer stream w/ 2x2 binning and 10hz rate
 
 # Configure the plugins
 NDROIConfigure(          "$(IMAGE_NAME):ROI", $(QSIZE), 0, "$(CAM_PORT)", 0 )

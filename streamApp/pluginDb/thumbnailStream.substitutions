@@ -1,0 +1,83 @@
+# thumbnailStream.substitutions
+
+# ROI Plugin
+file NDPluginBase.template
+{
+	{
+	P				= "$(CAM):",
+	R				= "$(IMAGE_NAME):ROI:",
+	PORT			= "$(IMAGE_NAME):ROI",
+	PLUGIN_SRC		= "$(CAM_PORT)",
+	ADDR			= "\$(ADDR=0)",
+	TIMEOUT			= "\$(TIMEOUT=1)",
+	NDARRAY_PORT	= "$(CAM_PORT)",
+	NDARRAY_ADDR	= "\$(NDARRAY_ADDR=1)",
+	TSE				= "\$(TSE=-2)",
+	}
+}
+file NDROI.template
+{
+	{
+	PORT			= "$(IMAGE_NAME):ROI",
+	P				= "$(CAM):",
+	R				= "$(PORT):",
+	ADDR			= "\$(ADDR=0)",
+	TIMEOUT			= "\$(TIMEOUT=1)",
+	}
+}
+
+# ColorConvert plugin
+file NDPluginBase.template
+{
+	{
+	PORT			= "$(IMAGE_NAME):CC",
+	P				= "$(CAM):",
+	R				= "$(PORT):",
+	ADDR			= "\$(ADDR=0)",
+	TIMEOUT			= "\$(TIMEOUT=1)",
+	Enable          = "0",
+	TSE				= "\$(TSE=-2)",
+	NDARRAY_PORT	= "$(CAM_PORT)",
+	NDARRAY_ADDR	= "\$(NDARRAY_ADDR=0)",
+	}
+}
+file NDColorConvert.template
+{
+	{
+	P				= "$(CAM):",
+	PORT			= "$(IMAGE_NAME):CC",
+	R				= "$(PORT):",
+	ADDR			= "\$(ADDR=0)",
+	TIMEOUT			= "\$(TIMEOUT=1)",
+	}
+}
+
+# stdArray Plugin
+file NDPluginBase.template
+{
+	{
+	PORT			= "$(IMAGE_NAME)",
+	P				= "$(CAM):",
+	R				= "$(PORT):",
+	ADDR			= "\$(ADDR=0)",
+	TIMEOUT			= "\$(TIMEOUT=1)",
+	Enable          = "1",
+	TSE				= "\$(TSE=-2)",
+	NDARRAY_PORT	= "$(CAM_PORT)",
+	NDARRAY_ADDR	= "\$(NDARRAY_ADDR=0)",
+	}
+}
+file NDStdArrays.template
+{
+	{
+	PORT			= "$(IMAGE_NAME)",
+	P				= "$(CAM):",
+	R				= "$(PORT):",
+	ADDR			= "\$(ADDR=0)",
+	TIMEOUT			= "\$(TIMEOUT=1)",
+	TYPE		 	= "Int8",
+	FTVL		 	= "CHAR",
+	NELEMENTS		= "$(IMAGE_NELM)",
+	}
+}
+

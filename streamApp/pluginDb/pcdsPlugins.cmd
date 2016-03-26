@@ -25,6 +25,11 @@ epicsEnvSet( "PLUGIN_SRC", "$(CAM_PORT)" )
 epicsEnvSet( "N", "6" )
 < db/pluginROI.cmd
 
+# Create a Std Image plugin, set to get data from it's ROI plugin
+epicsEnvSet( "PLUGIN_SRC", "ROI6" )
+epicsEnvSet( "IMAGE_NAME", "IMAGE2" )
+< db/pluginImage.cmd
+
 # Create an Overlay plugin, set it to get data from ROI6
 epicsEnvSet( "PLUGIN_SRC", "ROI6" )
 epicsEnvSet( "N", "2" )
@@ -53,11 +58,11 @@ epicsEnvSet( "IMAGE_TYPE", "Int8" )
 < db/pluginImage.cmd
 
 # Create a FileMPEG plugin, set it to get data from our std image
-epicsEnvSet( "PLUGIN_SRC", "IMAGE1" )
-epicsEnvSet( "N", "1" )
-< db/pluginFileMPEG.cmd
+#epicsEnvSet( "PLUGIN_SRC", "IMAGE1" )
+#epicsEnvSet( "N", "1" )
+#< db/pluginFileMPEG.cmd
 
 # Create an MJPG plugin, set it to get data from our std image
-epicsEnvSet( "PLUGIN_SRC", "IMAGE1" )
-epicsEnvSet( "N", "1" )
-< db/pluginMJPG.cmd
+#epicsEnvSet( "PLUGIN_SRC", "IMAGE1" )
+#epicsEnvSet( "N", "1" )
+#< db/pluginMJPG.cmd

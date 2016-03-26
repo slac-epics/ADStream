@@ -1,10 +1,6 @@
-# pcdsPlugins.sub-arch
+# commonPlugins.sub-arch autosave list
 file NDPluginBase.tpl-arch
 {
-    {   P = "$(CAM):",	R = "IMAGE1:"	}
-    {   P = "$(CAM):",	R = "IMAGE2:"	}
-    {   P = "$(CAM):",	R = "IMG_OVER2:"}
-    {   P = "$(CAM):",	R = "THUMBNAIL:"}
     {   P = "$(CAM):",	R = "Proc1:"	}
     {   P = "$(CAM):",	R = "Trans1:"	}
     {   P = "$(CAM):",	R = "CC1:"		}
@@ -14,9 +10,6 @@ file NDPluginBase.tpl-arch
     {   P = "$(CAM):",	R = "ROI2:"		}
     {   P = "$(CAM):",	R = "ROI3:"		}
     {   P = "$(CAM):",	R = "ROI4:"		}
-    {   P = "$(CAM):",	R = "ROI5:"		}
-    {   P = "$(CAM):",	R = "ROI6:"		}
-    {   P = "$(CAM):",	R = "ROI7:"		}
     {   P = "$(CAM):",	R = "Stats1:"	}
     {   P = "$(CAM):",	R = "Stats2:"	}
     {   P = "$(CAM):",	R = "Stats3:"	}
@@ -26,13 +19,6 @@ file NDPluginBase.tpl-arch
     {   P = "$(CAM):",	R = "JPEG1:"	}
     {   P = "$(CAM):",	R = "Nexus1:"	}
     {   P = "$(CAM):",	R = "HDF51:"	}
-}
-file NDStdArrays.tpl-arch
-{
-    {   P = "$(CAM):",	R = "IMAGE1:"	}
-    {   P = "$(CAM):",	R = "IMAGE2:"	}
-    {   P = "$(CAM):",	R = "IMG_OVER2:"}
-    {   P = "$(CAM):",	R = "THUMBNAIL:"}
 }
 file NDProcess.tpl-arch
 {
@@ -68,9 +54,6 @@ file NDROI.tpl-arch
     {   P = "$(CAM):",	R = "ROI2:"		}
     {   P = "$(CAM):",	R = "ROI3:"		}
     {   P = "$(CAM):",	R = "ROI4:"		}
-    {   P = "$(CAM):",	R = "ROI5:"		}
-    {   P = "$(CAM):",	R = "ROI6:"		}
-    {   P = "$(CAM):",	R = "ROI7:"		}
 }
 file NDStats.tpl-arch
 {
@@ -107,4 +90,3 @@ file NDFileHDF5.tpl-arch
 {
     {   P = "$(CAM):",	R = "HDF51:"	}
 }
-
