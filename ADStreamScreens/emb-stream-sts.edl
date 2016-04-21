@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 240
-y 1789
+x 330
+y 1832
 w 479
 h 400
 font "helvetica-medium-r-12.0"
@@ -31,9 +31,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 4
-y 4
-w 272
+x 0
+y 0
+w 244
 h 20
 font "helvetica-bold-r-12.0"
 fgColor index 14
@@ -52,7 +52,7 @@ minor 0
 release 0
 x 184
 y 88
-w 208
+w 160
 h 128
 lineColor index 14
 fill
@@ -65,9 +65,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 192
+x 188
 y 100
-w 104
+w 80
 h 20
 font "helvetica-bold-r-12.0"
 fgColor index 14
@@ -84,9 +84,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 192
+x 188
 y 128
-w 104
+w 80
 h 20
 font "helvetica-bold-r-12.0"
 fgColor index 14
@@ -103,9 +103,9 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 312
+x 272
 y 100
-w 72
+w 68
 h 20
 controlPv "$(P)$(R)ArraySize0_RBV"
 font "helvetica-bold-r-12.0"
@@ -128,9 +128,9 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 312
+x 272
 y 128
-w 72
+w 68
 h 20
 controlPv "$(P)$(R)ArraySize1_RBV"
 font "helvetica-bold-r-12.0"
@@ -153,9 +153,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 192
+x 188
 y 156
-w 104
+w 80
 h 20
 font "helvetica-bold-r-12.0"
 fgColor index 14
@@ -172,9 +172,9 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 312
+x 272
 y 156
-w 72
+w 68
 h 20
 controlPv "$(P)$(R)DataType_RBV"
 font "helvetica-bold-r-12.0"
@@ -197,9 +197,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 192
+x 188
 y 184
-w 104
+w 80
 h 20
 font "helvetica-bold-r-12.0"
 fgColor index 14
@@ -216,9 +216,9 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 312
+x 272
 y 184
-w 72
+w 68
 h 20
 controlPv "$(P)$(R)BitsPerPixel_RBV"
 font "helvetica-bold-r-12.0"
@@ -444,9 +444,9 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 8
+x 4
 y 52
-w 160
+w 168
 h 20
 controlPv "$(P)$(R)PortName_RBV.DESC"
 font "helvetica-bold-r-12.0"
@@ -495,15 +495,15 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 324
+x 284
 y 8
-w 36
+w 32
 h 24
 fgColor index 14
 bgColor index 3
 topShadowColor index 2
 botShadowColor index 12
-font "helvetica-medium-r-14.0"
+font "helvetica-medium-r-12.0"
 buttonLabel "ROI"
 numPvs 4
 numDsps 1
@@ -527,15 +527,15 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 360
+x 316
 y 8
-w 32
+w 28
 h 24
 fgColor index 14
 bgColor index 3
 topShadowColor index 2
 botShadowColor index 12
-font "helvetica-medium-r-14.0"
+font "helvetica-medium-r-12.0"
 buttonLabel "CC"
 numPvs 4
 numDsps 1
@@ -561,7 +561,7 @@ minor 0
 release 0
 x 184
 y 36
-w 208
+w 160
 h 44
 lineColor index 14
 fill
@@ -574,9 +574,9 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 256
+x 252
 y 48
-w 128
+w 88
 h 24
 controlPv "$(P)$(R)NDArrayPort"
 font "helvetica-medium-r-12.0"
@@ -598,9 +598,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 192
+x 188
 y 48
-w 64
+w 60
 h 24
 font "helvetica-bold-r-12.0"
 fgColor index 14
@@ -617,15 +617,15 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 280
+x 248
 y 8
-w 44
+w 36
 h 24
 fgColor index 14
 bgColor index 3
 topShadowColor index 2
 botShadowColor index 12
-font "helvetica-medium-r-14.0"
+font "helvetica-medium-r-12.0"
 buttonLabel "More"
 numPvs 4
 numDsps 1

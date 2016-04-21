@@ -419,7 +419,7 @@ setPosition {
   0 "parentWindow"
 }
 symbols {
-  0 "CAM=$(CAM),IOC=$(IOC),IMAGE=$(IMAGE),ORIG=/tmp/$(IMG_SIZE_X)x$(IMG_SIZE_Y)x$(IMG_N_BITS)Viewer.edl"
+  0 "CAM=$(CAM),HUTCH=$(HUTCH),IOC=$(IOC),IMAGE=$(IMAGE),ORIG=/tmp/$(IMG_SIZE_X)x$(IMG_SIZE_Y)x$(IMG_N_BITS)Viewer.edl"
 }
 closeDisplay {
   0 1
