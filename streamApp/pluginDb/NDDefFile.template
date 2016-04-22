@@ -1,0 +1,183 @@
+# Defaults for NDFile.template
+
+record(waveform, "$(P)$(R)DefFilePath")
+{
+    field(PINI, "YES")
+    field(FTVL, "CHAR")
+    field(NELM, "256")
+    info( autosaveFields, "VAL" )
+}
+
+record(waveform, "$(P)$(R)DefFileName")
+{
+    field(PINI, "YES")
+    field(FTVL, "CHAR")
+    field(NELM, "256")
+    info( autosaveFields, "VAL" )
+}
+
+record(longout, "$(P)$(R)DefFileNumber")
+{
+    field(PINI, "YES")
+    field(OUT, "$(P)$(R)FileNumber_write PP")
+    field(VAL, "1")
+    info( autosaveFields, "VAL" )
+}
+
+record(longout, "$(P)$(R)DefFileNumber_write")
+{
+    field(SDIS, "$(P)$(R)FileNumber_Sync.PACT")
+    field(DISV, "1")
+}
+
+record(longout, "$(P)$(R)DefFileNumber_Sync")
+{
+    field(DOL,  "$(P)$(R)FileNumber_RBV NPP")
+    field(OMSL, "closed_loop")
+    field(OUT,  "$(P)$(R)FileNumber PP")
+}
+
+record(bo, "$(P)$(R)DefAutoIncrement")
+{
+    field(PINI, "YES")
+    field(VAL,  "1")
+    field(ZNAM, "No")
+    field(ONAM, "Yes")
+    info( autosaveFields, "VAL" )
+}
+
+record(waveform, "$(P)$(R)DefFileTemplate")
+{
+    field(PINI, "YES")
+    field(FTVL, "CHAR")
+    field(NELM, "256")
+    info( autosaveFields, "VAL" )
+}
+
+record(bo, "$(P)$(R)DefAutoSave")
+{
+    field(PINI, "YES")
+    field(ZNAM, "No")
+    field(ONAM, "Yes")
+    info( autosaveFields, "VAL" )
+}
+
+record(busy, "$(P)$(R)DefWriteFile")
+{
+    field(ZNAM, "Done")
+    field(ONAM, "Write")
+}
+
+record(busy, "$(P)$(R)DefReadFile")
+{
+    field(ZNAM, "Done")
+    field(ONAM, "Read")
+}
+
+record(mbbo, "$(P)$(R)DefFileFormat")
+{
+    field(PINI, "YES")
+    field(VAL,  "0")
+    field(ZRST, "Undefined")
+    field(ZRVL, "0")
+    field(ONST, "Invalid")
+    field(ONVL, "1")
+    info( autosaveFields, "VAL" )
+}
+
+record(mbbo, "$(P)$(R)DefFileWriteMode")
+{
+    field(PINI, "YES")
+    field(VAL,  "0")
+    field(ZRST, "Single")
+    field(ZRVL, "0")
+    field(ONST, "Capture")
+    field(ONVL, "1")
+    field(TWST, "Stream")
+    field(TWVL, "2")
+    info( autosaveFields, "VAL" )
+}
+
+record(busy, "$(P)$(R)DefCapture")
+{
+    field(ZNAM, "Done")
+    field(ONAM, "Capture")
+    field(ZSV,  "NO_ALARM")
+    field(OSV,  "MINOR")
+}
+
+record(longout, "$(P)$(R)DefNumCapture")
+{
+    field(PINI, "YES")
+    field(VAL,  "1")
+    info( autosaveFields, "VAL" )
+}
+
+record(bo, "$(P)$(R)DefDeleteDriverFile")
+{
+    field(PINI, "YES")
+    field(VAL,  "0")
+    field(ZNAM, "No")
+    field(ONAM, "Yes")
+    info( autosaveFields, "VAL" )
+}
+
+record(waveform, "$(P)$(R)DefWriteMessage")
+{
+    field(FTVL, "CHAR")
+    field(NELM, "256")
+    field(SCAN, "I/O Intr")
+}
+
+record( seq, "$(P)$(R)RestorePluginDefaults" )
+{
+	field( SELM, "All" )
+	field( SELN, "0" )
+	field( DLY1, "0" )
+
+	# Defaults
+	field( DOL1, "$(P)$(R)DefFilePath")
+	field( DOL2, "$(P)$(R)DefFileName")
+	field( DOL3, "$(P)$(R)DefFileNumber")
+	field( DOL4, "$(P)$(R)DefFileNumber_write")
+	field( DOL5, "$(P)$(R)DefFileNumber_Sync")
+	field( DOL6, "$(P)$(R)DefAutoIncrement")
+	field( DOL7, "$(P)$(R)DefFileTemplate")
+	field( DOL8, "$(P)$(R)DefAutoSave")
+	field( DOL9, "$(P)$(R)DefFileFormat")
+	field( DOLA, "$(P)$(R)DefFileWriteMode")
+
+	# Plugin values
+	field( DO1,  "$(P)$(R)FilePath")
+	field( DO2,  "$(P)$(R)FileName")
+	field( DO3,  "$(P)$(R)FileNumber")
+	field( DO4,  "$(P)$(R)FileNumber_write")
+	field( DO5,  "$(P)$(R)FileNumber_Sync")
+	field( DO6,  "$(P)$(R)AutoIncrement")
+	field( DO7,  "$(P)$(R)FileTemplate")
+	field( DO8,  "$(P)$(R)AutoSave")
+	field( DO9,  "$(P)$(R)FileFormat")
+	field( DOA,  "$(P)$(R)FileWriteMode")
+
+	field( FLNK, "$(P)$(R)RestorePluginDefaults2" )
+	info( autosaveFields, "DLY1 DLY2 DLY3 DLY4 DLY5 DLY6 DLY7 DLY8 DLY9 DLYA" )
+}
+
+record( seq, "$(P)$(R)RestorePluginDefaults2" )
+{
+	field( SELM, "All" )
+	field( SELN, "0" )
+	field( DLY1, "0" )
+
+	# Defaults
+	field( DOL1, "$(P)$(R)DefNumCapture")
+	field( DOL2, "$(P)$(R)DefDeleteDriverFile")
+	field( DOL3, "$(P)$(R)DefWriteMessage")
+
+	# Plugin values
+	field( DO1,  "$(P)$(R)NumCapture")
+	field( DO2,  "$(P)$(R)DeleteDriverFile")
+	field( DO3,  "$(P)$(R)WriteMessage")
+
+	info( autosaveFields, "DLY1 DLY2 DLY3 DLY4 DLY5 DLY6 DLY7 DLY8 DLY9 DLYA" )
+}

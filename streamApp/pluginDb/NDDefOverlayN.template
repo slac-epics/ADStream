@@ -1,0 +1,144 @@
+# Defaults for NDOverlayN
+
+record(stringout, "$(P)$(R)DefName")
+{
+    field(PINI, "YES")
+    field(VAL,  "$(NAME)")
+   info( autosaveFields, "VAL" )
+}
+
+record(bo, "$(P)$(R)DefUse")
+{
+    field(PINI, "YES")
+    field(VAL,  "0")
+    field(ZNAM, "No")
+    field(ONAM, "Yes")
+   info( autosaveFields, "VAL" )
+}
+
+record(longout, "$(P)$(R)DefPositionX")
+{
+    field(PINI, "YES")
+    field(LOPR, "1")
+    field(HOPR, "1024")
+    field(VAL,  "1")
+   info( autosaveFields, "VAL" )
+}
+
+record(longout, "$(P)$(R)DefPositionY")
+{
+    field(PINI, "YES")
+    field(LOPR, "1")
+    field(HOPR, "1024")
+    field(VAL,  "1")
+   info( autosaveFields, "VAL" )
+}
+
+record(longout, "$(P)$(R)DefSizeX")
+{
+    field(PINI, "YES")
+    field(LOPR, "1")
+    field(HOPR, "1024")
+    field(VAL,  "1")
+   info( autosaveFields, "VAL" )
+}
+
+record(longout, "$(P)$(R)DefSizeY")
+{
+    field(PINI, "YES")
+    field(LOPR, "1")
+    field(HOPR, "1024")
+    field(VAL,  "1")
+   info( autosaveFields, "VAL" )
+}
+
+record(mbbo, "$(P)$(R)DefShape")
+{
+    field(PINI, "YES")
+    field(ZRST, "Cross")
+    field(ZRVL, "0")
+    field(ONST, "Rectangle")
+    field(ONVL, "1")
+    field(VAL,  "$(SHAPE)")
+   info( autosaveFields, "VAL" )
+}
+
+record(mbbo, "$(P)$(R)DefDrawMode")
+{
+    field(PINI, "YES")
+    field(ZRST, "Set")
+    field(ZRVL, "0")
+    field(ONST, "XOR")
+    field(ONVL, "1")
+   info( autosaveFields, "VAL" )
+}
+
+record(longout, "$(P)$(R)DefRed")
+{
+    field(PINI, "YES")
+    field(VAL,  "1")
+   info( autosaveFields, "VAL" )
+}
+
+record(longout, "$(P)$(R)DefGreen")
+{
+    field(PINI, "YES")
+    field(VAL,  "1")
+   info( autosaveFields, "VAL" )
+}
+
+record(longout, "$(P)$(R)DefBlue")
+{
+    field(PINI, "YES")
+    field(VAL,  "1")
+   info( autosaveFields, "VAL" )
+}
+
+record( seq, "$(P)$(R)RestorePluginDefaults" )
+{
+	field( SELM, "All" )
+	field( SELN, "0" )
+	field( DLY1, "0" )
+
+	# Defaults
+	field( DOL1, "$(P)$(R)DefName")
+	field( DOL2, "$(P)$(R)DefUse")
+	field( DOL3, "$(P)$(R)DefPositionX")
+	field( DOL4, "$(P)$(R)DefPositionY")
+	field( DOL5, "$(P)$(R)DefSizeX")
+	field( DOL6, "$(P)$(R)DefSizeY")
+	field( DOL7, "$(P)$(R)DefShape")
+	field( DOL8, "$(P)$(R)DefDrawMode")
+
+	# Plugin values
+	field( DO1,  "$(P)$(R)Name")
+	field( DO2,  "$(P)$(R)Use")
+	field( DO3,  "$(P)$(R)PositionX")
+	field( DO4,  "$(P)$(R)PositionY")
+	field( DO5,  "$(P)$(R)SizeX")
+	field( DO6,  "$(P)$(R)SizeY")
+	field( DO7,  "$(P)$(R)Shape")
+	field( DO8,  "$(P)$(R)DrawMode")
+
+	field( FLNK, "$(P)$(R)RestorePluginDefaults2" )
+	info( autosaveFields, "DLY1 DLY2 DLY3 DLY4 DLY5 DLY6 DLY7 DLY8 DLY9 DLYA" )
+}
+
+record( seq, "$(P)$(R)RestorePluginDefaults2" )
+{
+	field( SELM, "All" )
+	field( SELN, "0" )
+	field( DLY1, "0" )
+
+	# Defaults
+	field( DOL1, "$(P)$(R)DefRed")
+	field( DOL2, "$(P)$(R)DefGreen")
+	field( DOL3, "$(P)$(R)DefBlue")
+
+	# Plugin values
+	field( DO1,  "$(P)$(R)Red")
+	field( DO2,  "$(P)$(R)Green")
+	field( DO3,  "$(P)$(R)Blue")
+
+	info( autosaveFields, "DLY1 DLY2 DLY3 DLY4 DLY5 DLY6 DLY7 DLY8 DLY9 DLYA" )
+}

@@ -189,7 +189,6 @@ record( seq, "$(P)$(R)RestorePluginDefaults" )
 	field( DLY1, "0" )
 
 	# Defaults
-	# Plugin values
 	field( DOL1, "$(P)$(R)DefName")
 	field( DOL2, "$(P)$(R)DefBinX")
 	field( DOL3, "$(P)$(R)DefBinY")

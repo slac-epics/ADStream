@@ -1,0 +1,44 @@
+# Defaults for NDFileNexus
+
+record(mbbo, "$(P)$(R)DefFileFormat")
+{
+    field(ZRST, "NeXus")
+    field(ZRVL, "0")
+    field(ONST, "Invalid")
+    field(ONVL, "1")
+}
+
+record(waveform, "$(P)$(R)DefTemplateFilePath")
+{
+    field(PINI, "YES")
+    field(FTVL, "CHAR")
+    field(NELM, "256")
+   info( autosaveFields, "VAL" )
+}
+
+record(waveform, "$(P)$(R)DefTemplateFileName")
+{
+    field(PINI, "YES")
+    field(FTVL, "CHAR")
+    field(NELM, "256")
+   info( autosaveFields, "VAL" )
+}
+
+record( seq, "$(P)$(R)RestorePluginDefaults" )
+{
+	field( SELM, "All" )
+	field( SELN, "0" )
+	field( DLY1, "0" )
+
+	# Defaults
+	field( DOL1, "$(P)$(R)DefFileFormat")
+	field( DOL2, "$(P)$(R)DefTemplateFilePath")
+	field( DOL3, "$(P)$(R)DefTemplateFileName")
+
+	# Plugin values
+	field( DO1,  "$(P)$(R)FileFormat")
+	field( DO2,  "$(P)$(R)TemplateFilePath")
+	field( DO3,  "$(P)$(R)TemplateFileName")
+
+	info( autosaveFields, "DLY1 DLY2 DLY3 DLY4 DLY5 DLY6 DLY7 DLY8 DLY9 DLYA" )
+}

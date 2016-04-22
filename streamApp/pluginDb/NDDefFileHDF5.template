@@ -1,0 +1,193 @@
+
+record(mbbo, "$(P)$(R)DefFileFormat")
+{
+    field(ZRST, "HDF5")
+    field(ZRVL, "0")
+    field(ONST, "Invalid")
+    field(ONVL, "1")
+}
+
+record(longout, "$(P)$(R)DefNumRowChunks")
+{
+    field(PINI, "YES")
+   info( autosaveFields, "VAL" )
+}
+
+record(longout, "$(P)$(R)DefNumColChunks")
+{
+    field(PINI, "YES")
+   info( autosaveFields, "VAL" )
+}
+
+record(longout, "$(P)$(R)DefNumFramesChunks")
+{
+    field(PINI, "YES")
+   info( autosaveFields, "VAL" )
+}
+
+record(longout, "$(P)$(R)DefBoundaryAlign")
+{
+    field(PINI, "YES")
+    field(VAL, "0")
+    field(EGU, "bytes")
+   info( autosaveFields, "VAL" )
+}
+
+
+record(longout, "$(P)$(R)DefBoundaryThreshold")
+{
+    field(PINI, "YES")
+    field(VAL, "1")
+    field(EGU, "bytes")
+   info( autosaveFields, "VAL" )
+}
+
+
+record(longout, "$(P)$(R)DefNumExtraDims")
+{
+    field(PINI, "YES")
+   info( autosaveFields, "VAL" )
+}
+
+record(longout, "$(P)$(R)DefExtraDimSizeN")
+{
+    field(PINI, "YES")
+   info( autosaveFields, "VAL" )
+}
+
+record(longout, "$(P)$(R)DefExtraDimSizeX")
+{
+    field(PINI, "YES")
+   info( autosaveFields, "VAL" )
+}
+
+record(longout, "$(P)$(R)DefExtraDimSizeY")
+{
+    field(PINI, "YES")
+   info( autosaveFields, "VAL" )
+}
+
+record(bo, "$(P)$(R)DefStoreAttr")
+{
+    field(PINI, "NO")
+    field(ZNAM, "No")
+    field(ONAM, "Yes")
+   info( autosaveFields, "VAL" )
+}
+
+record(bo, "$(P)$(R)DefStorePerform")
+{
+    field(PINI, "NO")
+    field(ZNAM, "No")
+    field(ONAM, "Yes")
+   info( autosaveFields, "VAL" )
+}
+
+record(longout, "$(P)$(R)DefNumFramesFlush")
+{
+    field(PINI, "NO")
+   info( autosaveFields, "VAL" )
+}
+
+record(mbbo, "$(P)$(R)DefCompression")
+{
+    field(ZRST, "None")
+    field(ZRVL, "0")
+    field(ONST, "N-bit")
+    field(ONVL, "1")
+    field(TWST, "szip")
+    field(TWVL, "2")
+    field(THST, "zlib")
+    field(THVL, "3")
+   info( autosaveFields, "VAL" )
+}
+
+record(longout, "$(P)$(R)DefNumDataBits")
+{
+    field(PINI, "NO")
+    field(EGU,  "bit")
+   info( autosaveFields, "VAL" )
+}
+
+record(longout, "$(P)$(R)DefDataBitsOffset")
+{
+    field(PINI, "NO")
+    field(EGU,  "bit")
+   info( autosaveFields, "VAL" )
+}
+
+record(longout, "$(P)$(R)DefSZipNumPixels")
+{
+    field(PINI, "NO")
+    field(EGU,  "bit")
+   info( autosaveFields, "VAL" )
+}
+
+record(longout, "$(P)$(R)DefZLevel")
+{
+    field(PINI, "NO")
+   info( autosaveFields, "VAL" )
+}
+
+record( seq, "$(P)$(R)RestorePluginDefaults" )
+{
+	field( SELM, "All" )
+	field( SELN, "0" )
+	field( DLY1, "0" )
+
+	# Defaults
+	field( DOL1, "$(P)$(R)DefFileFormat")
+	field( DOL2, "$(P)$(R)DefNumRowChunks")
+	field( DOL3, "$(P)$(R)DefNumColChunks")
+	field( DOL4, "$(P)$(R)DefNumFramesChunks")
+	field( DOL5, "$(P)$(R)DefBoundaryAlign")
+	field( DOL6, "$(P)$(R)DefBoundaryThreshold")
+	field( DOL7, "$(P)$(R)DefNumExtraDims")
+	field( DOL8, "$(P)$(R)DefExtraDimSizeN")
+	field( DOL9, "$(P)$(R)DefExtraDimSizeX")
+	field( DOLA, "$(P)$(R)DefExtraDimSizeY")
+
+	# Plugin values
+	field( DO1,  "$(P)$(R)FileFormat")
+	field( DO2,  "$(P)$(R)NumRowChunks")
+	field( DO3,  "$(P)$(R)NumColChunks")
+	field( DO4,  "$(P)$(R)NumFramesChunks")
+	field( DO5,  "$(P)$(R)BoundaryAlign")
+	field( DO6,  "$(P)$(R)BoundaryThreshold")
+	field( DO7,  "$(P)$(R)NumExtraDims")
+	field( DO8,  "$(P)$(R)ExtraDimSizeN")
+	field( DO9,  "$(P)$(R)ExtraDimSizeX")
+	field( DOA,  "$(P)$(R)ExtraDimSizeY")
+
+	field( FLNK, "$(P)$(R)RestorePluginDefaults2" )
+	info( autosaveFields, "DLY1 DLY2 DLY3 DLY4 DLY5 DLY6 DLY7 DLY8 DLY9 DLYA" )
+}
+
+record( seq, "$(P)$(R)RestorePluginDefaults2" )
+{
+	field( SELM, "All" )
+	field( SELN, "0" )
+	field( DLY1, "0" )
+
+	# Defaults
+	field( DOL1, "$(P)$(R)DefStoreAttr")
+	field( DOL2, "$(P)$(R)DefStorePerform")
+	field( DOL3, "$(P)$(R)DefNumFramesFlush")
+	field( DOL4, "$(P)$(R)DefCompression")
+	field( DOL5, "$(P)$(R)DefNumDataBits")
+	field( DOL6, "$(P)$(R)DefDataBitsOffset")
+	field( DOL7, "$(P)$(R)DefSZipNumPixels")
+	field( DOL8, "$(P)$(R)DefZLevel")
+
+	# Plugin values
+	field( DO1,  "$(P)$(R)StoreAttr")
+	field( DO2,  "$(P)$(R)StorePerform")
+	field( DO3,  "$(P)$(R)NumFramesFlush")
+	field( DO4,  "$(P)$(R)Compression")
+	field( DO5,  "$(P)$(R)NumDataBits")
+	field( DO6,  "$(P)$(R)DataBitsOffset")
+	field( DO7,  "$(P)$(R)SZipNumPixels")
+	field( DO8,  "$(P)$(R)ZLevel")
+
+	info( autosaveFields, "DLY1 DLY2 DLY3 DLY4 DLY5 DLY6 DLY7 DLY8 DLY9 DLYA" )
+}

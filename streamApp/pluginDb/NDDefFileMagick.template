@@ -1,0 +1,73 @@
+# Defaults for NDFileMagick
+
+record(mbbo, "$(P)$(R)DefFileFormat")
+{
+    field(ZRST, "Use extension")
+    field(ZRVL, "0")
+}
+
+record(longout, "$(P)$(R)DefQuality")
+{
+    field(PINI, "YES")
+    field(VAL,  "100")
+    field(LOPR, "0")
+    field(DRVL, "0")
+    field(HOPR, "100")
+    field(DRVH, "100")
+   info( autosaveFields, "VAL" )
+}
+
+record(mbbo, "$(P)$(R)DefBitDepth")
+{
+   field(PINI, "YES")
+   field(ZRST, "1")
+   field(ZRVL, "1")
+   field(ONST, "8")
+   field(ONVL, "8")
+   field(TWST, "16")
+   field(TWVL, "16")
+   info( autosaveFields, "VAL" )
+}
+
+record(mbbo, "$(P)$(R)DefCompressType")
+{
+   field(PINI, "YES")
+   field(ZRST, "None")
+   field(ZRVL, "0")
+   field(ONST, "BZip")
+   field(ONVL, "1")
+   field(TWST, "FAX")
+   field(TWVL, "2")
+   field(THST, "Group 4")
+   field(THVL, "3")
+   field(FRST, "JPEG")
+   field(FRVL, "4")
+   field(FVST, "LZW")
+   field(FVVL, "5")
+   field(SXST, "RLE")
+   field(SXVL, "6")
+   field(SVST, "Zip")
+   field(SVVL, "7")
+   info( autosaveFields, "VAL" )
+}
+
+record( seq, "$(P)$(R)RestorePluginDefaults" )
+{
+	field( SELM, "All" )
+	field( SELN, "0" )
+	field( DLY1, "0" )
+
+	# Defaults
+	field( DOL1, "$(P)$(R)DefFileFormat")
+	field( DOL2, "$(P)$(R)DefQuality")
+	field( DOL3, "$(P)$(R)DefBitDepth")
+	field( DOL4, "$(P)$(R)DefCompressType")
+
+	# Plugin values
+	field( DO1,  "$(P)$(R)FileFormat")
+	field( DO2,  "$(P)$(R)Quality")
+	field( DO3,  "$(P)$(R)BitDepth")
+	field( DO4,  "$(P)$(R)CompressType")
+
+	info( autosaveFields, "DLY1 DLY2 DLY3 DLY4 DLY5 DLY6 DLY7 DLY8 DLY9 DLYA" )
+}

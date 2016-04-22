@@ -1,0 +1,423 @@
+# Defaults for NDProcess
+
+record(mbbo, "$(P)$(R)DefDataTypeOut")
+{
+    field(PINI, "YES")
+    field(ZRST, "Int8")
+    field(ZRVL, "0")
+    field(ONST, "UInt8")
+    field(ONVL, "1")
+    field(TWST, "Int16")
+    field(TWVL, "2")
+    field(THST, "UInt16")
+    field(THVL, "3")
+    field(FRST, "Int32")
+    field(FRVL, "4")
+    field(FVST, "UInt32")
+    field(FVVL, "5")
+    field(SXST, "Float32")
+    field(SXVL, "6")
+    field(SVST, "Float64")
+    field(SVVL, "7")
+    field(EIST, "Automatic")
+    field(EIVL, "-1")
+    field(VAL,  "8")
+   info( autosaveFields, "VAL" )
+}
+
+record(bo, "$(P)$(R)DefSaveBackground")
+{
+    field(VAL,  "1")
+    field(ZNAM, "No")
+    field(ONAM, "Yes")
+}
+
+record(bo, "$(P)$(R)DefEnableBackground")
+{
+    field(PINI, "YES")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+   info( autosaveFields, "VAL" )
+}
+
+record(bo, "$(P)$(R)DefSaveFlatField")
+{
+    field(VAL,  "1")
+    field(ZNAM, "No")
+    field(ONAM, "Yes")
+}
+
+record(bo, "$(P)$(R)DefEnableFlatField")
+{
+    field(PINI, "YES")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+   info( autosaveFields, "VAL" )
+}
+
+record(ao, "$(P)$(R)DefScaleFlatField")
+{
+    field(PINI, "YES")
+    field(VAL,  "255.")
+   info( autosaveFields, "VAL" )
+}
+
+record(bo, "$(P)$(R)DefEnableOffsetScale")
+{
+    field(PINI, "YES")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+   info( autosaveFields, "VAL" )
+}
+
+record(busy, "$(P)$(R)DefAutoOffsetScale")
+{
+    field(ZNAM, "Done")
+    field(ONAM, "Calculating")
+}
+
+record(ao, "$(P)$(R)DefOffset")
+{
+    field(PINI, "YES")
+    field(PREC, "2")
+    field(VAL,  "0.0")
+   info( autosaveFields, "VAL" )
+}
+
+record(ao, "$(P)$(R)DefScale")
+{
+    field(PINI, "YES")
+    field(PREC, "2")
+    field(VAL,  "1.0")
+   info( autosaveFields, "VAL" )
+}
+
+record(bo, "$(P)$(R)DefEnableLowClip")
+{
+    field(PINI, "YES")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+   info( autosaveFields, "VAL" )
+}
+
+record(ao, "$(P)$(R)DefLowClip")
+{
+    field(PINI, "YES")
+    field(VAL,  "0.0")
+   info( autosaveFields, "VAL" )
+}
+
+record(bo, "$(P)$(R)DefEnableHighClip")
+{
+    field(PINI, "YES")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+   info( autosaveFields, "VAL" )
+}
+
+record(ao, "$(P)$(R)DefHighClip")
+{
+    field(PINI, "YES")
+    field(VAL,  "100.0")
+   info( autosaveFields, "VAL" )
+}
+
+record(bo, "$(P)$(R)DefEnableFilter")
+{
+    field(PINI, "YES")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+   info( autosaveFields, "VAL" )
+}
+
+record(bo, "$(P)$(R)DefResetFilter")
+{
+    field(VAL,  "1")
+    field(ZNAM, "No")
+    field(ONAM, "Yes")
+}
+
+record(bo, "$(P)$(R)DefAutoResetFilter")
+{
+    field(PINI, "YES")
+    field(ZNAM, "No")
+    field(ONAM, "Yes")
+   info( autosaveFields, "VAL" )
+}
+
+record(bo, "$(P)$(R)DefFilterCallbacks")
+{
+    field(PINI, "YES")
+    field(ZNAM, "Every array")
+    field(ONAM, "Array N only")
+   info( autosaveFields, "VAL" )
+}
+
+record(longout, "$(P)$(R)DefNumFilter")
+{
+    field(PINI, "YES")
+    field(VAL,  "1")
+    field(FLNK, "$(P)$(R)NumFilterRecip.PROC PP")
+   info( autosaveFields, "VAL" )
+}
+
+record(ao, "$(P)$(R)DefOOffset")
+{
+    field(PINI, "YES")
+    field(VAL,  "0.0")
+    field(PREC, "2")
+   info( autosaveFields, "VAL" )
+}
+
+record(ao, "$(P)$(R)DefOScale")
+{
+    field(PINI, "YES")
+    field(VAL,  "1.0")
+    field(PREC, "2")
+   info( autosaveFields, "VAL" )
+}
+
+record(ao, "$(P)$(R)DefOC1")
+{
+    field(PINI, "YES")
+    field(VAL,  "1.0")
+    field(PREC, "2")
+   info( autosaveFields, "VAL" )
+}
+
+record(ao, "$(P)$(R)DefOC2")
+{
+    field(PINI, "YES")
+    field(VAL,  "-1.0")
+    field(PREC, "2")
+   info( autosaveFields, "VAL" )
+}
+
+record(ao, "$(P)$(R)DefOC3")
+{
+    field(PINI, "YES")
+    field(VAL,  "0.0")
+    field(PREC, "2")
+   info( autosaveFields, "VAL" )
+}
+
+record(ao, "$(P)$(R)DefOC4")
+{
+    field(PINI, "YES")
+    field(VAL,  "1.0")
+    field(PREC, "2")
+   info( autosaveFields, "VAL" )
+}
+
+record(ao, "$(P)$(R)DefFOffset")
+{
+    field(PINI, "YES")
+    field(VAL,  "0.0")
+    field(PREC, "2")
+   info( autosaveFields, "VAL" )
+}
+
+record(ao, "$(P)$(R)DefFScale")
+{
+    field(PINI, "YES")
+    field(VAL,  "1.0")
+    field(PREC, "2")
+   info( autosaveFields, "VAL" )
+}
+
+record(ao, "$(P)$(R)DefFC1")
+{
+    field(PINI, "YES")
+    field(VAL,  "1.0")
+    field(PREC, "2")
+   info( autosaveFields, "VAL" )
+}
+
+record(ao, "$(P)$(R)DefFC2")
+{
+    field(PINI, "YES")
+    field(VAL,  "-1.0")
+    field(PREC, "2")
+   info( autosaveFields, "VAL" )
+}
+record(ao, "$(P)$(R)DefFC3")
+{
+    field(PINI, "YES")
+    field(VAL,  "0.0")
+    field(PREC, "2")
+   info( autosaveFields, "VAL" )
+}
+
+record(ao, "$(P)$(R)DefFC4")
+{
+    field(PINI, "YES")
+    field(VAL,  "1.0")
+    field(PREC, "2")
+   info( autosaveFields, "VAL" )
+}
+record(ao, "$(P)$(R)DefROffset")
+{
+    field(PINI, "YES")
+    field(VAL,  "0.0")
+    field(PREC, "2")
+   info( autosaveFields, "VAL" )
+}
+
+record(ao, "$(P)$(R)DefRC1")
+{
+    field(PINI, "YES")
+    field(VAL,  "1.0")
+    field(PREC, "2")
+   info( autosaveFields, "VAL" )
+}
+
+record(ao, "$(P)$(R)DefRC2")
+{
+    field(PINI, "YES")
+    field(VAL,  "1.0")
+    field(PREC, "2")
+   info( autosaveFields, "VAL" )
+}
+
+record(mbbo, "$(P)$(R)DefFilterType")
+{
+    field(ZRST, "RecursiveAve")
+    field(ZRVL, "1")
+    field(ONST, "Average")
+    field(ONVL, "2")
+    field(TWST, "Sum")
+    field(TWVL, "3")
+    field(THST, "Difference")
+    field(THVL, "4")
+    field(FRST, "RecursiveAveDiff")
+    field(FRVL, "5")
+    field(FVST, "CopyToFilter")
+    field(FVVL, "6")
+    field(FLNK, "$(P)$(R)FilterTypeSeq PP MS")
+   info( autosaveFields, "VAL" )
+}
+
+record( seq, "$(P)$(R)RestorePluginDefaults" )
+{
+	field( SELM, "All" )
+	field( SELN, "0" )
+	field( DLY1, "0" )
+
+	# Defaults
+	field( DOL1, "$(P)$(R)DefDataTypeOut")
+	field( DOL2, "$(P)$(R)DefSaveBackground")
+	field( DOL3, "$(P)$(R)DefEnableBackground")
+	field( DOL4, "$(P)$(R)DefSaveFlatField")
+	field( DOL5, "$(P)$(R)DefEnableFlatField")
+	field( DOL6, "$(P)$(R)DefScaleFlatField")
+	field( DOL7, "$(P)$(R)DefEnableOffsetScale")
+	field( DOL8, "$(P)$(R)DefAutoOffsetScale")
+	field( DOL9, "$(P)$(R)DefOffset")
+	field( DOLA, "$(P)$(R)DefScale")
+
+	# Plugin values
+	field( DO1,  "$(P)$(R)DataTypeOut")
+	field( DO2,  "$(P)$(R)SaveBackground")
+	field( DO3,  "$(P)$(R)EnableBackground")
+	field( DO4,  "$(P)$(R)SaveFlatField")
+	field( DO5,  "$(P)$(R)EnableFlatField")
+	field( DO6,  "$(P)$(R)ScaleFlatField")
+	field( DO7,  "$(P)$(R)EnableOffsetScale")
+	field( DO8,  "$(P)$(R)AutoOffsetScale")
+	field( DO9,  "$(P)$(R)Offset")
+	field( DOA,  "$(P)$(R)Scale")
+
+	field( FLNK, "$(P)$(R)RestorePluginDefaults2" )
+	info( autosaveFields, "DLY1 DLY2 DLY3 DLY4 DLY5 DLY6 DLY7 DLY8 DLY9 DLYA" )
+}
+
+record( seq, "$(P)$(R)RestorePluginDefaults2" )
+{
+	field( SELM, "All" )
+	field( SELN, "0" )
+	field( DLY1, "0" )
+
+	# Defaults
+	field( DOL1, "$(P)$(R)DefEnableLowClip")
+	field( DOL2, "$(P)$(R)DefLowClip")
+	field( DOL3, "$(P)$(R)DefEnableHighClip")
+	field( DOL4, "$(P)$(R)DefHighClip")
+	field( DOL5, "$(P)$(R)DefEnableFilter")
+	field( DOL6, "$(P)$(R)DefResetFilter")
+	field( DOL7, "$(P)$(R)DefAutoResetFilter")
+	field( DOL8, "$(P)$(R)DefFilterCallbacks")
+	field( DOL9, "$(P)$(R)DefNumFilter")
+	field( DOLA, "$(P)$(R)DefOOffset")
+
+	# Plugin values
+	field( DO1,  "$(P)$(R)EnableLowClip")
+	field( DO2,  "$(P)$(R)LowClip")
+	field( DO3,  "$(P)$(R)EnableHighClip")
+	field( DO4,  "$(P)$(R)HighClip")
+	field( DO5,  "$(P)$(R)EnableFilter")
+	field( DO6,  "$(P)$(R)ResetFilter")
+	field( DO7,  "$(P)$(R)AutoResetFilter")
+	field( DO8,  "$(P)$(R)FilterCallbacks")
+	field( DO9,  "$(P)$(R)NumFilter")
+	field( DOA,  "$(P)$(R)OOffset")
+
+	field( FLNK, "$(P)$(R)RestorePluginDefaults3" )
+	info( autosaveFields, "DLY1 DLY2 DLY3 DLY4 DLY5 DLY6 DLY7 DLY8 DLY9 DLYA" )
+}
+
+record( seq, "$(P)$(R)RestorePluginDefaults3" )
+{
+	field( SELM, "All" )
+	field( SELN, "0" )
+	field( DLY1, "0" )
+
+	# Defaults
+	field( DOL1, "$(P)$(R)DefOScale")
+	field( DOL2, "$(P)$(R)DefOC1")
+	field( DOL3, "$(P)$(R)DefOC2")
+	field( DOL4, "$(P)$(R)DefOC3")
+	field( DOL5, "$(P)$(R)DefOC4")
+	field( DOL6, "$(P)$(R)DefFOffset")
+	field( DOL7, "$(P)$(R)DefFScale")
+
+	# Plugin values
+	field( DO1,  "$(P)$(R)OScale")
+	field( DO2,  "$(P)$(R)OC1")
+	field( DO3,  "$(P)$(R)OC2")
+	field( DO4,  "$(P)$(R)OC3")
+	field( DO5,  "$(P)$(R)OC4")
+	field( DO6,  "$(P)$(R)FOffset")
+	field( DO7,  "$(P)$(R)FScale")
+
+	field( FLNK, "$(P)$(R)RestorePluginDefaults4" )
+	info( autosaveFields, "DLY1 DLY2 DLY3 DLY4 DLY5 DLY6 DLY7 DLY8 DLY9 DLYA" )
+}
+
+record( seq, "$(P)$(R)RestorePluginDefaults4" )
+{
+	field( SELM, "All" )
+	field( SELN, "0" )
+	field( DLY1, "0" )
+
+	# Defaults
+	field( DOL1, "$(P)$(R)DefFC1")
+	field( DOL2, "$(P)$(R)DefFC2")
+	field( DOL3, "$(P)$(R)DefFC3")
+	field( DOL4, "$(P)$(R)DefFC4")
+	field( DOL5, "$(P)$(R)DefROffset")
+	field( DOL6, "$(P)$(R)DefRC1")
+	field( DOL7, "$(P)$(R)DefRC2")
+	field( DOL8, "$(P)$(R)DefFilterType")
+
+	# Plugin values
+	field( DO1,  "$(P)$(R)FC1")
+	field( DO2,  "$(P)$(R)FC2")
+	field( DO3,  "$(P)$(R)FC3")
+	field( DO4,  "$(P)$(R)FC4")
+	field( DO5,  "$(P)$(R)ROffset")
+	field( DO6,  "$(P)$(R)RC1")
+	field( DO7,  "$(P)$(R)RC2")
+	field( DO8,  "$(P)$(R)FilterType")
+
+	info( autosaveFields, "DLY1 DLY2 DLY3 DLY4 DLY5 DLY6 DLY7 DLY8 DLY9 DLYA" )
+}

@@ -1,0 +1,144 @@
+# Defaults for NDStats
+
+record(bo, "$(P)$(R)DefComputeStatistics")
+{
+   field(PINI, "YES")
+   field(VAL,  "1")
+   field(ZNAM, "No")
+   field(ONAM, "Yes")
+}
+
+record(longout, "$(P)$(R)DefBgdWidth")
+{
+   field(PINI, "YES")
+   field(VAL,  "1")
+   info( autosaveFields, "VAL" )
+}
+
+record(bo, "$(P)$(R)DefComputeCentroid")
+{
+   field(PINI, "YES")
+   field(VAL,  "0")
+   field(ZNAM, "No")
+   field(ONAM, "Yes")
+   info( autosaveFields, "VAL" )
+}
+
+record(ao, "$(P)$(R)DefCentroidThreshold")
+{
+    field(PINI, "YES")
+    field(VAL,  "1")
+   info( autosaveFields, "VAL" )
+}
+
+record(longout, "$(P)$(R)DefTSNumPoints")
+{
+   field(PINI, "YES")
+   field(VAL,  "$(NCHANS)")
+   field(DRVH, "$(NCHANS)")
+   info( autosaveFields, "VAL" )
+}
+
+record(bo, "$(P)$(R)DefComputeProfiles")
+{
+   field(PINI, "YES")
+   field(VAL,  "0")
+   field(ZNAM, "No")
+   field(ONAM, "Yes")
+   info( autosaveFields, "VAL" )
+}
+
+record(longout, "$(P)$(R)DefCursorX")
+{
+   field(PINI, "YES")
+   field(VAL,  "256")
+   info( autosaveFields, "VAL" )
+}
+
+record(longout, "$(P)$(R)DefCursorY")
+{
+   field(PINI, "YES")
+   field(VAL,  "256")
+   info( autosaveFields, "VAL" )
+}
+
+record(bo, "$(P)$(R)DefComputeHistogram")
+{
+   field(PINI, "YES")
+   field(VAL,  "0")
+   field(ZNAM, "No")
+   field(ONAM, "Yes")
+   info( autosaveFields, "VAL" )
+}
+
+record(longout, "$(P)$(R)DefHistSize")
+{
+   field(PINI, "YES")
+   field(VAL,  "256")
+   info( autosaveFields, "VAL" )
+}
+
+record(ao, "$(P)$(R)DefHistMin")
+{
+   field(PINI, "YES")
+   field(VAL,  "0")
+   info( autosaveFields, "VAL" )
+}
+
+record(ao, "$(P)$(R)DefHistMax")
+{
+   field(PINI, "YES")
+   field(VAL,  "255")
+   info( autosaveFields, "VAL" )
+}
+
+record( seq, "$(P)$(R)RestorePluginDefaults" )
+{
+	field( SELM, "All" )
+	field( SELN, "0" )
+	field( DLY1, "0" )
+
+	# Defaults
+	field( DOL1, "$(P)$(R)DefComputeStatistics")
+	field( DOL2, "$(P)$(R)DefBgdWidth")
+	field( DOL3, "$(P)$(R)DefComputeCentroid")
+	field( DOL4, "$(P)$(R)DefCentroidThreshold")
+	field( DOL5, "$(P)$(R)DefTSNumPoints")
+	field( DOL6, "$(P)$(R)DefComputeProfiles")
+	field( DOL7, "$(P)$(R)DefCursorX")
+	field( DOL8, "$(P)$(R)DefCursorY")
+
+	# Plugin values
+	field( DO1,  "$(P)$(R)ComputeStatistics")
+	field( DO2,  "$(P)$(R)BgdWidth")
+	field( DO3,  "$(P)$(R)ComputeCentroid")
+	field( DO4,  "$(P)$(R)CentroidThreshold")
+	field( DO5,  "$(P)$(R)TSNumPoints")
+	field( DO6,  "$(P)$(R)ComputeProfiles")
+	field( DO7,  "$(P)$(R)CursorX")
+	field( DO8,  "$(P)$(R)CursorY")
+
+	field( FLNK, "$(P)$(R)RestorePluginDefaults2" )
+	info( autosaveFields, "DLY1 DLY2 DLY3 DLY4 DLY5 DLY6 DLY7 DLY8 DLY9 DLYA" )
+}
+
+record( seq, "$(P)$(R)RestorePluginDefaults2" )
+{
+	field( SELM, "All" )
+	field( SELN, "0" )
+	field( DLY1, "0" )
+
+	# Defaults
+	field( DOL1, "$(P)$(R)DefComputeHistogram")
+	field( DOL2, "$(P)$(R)DefHistSize")
+	field( DOL3, "$(P)$(R)DefHistMin")
+	field( DOL4, "$(P)$(R)DefHistMax")
+
+	# Plugin values
+	field( DO1,  "$(P)$(R)ComputeHistogram")
+	field( DO2,  "$(P)$(R)HistSize")
+	field( DO3,  "$(P)$(R)HistMin")
+	field( DO4,  "$(P)$(R)HistMax")
+
+	info( autosaveFields, "DLY1 DLY2 DLY3 DLY4 DLY5 DLY6 DLY7 DLY8 DLY9 DLYA" )
+}

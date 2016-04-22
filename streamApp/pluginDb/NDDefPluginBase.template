@@ -51,7 +51,10 @@ record(bo, "$(P)$(R)DefMemoryPoolDiagEnable" )
 }
 
 # Records to control restoration of defaults
-# On initial bootup,
+# On initial bootup, PluginBootupCheck will reset the
+# plugin to default settings if its never been initialized.
+# To restore defaults manually, write a 1 to
+# RestoreBaseDefaults.PROC
 record( bo,  "$(P)$(R)PluginInitialized" )
 {
     field( PINI, "YES" )
@@ -71,6 +74,9 @@ record( seq, "$(P)$(R)RestoreBaseDefaults" )
 {
 	field( SELM, "All" )
 	field( SELN, "0" )
+
+	field( DOL1, "1" )
+	field( DO1,  "$(P)$(R)PluginInitialized" )
 	field( DLY1, "1" )
 
 	field( DOL2, "$(P)$(R)Def:NDArrayPort" )
