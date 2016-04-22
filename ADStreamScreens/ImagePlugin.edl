@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 53
-y 1555
+x 935
+y 576
 w 409
 h 500
 font "helvetica-bold-r-12.0"
@@ -69,32 +69,6 @@ numCmds 1
 command {
   0 "firefox --no-remote areaDetectorHelp/NDPluginStdArrays.html &"
 }
-endObjectProperties
-
-# (Shell Command)
-object shellCmdClass
-beginObjectProperties
-major 4
-minor 3
-release 0
-x 8
-y 8
-w 104
-h 24
-fgColor index 14
-bgColor index 3
-topShadowColor index 1
-botShadowColor index 14
-font "helvetica-medium-r-12.0"
-buttonLabel "EDM Viewer"
-numCmds 1
-commandLabel {
-  0 "View IMAGE in EDM Viewer"
-}
-command {
-  0 "P=$(CAM) R=: IMAGE=$(IMAGE) HUTCH=$(HUTCH) IOC=$(IOC) ADStreamScreens/edmViewer.sh"
-}
-execCursor
 endObjectProperties
 
 # (Exit Button)
@@ -246,5 +220,51 @@ symbols {
 replaceSymbols {
   0 1
 }
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 8
+y 8
+w 104
+h 24
+
+beginGroup
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+x 8
+y 8
+w 104
+h 24
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 14
+font "helvetica-medium-r-12.0"
+buttonLabel "EDM Viewer"
+numCmds 1
+commandLabel {
+  0 "View IMAGE in EDM Viewer"
+}
+command {
+  0 "P=$(CAM) R=: IMAGE=$(IMAGE) HUTCH=$(HUTCH) IOC=$(IOC) ADStreamScreens/edmViewer.sh"
+}
+execCursor
+endObjectProperties
+
+endGroup
+
+visPv "$(P)$(R)ColorMode_RBV"
+visMin "0"
+visMax "1"
 endObjectProperties
 
