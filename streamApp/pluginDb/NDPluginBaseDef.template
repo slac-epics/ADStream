@@ -1,0 +1,95 @@
+# Default settings and reset support for NDPluginBase
+
+record(stringout, "$(P)$(R)DefNDArrayPort")
+{
+    field(PINI, "YES")
+    field(VAL,  "$(NDARRAY_PORT)")
+    info( autosaveFields, "DESC VAL" )
+}
+
+record(longout, "$(P)$(R)DefNDArrayAddress")
+{
+    field(PINI, "YES")
+    field(VAL,  "$(NDARRAY_ADDR=0)")
+    info( autosaveFields, "DESC VAL" )
+}
+
+record(bo, "$(P)$(R)DefEnableCallbacks")
+{
+    field(PINI, "YES")
+    field(ZNAM, "Disabled")
+    field(ONAM, "Enabled")
+    field(VAL,  "$(Enable=0)")
+    info( autosaveFields, "DESC VAL" )
+}
+
+record(ao, "$(P)$(R)DefMinCallbackTime")
+{
+    field(PINI, "YES")
+    field(EGU,  "s")
+    field(PREC, "3")
+    field(VAL,  "$(MIN_CB=0.0)")
+    info( autosaveFields, "DESC VAL" )
+}
+
+record(bo, "$(P)$(R)DefBlockingCallbacks")
+{
+    field(PINI, "YES")
+    field(ZNAM, "No")
+    field(ONAM, "Yes")
+    field(VAL,  "$(BLOCKING_CB=0)")
+    info( autosaveFields, "DESC ZSV OSV VAL" )
+}
+
+record(bo, "$(P)$(R)DefMemoryPoolDiagEnable" )
+{
+    field(PINI, "YES")
+    field(ZNAM, "Disabled")
+    field(ONAM, "Enabled")
+    field(VAL,  "$(MEM_POOL_DIAG_ENABLE=0)")
+    info( autosaveFields, "VAL" )
+}
+
+# Records to control restoration of defaults
+# On initial bootup,
+record( bo,  "$(P)$(R)PluginInitialized" )
+{
+    field( PINI, "YES" )
+    field( ZNAM, "Uninitialized" )
+    field( ONAM, "Initialized" )
+    field( VAL,  "0" )
+    info( autosaveFields, "VAL" )
+}
+record( calcout, "$(P)$(R)PluginBootupCheck" )
+{
+	field( PINI, "YES" )
+	field( INPA, "$(P)$(R)PluginInitialized" )
+	field( CALC, "!A" )
+	field( OUT,  "$(P)$(R)RestoreBaseDefaults.PROC" )
+}
+record( seq, "$(P)$(R)RestoreBaseDefaults" )
+{
+	field( SELM, "All" )
+	field( SELN, "0" )
+	field( DLY1, "1" )
+
+	field( DOL2, "$(P)$(R)Def:NDArrayPort" )
+	field( DO2,  "$(P)$(R)NDArrayPort" )
+
+	field( DOL3, "$(P)$(R)Def:NDArrayAddress" )
+	field( DO3,  "$(P)$(R)NDArrayAddress" )
+
+	field( DOL4, "$(P)$(R)Def:EnableCallbacks" )
+	field( DO4,  "$(P)$(R)EnableCallbacks" )
+
+	field( DOL5, "$(P)$(R)Def:MinCallbackTime" )
+	field( DO5,  "$(P)$(R)MinCallbackTime" )
+
+	field( DOL6, "$(P)$(R)Def:BlockingCallbacks" )
+	field( DOL6, "$(P)$(R)Def:BlockingCallbacks" )
+
+	field( DOL7, "$(P)$(R)Def:MemoryPoolDiagEnable" )
+	field( DOL7, "$(P)$(R)Def:MemoryPoolDiagEnable" )
+
+	field( FLNK, "$(P)$(R)RestorePluginDefaults" )
+}

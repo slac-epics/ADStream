@@ -1,0 +1,270 @@
+# Defaults and reset sequence for ND ROIs
+
+record(stringout, "$(P)$(R)DefName")
+{
+   field(PINI, "YES")
+   info( autosaveFields, "VAL" )
+}
+
+record(longout, "$(P)$(R)DefBinX")
+{
+   field(PINI, "YES")
+   field(VAL,  "$(BIN_X=1)")
+   info( autosaveFields, "VAL" )
+}
+
+record(longout, "$(P)$(R)DefBinY")
+{
+   field(PINI, "YES")
+   field(VAL,  "$(BIN_Y=1)")
+   info( autosaveFields, "VAL" )
+}
+
+record(longout, "$(P)$(R)DefBinZ")
+{
+   field(PINI, "YES")
+   field(VAL,  "$(BIN_Z=1)")
+   info( autosaveFields, "VAL" )
+}
+
+record(longout, "$(P)$(R)DefMinX")
+{
+   field(PINI, "YES")
+   field(LOPR, "0")
+   field(VAL,  "$(MIN_X=0)")
+   info( autosaveFields, "VAL" )
+}
+
+
+record(longout, "$(P)$(R)DefMinY")
+{
+   field(PINI, "YES")
+   field(LOPR, "0")
+   field(VAL,  "$(MIN_Y=0)")
+   info( autosaveFields, "VAL" )
+}
+
+
+record(longout, "$(P)$(R)DefMinZ")
+{
+   field(PINI, "YES")
+   field(LOPR, "1")
+   field(VAL,  "$(MIN_Z=0)")
+   info( autosaveFields, "VAL" )
+}
+
+
+record(longout, "$(P)$(R)DefSizeX")
+{
+   field(PINI, "YES")
+   field(VAL,  "$(SIZE_X=1000000)")
+   info( autosaveFields, "VAL" )
+}
+
+
+record(longout, "$(P)$(R)DefSizeY")
+{
+   field(PINI, "YES")
+   field(VAL,  "$(SIZE_Y=1000000)")
+   info( autosaveFields, "VAL" )
+}
+
+
+record(longout, "$(P)$(R)DefSizeZ")
+{
+   field(PINI, "YES")
+   field(VAL,  "$(SIZE_Z=1000000)")
+   info( autosaveFields, "VAL" )
+}
+
+record(bo, "$(P)$(R)DefAutoSizeX")
+{
+   field(PINI, "YES")
+   field(VAL,  "$(AUTO_SIZE_X=0)")
+   field(ZNAM, "No")
+   field(ONAM, "Yes")
+   info( autosaveFields, "VAL" )
+}
+
+record(bo, "$(P)$(R)DefAutoSizeY")
+{
+   field(PINI, "YES")
+   field(VAL,  "$(AUTO_SIZE_Y=0)")
+   field(ZNAM, "No")
+   field(ONAM, "Yes")
+   info( autosaveFields, "VAL" )
+}
+
+record(bo, "$(P)$(R)DefAutoSizeZ")
+{
+   field(PINI, "YES")
+   field(VAL,  "$(AUTO_SIZE_Z=0)")
+   field(ZNAM, "No")
+   field(ONAM, "Yes")
+   info( autosaveFields, "VAL" )
+}
+
+record(bo, "$(P)$(R)DefReverseX")
+{
+   field(PINI, "YES")
+   field(VAL,  "$(REVERSE_X=0)")
+   field(ZNAM, "No")
+   field(ONAM, "Yes")
+   info( autosaveFields, "VAL" )
+}
+
+record(bo, "$(P)$(R)DefReverseY")
+{
+   field(PINI, "YES")
+   field(VAL,  "$(REVERSE_Y=0)")
+   field(ZNAM, "No")
+   field(ONAM, "Yes")
+   info( autosaveFields, "VAL" )
+}
+
+record(bo, "$(P)$(R)DefReverseZ")
+{
+   field(PINI, "YES")
+   field(VAL,  "$(REVERSE_Z=0)")
+   field(ZNAM, "No")
+   field(ONAM, "Yes")
+   info( autosaveFields, "VAL" )
+}
+
+record(bo, "$(P)$(R)DefEnableX")
+{
+   field(PINI, "YES")
+   field(VAL,  "$(ENABLE_X=1)")
+   field(ZNAM, "Disable")
+   field(ONAM, "Enable")
+   info( autosaveFields, "VAL" )
+}
+
+record(bo, "$(P)$(R)DefEnableY")
+{
+   field(PINI, "YES")
+   field(VAL,  "$(ENABLE_Y=1)")
+   field(ZNAM, "Disable")
+   field(ONAM, "Enable")
+   info( autosaveFields, "VAL" )
+}
+
+record(bo, "$(P)$(R)DefEnableZ")
+{
+   field(PINI, "YES")
+   field(VAL,  "$(ENABLE_Z=1)")
+   field(ZNAM, "Disable")
+   field(ONAM, "Enable")
+   info( autosaveFields, "VAL" )
+}
+
+record(bo, "$(P)$(R)DefEnableScale")
+{
+   field(PINI, "YES")
+   field(VAL,  "$(ENABLE_SCALE=1)")
+   field(ZNAM, "Disable")
+   field(ONAM, "Enable")
+   info( autosaveFields, "VAL" )
+}
+
+record(ao, "$(P)$(R)DefScale")
+{
+   field(PINI, "YES")
+   field(VAL,  "1")
+   field(VAL,  "$(SCALE=1)")
+   info( autosaveFields, "VAL" )
+}
+
+record(longout, "$(P)$(R)DefDataTypeOut")
+{
+   field(PINI, "YES")
+   field(VAL,  "$(DATA_TYPE_OUT=8)")
+   info( autosaveFields, "VAL" )
+}
+
+record( seq, "$(P)$(R)RestorePluginDefaults" )
+{
+	field( SELM, "All" )
+	field( SELN, "0" )
+	field( DLY1, "0" )
+
+	# Defaults
+	# Plugin values
+	field( DOL1, "$(P)$(R)DefName")
+	field( DOL2, "$(P)$(R)DefBinX")
+	field( DOL3, "$(P)$(R)DefBinY")
+	field( DOL4, "$(P)$(R)DefBinZ")
+	field( DOL5, "$(P)$(R)DefMinX")
+	field( DOL6, "$(P)$(R)DefMinY")
+	field( DOL7, "$(P)$(R)DefMinZ")
+	field( DOL8, "$(P)$(R)DefSizeX")
+	field( DOL9, "$(P)$(R)DefSizeY")
+	field( DOLA, "$(P)$(R)DefSizeZ")
+	
+	# Plugin values
+	field( DO1,  "$(P)$(R)Name")
+	field( DO2,  "$(P)$(R)BinX")
+	field( DO3,  "$(P)$(R)BinY")
+	field( DO4,  "$(P)$(R)BinZ")
+	field( DO5,  "$(P)$(R)MinX")
+	field( DO6,  "$(P)$(R)MinY")
+	field( DO7,  "$(P)$(R)MinZ")
+	field( DO8,  "$(P)$(R)SizeX")
+	field( DO9,  "$(P)$(R)SizeY")
+	field( DOA,  "$(P)$(R)SizeZ")
+
+	field( FLNK, "$(P)$(R)RestorePluginDefaults2" )
+	info( autosaveFields, "DLY1 DLY2 DLY3 DLY4 DLY5 DLY6 DLY7 DLY8 DLY9 DLYA" )
+}
+
+record( seq, "$(P)$(R)RestorePluginDefaults2" )
+{
+	field( SELM, "All" )
+	field( SELN, "0" )
+	field( DLY1, "0" )
+
+	# Defaults
+	field( DOL1, "$(P)$(R)DefAutoSizeX")
+	field( DOL2, "$(P)$(R)DefAutoSizeY")
+	field( DOL3, "$(P)$(R)DefAutoSizeZ")
+	field( DOL4, "$(P)$(R)DefReverseX")
+	field( DOL5, "$(P)$(R)DefReverseY")
+	field( DOL6, "$(P)$(R)DefReverseZ")
+	field( DOL7, "$(P)$(R)DefEnableX")
+	field( DOL8, "$(P)$(R)DefEnableY")
+	field( DOL9, "$(P)$(R)DefEnableZ")
+
+	# Plugin values
+	field( DO1,  "$(P)$(R)AutoSizeX")
+	field( DO2,  "$(P)$(R)AutoSizeY")
+	field( DO3,  "$(P)$(R)AutoSizeZ")
+	field( DO4,  "$(P)$(R)ReverseX")
+	field( DO5,  "$(P)$(R)ReverseY")
+	field( DO6,  "$(P)$(R)ReverseZ")
+	field( DO7,  "$(P)$(R)EnableX")
+	field( DO8,  "$(P)$(R)EnableY")
+	field( DO9,  "$(P)$(R)EnableZ")
+
+	field( FLNK, "$(P)$(R)RestorePluginDefaults3" )
+
+	info( autosaveFields, "DLY1 DLY2 DLY3 DLY4 DLY5 DLY6 DLY7 DLY8 DLY9 DLYA" )
+}
+
+record( seq, "$(P)$(R)RestorePluginDefaults3" )
+{
+	field( SELM, "All" )
+	field( SELN, "0" )
+	field( DLY1, "0" )
+
+	# Defaults
+	field( DOL1, "$(P)$(R)DefEnableScale")
+	field( DOL2, "$(P)$(R)DefScale")
+	field( DOL3, "$(P)$(R)DefDataTypeOut")
+
+	# Plugin values
+	field( DO1,  "$(P)$(R)EnableScale")
+	field( DO2,  "$(P)$(R)Scale")
+	field( DO3,  "$(P)$(R)DataTypeOut")
+
+	info( autosaveFields, "DLY1 DLY2 DLY3 DLY4 DLY5 DLY6 DLY7 DLY8 DLY9 DLYA" )
+}
