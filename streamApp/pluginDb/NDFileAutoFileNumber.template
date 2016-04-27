@@ -1,0 +1,34 @@
+# Database to add automatic reset of FileNumber on changes
+# to FilePath, FileTemplate, or FileName
+
+# Add FLNKS to ResetFileNumber
+record(waveform, "$(P)$(R)FilePath")
+{
+    field(FLNK, "$(P)$(R)ResetFileNumber" )
+}
+record(waveform, "$(P)$(R)FileName")
+{
+    field(FLNK, "$(P)$(R)ResetFileNumber" )
+}
+record(waveform, "$(P)$(R)FileTemplate")
+{
+    field(FLNK, "$(P)$(R)ResetFileNumber" )
+}
+
+# AutoFileNumberReset flag
+record(bo, "$(P)$(R)AutoFileNumberReset")
+{
+    field(PINI, "YES")
+    field(VAL,  "1")
+    field(ZNAM, "No")
+    field(ONAM, "Yes")
+    info( autosaveFields, "VAL" )
+}
+
+record(calcout, "$(P)$(R)ResetFileNumber")
+{
+    field(INPA, "$(P)$(R)AutoFileNumberReset NPP")
+    field(CALC, "A")
+    field(OOPT, "When Non-zero" )
+    field(OUT,  "$(P)$(R)FileNumber PP")
+}

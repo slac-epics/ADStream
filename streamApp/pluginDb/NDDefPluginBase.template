@@ -5,6 +5,14 @@ record(stringout, "$(P)$(R)DefNDArrayPort")
     field(PINI, "YES")
     field(VAL,  "$(NDARRAY_PORT)")
     info( autosaveFields, "DESC VAL" )
+field( TPRO, 2 )
+}
+record(stringout, "$(P)$(R)ResetNDArrayPort")
+{
+	field(OMSL, "closed_loop")
+    field(DOL,  "$(P)$(R)DefNDArrayPort")
+    field(OUT,  "$(P)$(R)NDArrayPort PP")
+field( TPRO, 2 )
 }
 
 record(longout, "$(P)$(R)DefNDArrayAddress")
@@ -54,7 +62,7 @@ record(bo, "$(P)$(R)DefMemoryPoolDiagEnable" )
 # On initial bootup, PluginBootupCheck will reset the
 # plugin to default settings if its never been initialized.
 # To restore defaults manually, write a 1 to
-# RestoreBaseDefaults.PROC
+# ResetPlugin.PROC
 record( bo,  "$(P)$(R)PluginInitialized" )
 {
     field( PINI, "YES" )
@@ -68,34 +76,35 @@ record( calcout, "$(P)$(R)PluginBootupCheck" )
 	field( PINI, "YES" )
 	field( INPA, "$(P)$(R)PluginInitialized" )
 	field( CALC, "!A" )
-	field( OUT,  "$(P)$(R)RestoreBaseDefaults.PROC" )
+	field( OUT,  "$(P)$(R)ResetPlugin.PROC" )
 }
-record( seq, "$(P)$(R)RestoreBaseDefaults" )
+
+# Run by ResetPlugin
+record( seq, "$(P)$(R)ResetPluginBase" )
 {
+field( TPRO, 2 )
 	field( SELM, "All" )
 	field( SELN, "0" )
 
 	field( DOL1, "1" )
-	field( DO1,  "$(P)$(R)PluginInitialized" )
+	field( LNK1, "$(P)$(R)PluginInitialized PP" )
 	field( DLY1, "1" )
 
-	field( DOL2, "$(P)$(R)Def:NDArrayPort" )
-	field( DO2,  "$(P)$(R)NDArrayPort" )
+	field( DOL2, "1" )
+	field( LNK2, "$(P)$(R)ResetNDArrayPort.PROC" )
 
-	field( DOL3, "$(P)$(R)Def:NDArrayAddress" )
-	field( DO3,  "$(P)$(R)NDArrayAddress" )
+	field( DOL3, "$(P)$(R)DefNDArrayAddress" )
+	field( LNK3, "$(P)$(R)NDArrayAddress PP" )
 
-	field( DOL4, "$(P)$(R)Def:EnableCallbacks" )
-	field( DO4,  "$(P)$(R)EnableCallbacks" )
+	field( DOL4, "$(P)$(R)DefEnableCallbacks" )
+	field( LNK4, "$(P)$(R)EnableCallbacks PP" )
 
-	field( DOL5, "$(P)$(R)Def:MinCallbackTime" )
-	field( DO5,  "$(P)$(R)MinCallbackTime" )
+	field( DOL5, "$(P)$(R)DefMinCallbackTime" )
+	field( LNK5, "$(P)$(R)MinCallbackTime PP" )
 
-	field( DOL6, "$(P)$(R)Def:BlockingCallbacks" )
-	field( DOL6, "$(P)$(R)Def:BlockingCallbacks" )
+	field( DOL6, "$(P)$(R)DefBlockingCallbacks" )
+	field( LNK6, "$(P)$(R)BlockingCallbacks PP" )
 
-	field( DOL7, "$(P)$(R)Def:MemoryPoolDiagEnable" )
-	field( DOL7, "$(P)$(R)Def:MemoryPoolDiagEnable" )
-
-	field( FLNK, "$(P)$(R)RestorePluginDefaults" )
+	field( DOL7, "$(P)$(R)DefMemoryPoolDiagEnable" )
+	field( LNK7, "$(P)$(R)MemoryPoolDiagEnable PP" )
 }

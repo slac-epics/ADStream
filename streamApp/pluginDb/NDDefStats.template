@@ -92,37 +92,39 @@ record(ao, "$(P)$(R)DefHistMax")
    info( autosaveFields, "VAL" )
 }
 
-record( seq, "$(P)$(R)RestorePluginDefaults" )
+record( seq, "$(P)$(R)ResetPlugin" )
 {
 	field( SELM, "All" )
 	field( SELN, "0" )
 	field( DLY1, "0" )
 
 	# Defaults
-	field( DOL1, "$(P)$(R)DefComputeStatistics")
-	field( DOL2, "$(P)$(R)DefBgdWidth")
-	field( DOL3, "$(P)$(R)DefComputeCentroid")
-	field( DOL4, "$(P)$(R)DefCentroidThreshold")
-	field( DOL5, "$(P)$(R)DefTSNumPoints")
-	field( DOL6, "$(P)$(R)DefComputeProfiles")
-	field( DOL7, "$(P)$(R)DefCursorX")
-	field( DOL8, "$(P)$(R)DefCursorY")
+	field( DOL1, 1 )
+	field( DOL2, "$(P)$(R)DefComputeStatistics")
+	field( DOL3, "$(P)$(R)DefBgdWidth")
+	field( DOL4, "$(P)$(R)DefComputeCentroid")
+	field( DOL5, "$(P)$(R)DefCentroidThreshold")
+	field( DOL6, "$(P)$(R)DefTSNumPoints")
+	field( DOL7, "$(P)$(R)DefComputeProfiles")
+	field( DOL8, "$(P)$(R)DefCursorX")
+	field( DOL9, "$(P)$(R)DefCursorY")
 
 	# Plugin values
-	field( DO1,  "$(P)$(R)ComputeStatistics")
-	field( DO2,  "$(P)$(R)BgdWidth")
-	field( DO3,  "$(P)$(R)ComputeCentroid")
-	field( DO4,  "$(P)$(R)CentroidThreshold")
-	field( DO5,  "$(P)$(R)TSNumPoints")
-	field( DO6,  "$(P)$(R)ComputeProfiles")
-	field( DO7,  "$(P)$(R)CursorX")
-	field( DO8,  "$(P)$(R)CursorY")
+	field( LNK1, "$(P)$(R)ResetPluginBase.PROC" )
+	field( LNK2, "$(P)$(R)ComputeStatistics PP")
+	field( LNK3, "$(P)$(R)BgdWidth PP")
+	field( LNK4, "$(P)$(R)ComputeCentroid PP")
+	field( LNK5, "$(P)$(R)CentroidThreshold PP")
+	field( LNK6, "$(P)$(R)TSNumPoints PP")
+	field( LNK7, "$(P)$(R)ComputeProfiles PP")
+	field( LNK8, "$(P)$(R)CursorX PP")
+	field( LNK9, "$(P)$(R)CursorY PP")
 
-	field( FLNK, "$(P)$(R)RestorePluginDefaults2" )
+	field( FLNK, "$(P)$(R)ResetPlugin2" )
 	info( autosaveFields, "DLY1 DLY2 DLY3 DLY4 DLY5 DLY6 DLY7 DLY8 DLY9 DLYA" )
 }
 
-record( seq, "$(P)$(R)RestorePluginDefaults2" )
+record( seq, "$(P)$(R)ResetPlugin2" )
 {
 	field( SELM, "All" )
 	field( SELN, "0" )
@@ -135,10 +137,10 @@ record( seq, "$(P)$(R)RestorePluginDefaults2" )
 	field( DOL4, "$(P)$(R)DefHistMax")
 
 	# Plugin values
-	field( DO1,  "$(P)$(R)ComputeHistogram")
-	field( DO2,  "$(P)$(R)HistSize")
-	field( DO3,  "$(P)$(R)HistMin")
-	field( DO4,  "$(P)$(R)HistMax")
+	field( LNK1, "$(P)$(R)ComputeHistogram PP")
+	field( LNK2, "$(P)$(R)HistSize PP")
+	field( LNK3, "$(P)$(R)HistMin PP")
+	field( LNK4, "$(P)$(R)HistMax PP")
 
 	info( autosaveFields, "DLY1 DLY2 DLY3 DLY4 DLY5 DLY6 DLY7 DLY8 DLY9 DLYA" )
 }

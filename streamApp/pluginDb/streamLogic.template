@@ -1,0 +1,23 @@
+# Database for Stream Logic
+# Provides the glue to keep the stream plugins working together
+
+record( seq, "$(P)$(R)ResetStream" )
+{
+	field( SELM, "All" )
+	field( SELN, "0" )
+	field( DLY1, "0" )
+
+	# Defaults
+	field( DOL1, 1 )
+	field( DOL2, 1 )
+	field( DOL3, 1 )
+	field( DOL4, 1 )
+
+	# Plugin values
+	field( LNK1, "$(P)$(R)ResetPlugin.PROC" )
+	field( LNK2, "$(P)$(R)CC:ResetPlugin.PROC" )
+	field( LNK3, "$(P)$(R)Over:ResetPlugin.PROC" )
+	field( LNK4, "$(P)$(R)ROI:ResetPlugin.PROC" )
+
+	info( autosaveFields, "DLY1 DLY2 DLY3 DLY4 DLY5 DLY6 DLY7 DLY8 DLY9 DLYA" )
+}

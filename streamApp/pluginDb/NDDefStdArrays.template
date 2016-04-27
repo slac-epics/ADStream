@@ -1,16 +1,16 @@
 # No defaults for NDStdArrays
 
-record( seq, "$(P)$(R)RestorePluginDefaults" )
+record( seq, "$(P)$(R)ResetPlugin" )
 {
 	field( SELM, "All" )
 	field( SELN, "0" )
 	field( DLY1, "0" )
 
 	# Defaults
-	field( DOL1, "" )
+	field( DOL1, 1 )
 
 	# Plugin values
-	field( DO1,  "" )
+	field( LNK1, "$(P)$(R)ResetPluginBase.PROC" )
 
 	info( autosaveFields, "DLY1 DLY2 DLY3 DLY4 DLY5 DLY6 DLY7 DLY8 DLY9 DLYA" )
 }

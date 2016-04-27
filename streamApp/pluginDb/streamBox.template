@@ -1,0 +1,33 @@
+# Database for Stream Overlay Box
+
+record( calcout, "$(P)$(R)Box$(N):MinX_Calc" )
+{
+	field( INPA, "$(CAM):ROI$(N):MinX_RBV  CPP MS" )
+	field( INPB, "$(P)$(R)ROI$(N):BinX_RBV CPP MS" )
+	field( CALC, "A/B" )
+	field( OUT,  "$(P)$(R)Box$(N):MinX PP MS" )
+}
+
+record( calcout, "$(P)$(R)Box$(N):MinY_Calc" )
+{
+	field( INPA, "$(CAM):ROI$(N):MinY_RBV  CPP MS" )
+	field( INPB, "$(P)$(R)ROI$(N):BinY_RBV CPP MS" )
+	field( CALC, "A/B" )
+	field( OUT,  "$(P)$(R)Box$(N):MinY PP MS" )
+}
+
+record( calcout, "$(P)$(R)Box$(N):SizeX_Calc" )
+{
+	field( INPA, "$(CAM):ROI$(N):SizeX_RBV  CPP MS" )
+	field( INPB, "$(P)$(R)ROI$(N):BinX_RBV CPP MS" )
+	field( CALC, "A/B" )
+	field( OUT,  "$(P)$(R)Box$(N):SizeX PP MS" )
+}
+
+record( calcout, "$(P)$(R)Box$(N):SizeY_Calc" )
+{
+	field( INPA, "$(CAM):ROI$(N):SizeY_RBV  CPP MS" )
+	field( INPB, "$(P)$(R)ROI$(N):BinY_RBV CPP MS" )
+	field( CALC, "A/B" )
+	field( OUT,  "$(P)$(R)Box$(N):SizeY PP MS" )
+}

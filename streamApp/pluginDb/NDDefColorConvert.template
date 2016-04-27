@@ -2,6 +2,7 @@
 record(mbbo, "$(P)$(R)DefColorModeOut")
 {
    field(PINI, "YES")
+   field(VAL,  "$(MODE=0)")
    field(ZRST, "Mono")
    field(ZRVL, "0")
    field(ONST, "Bayer")
@@ -33,19 +34,21 @@ record(mbbo, "$(P)$(R)DefFalseColor")
    field(TWVL, "2")
 }
 
-record( seq, "$(P)$(R)RestorePluginDefaults" )
+record( seq, "$(P)$(R)ResetPlugin" )
 {
 	field( SELM, "All" )
 	field( SELN, "0" )
 	field( DLY1, "0" )
 
 	# Defaults
-	field( DOL1, "$(P)$(R)DefColorModeOut")
-	field( DOL2, "$(P)$(R)DefFalseColor")
+	field( DOL1, 1 )
+	field( DOL2, "$(P)$(R)DefColorModeOut")
+	field( DOL3, "$(P)$(R)DefFalseColor")
 
 	# Plugin values
-	field( DO1,  "$(P)$(R)ColorModeOut")
-	field( DO2,  "$(P)$(R)FalseColor")
+	field( LNK1, "$(P)$(R)ResetPluginBase.PROC" )
+	field( LNK2, "$(P)$(R)ColorModeOut PP")
+	field( LNK3, "$(P)$(R)FalseColor PP")
 
 	info( autosaveFields, "DLY1 DLY2 DLY3 DLY4 DLY5 DLY6 DLY7 DLY8 DLY9 DLYA" )
 }

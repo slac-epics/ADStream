@@ -5,6 +5,12 @@ record(stringout, "$(P)$(R)DefName")
    field(PINI, "1")
    info( autosaveFields, "VAL" )
 }
+record(stringout, "$(P)$(R)ResetName")
+{
+	field(OMSL, "closed_loop")
+    field(DOL,  "$(P)$(R)DefName")
+    field(OUT,  "$(P)$(R)Name")
+}
 
 record(mbbo, "$(P)$(R)DefType1")
 {
@@ -108,27 +114,29 @@ record(mbbo, "$(P)$(R)DefOriginLocation")
    info( autosaveFields, "VAL" )
 }
 
-record( seq, "$(P)$(R)RestorePluginDefaults" )
+record( seq, "$(P)$(R)ResetPlugin" )
 {
 	field( SELM, "All" )
 	field( SELN, "0" )
 	field( DLY1, "0" )
 
 	# Defaults
-	field( DOL1, "$(P)$(R)DefName")
-	field( DOL2, "$(P)$(R)DefType1")
-	field( DOL3, "$(P)$(R)DefType2")
-	field( DOL4, "$(P)$(R)DefType3")
-	field( DOL5, "$(P)$(R)DefType4")
-	field( DOL6, "$(P)$(R)DefOriginLocation")
+	field( DOL1, 1 )
+	field( DOL2, 1 )
+	field( DOL3, "$(P)$(R)DefType1")
+	field( DOL4, "$(P)$(R)DefType2")
+	field( DOL5, "$(P)$(R)DefType3")
+	field( DOL6, "$(P)$(R)DefType4")
+	field( DOL7, "$(P)$(R)DefOriginLocation")
 
 	# Plugin values
-	field( DO1, "$(P)$(R)DefName")
-	field( DO2, "$(P)$(R)DefType1")
-	field( DO3, "$(P)$(R)DefType2")
-	field( DO4, "$(P)$(R)DefType3")
-	field( DO5, "$(P)$(R)DefType4")
-	field( DO6, "$(P)$(R)DefOriginLocation")
+	field( LNK1, "$(P)$(R)ResetPluginBase.PROC" )
+	field( LNK2,"$(P)$(R)ResetName.PROC")
+	field( LNK3,"$(P)$(R)Type1 PP")
+	field( LNK4,"$(P)$(R)Type2 PP")
+	field( LNK5,"$(P)$(R)Type3 PP")
+	field( LNK6,"$(P)$(R)Type4 PP")
+	field( LNK7,"$(P)$(R)OriginLocation PP")
 
 	info( autosaveFields, "DLY1 DLY2 DLY3 DLY4 DLY5 DLY6 DLY7 DLY8 DLY9 DLYA" )
 }

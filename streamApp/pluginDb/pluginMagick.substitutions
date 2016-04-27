@@ -14,7 +14,15 @@ file NDPluginBase.template
 	NDARRAY_ADDR=0,
 	}
 }
-
+file NDDefPluginBase.template
+{
+	{
+	P				= "$(CAM):",
+	R				= "Magick$(N):",
+	NDARRAY_PORT    = "$(PLUGIN_SRC)",
+	NDARRAY_ADDR    = 0,
+	}
+}
 file NDFile.template
 {
 	{
@@ -25,7 +33,14 @@ file NDFile.template
 	TIMEOUT=1
 	}
 }
-
+file NDDefFile.template
+{
+	{ P=$(CAM):, R=Magick$(N):  }
+}
+file NDFileAutoFileNumber.template
+{
+	{ P=$(CAM):, R=Magick$(N):  }
+}
 file NDFileMagick.template
 {
 	{
@@ -35,5 +50,9 @@ file NDFileMagick.template
 	ADDR=0,
 	TIMEOUT=1
 	}
+}
+file NDDefFileMagick.template
+{
+	{ P=$(CAM):, R=Magick$(N):  }
 }
 

@@ -1,0 +1,32 @@
+# Database for generic cross records to hold common X, Y and color for cross overlays
+
+record(longout, "$(P)$(R)Cross$(N)X")
+{
+   field(FLNK, "$(P)$(R)Cross$(N)X_RBV")
+   field(OUT,  "$(P)$(R)Cross$(N)X_RBV")
+}
+
+record(longin, "$(P)$(R)Cross$(N)X_RBV")
+{
+}
+
+record(longout, "$(P)$(R)Cross$(N)Y")
+{
+   field(FLNK, "$(P)$(R)Cross$(N)Y_RBV")
+   field(OUT,  "$(P)$(R)Cross$(N)Y_RBV")
+}
+
+record(longin, "$(P)$(R)Cross$(N)Y_RBV")
+{
+}
+
+record(longout, "$(P)$(R)Cross$(N)Color")
+{
+   field(FLNK, "$(P)$(R)Cross$(N)Color_RBV")
+   field(OUT,  "$(P)$(R)Cross$(N)Color_RBV")
+}
+
+record(longin, "$(P)$(R)Cross$(N)Color_RBV")
+{
+}
+

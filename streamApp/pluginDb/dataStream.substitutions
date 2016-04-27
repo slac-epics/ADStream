@@ -1,83 +1,242 @@
 # dataStream.substitutions
 
-# ROI Plugin
-file NDPluginBase.template
+file streamLogic.template
 {
-	{
-	PORT			= "$(IMAGE_NAME):ROI",
-	P				= "$(CAM):",
-	R				= "$(PORT):",
-	ADDR			= "\$(ADDR=0)",
-	TIMEOUT			= "\$(TIMEOUT=1)",
-	Enable          = "0",
-	TSE				= "\$(TSE=-2)",
-	NDARRAY_PORT	= "$(CAM_PORT)",
-	NDARRAY_ADDR	= "\$(NDARRAY_ADDR=0)",
-	}
-}
-file NDROI.template
-{
-	{
-	PORT			= "$(IMAGE_NAME):ROI",
-	P				= "$(CAM):",
-	R				= "$(PORT):",
-	ADDR			= "\$(ADDR=0)",
-	TIMEOUT			= "\$(TIMEOUT=1)",
-	}
+    {
+    P           = "$(CAM):",
+    R           = "$(IMAGE_NAME):",
+    }
 }
 
-# ColorConvert plugin
-file NDPluginBase.template
+file streamBox.template
 {
-	{
-	PORT			= "$(IMAGE_NAME):CC",
-	P				= "$(CAM):",
-	R				= "$(PORT):",
-	ADDR			= "\$(ADDR=0)",
-	TIMEOUT			= "\$(TIMEOUT=1)",
-	Enable          = "0",
-	TSE				= "\$(TSE=-2)",
-	NDARRAY_PORT	= "$(CAM_PORT)",
-	NDARRAY_ADDR	= "\$(NDARRAY_ADDR=0)",
-	}
+    pattern
+    {   N,  P,          R                 }
+    {   1,  "$(CAM):",  "$(IMAGE_NAME):"  }
+    {   2,  "$(CAM):",  "$(IMAGE_NAME):"  }
+    {   3,  "$(CAM):",  "$(IMAGE_NAME):"  }
+    {   4,  "$(CAM):",  "$(IMAGE_NAME):"  }
 }
-file NDColorConvert.template
+
+file streamCross.template
 {
-	{
-	P				= "$(CAM):",
-	PORT			= "$(IMAGE_NAME):CC",
-	R				= "$(PORT):",
-	ADDR			= "\$(ADDR=0)",
-	TIMEOUT			= "\$(TIMEOUT=1)",
-	}
+    pattern
+    {   N,  P,          R                 }
+    {   1,  "$(CAM):",  "$(IMAGE_NAME):"  }
+    {   2,  "$(CAM):",  "$(IMAGE_NAME):"  }
+    {   3,  "$(CAM):",  "$(IMAGE_NAME):"  }
+    {   4,  "$(CAM):",  "$(IMAGE_NAME):"  }
+}
+
+file cross.template
+{
+    pattern
+    {   N,  P,          R   }
+    {   1,  "$(CAM):",  ""  }
+    {   2,  "$(CAM):",  ""  }
+    {   3,  "$(CAM):",  ""  }
+    {   4,  "$(CAM):",  ""  }
 }
 
 # stdArray Plugin
 file NDPluginBase.template
 {
-	{
-	PORT			= "$(IMAGE_NAME)",
-	P				= "$(CAM):",
-	R				= "$(PORT):",
-	ADDR			= "\$(ADDR=0)",
-	TIMEOUT			= "\$(TIMEOUT=1)",
-	Enable          = "1",
-	TSE				= "\$(TSE=-2)",
-	NDARRAY_PORT	= "$(CAM_PORT)",
-	NDARRAY_ADDR	= "\$(NDARRAY_ADDR=0)",
-	}
+    {
+    PORT            = "$(IMAGE_NAME)",
+    P               = "$(CAM):",
+    R               = "$(PORT):",
+    ADDR            = "\$(ADDR=0)",
+    TIMEOUT         = "\$(TIMEOUT=1)",
+    TSE             = "\$(TSE=-2)",
+    Enable          = "1",
+    NDARRAY_PORT    = "$(CAM_PORT)",
+    NDARRAY_ADDR    = "\$(NDARRAY_ADDR=0)",
+    }
+}
+file NDDefPluginBase.template
+{
+    {
+    P               = "$(CAM):",
+    R               = "$(IMAGE_NAME):",
+    Enable          = "1",
+    NDARRAY_PORT    = "$(CAM_PORT)",
+    NDARRAY_ADDR    = "\$(NDARRAY_ADDR=0)",
+    }
 }
 file NDStdArrays.template
 {
-	{
-	PORT			= "$(IMAGE_NAME)",
-	P				= "$(CAM):",
-	R				= "$(PORT):",
-	ADDR			= "\$(ADDR=0)",
-	TIMEOUT			= "\$(TIMEOUT=1)",
-	TYPE		 	= "$(IMAGE_TYPE)",
-	FTVL		 	= "$(IMAGE_FTVL)",
-	NELEMENTS		= "$(IMAGE_NELM)",
-	}
+    {
+    PORT            = "$(IMAGE_NAME)",
+    P               = "$(CAM):",
+    R               = "$(PORT):",
+    ADDR            = "\$(ADDR=0)",
+    TIMEOUT         = "\$(TIMEOUT=1)",
+    TYPE            = "$(IMAGE_TYPE)",
+    FTVL            = "$(IMAGE_FTVL)",
+    NELEMENTS       = "$(IMAGE_NELM)",
+    }
+}
+file NDDefStdArrays.template
+{
+    { P = "$(CAM):", R = "$(IMAGE_NAME):" }
+}
+
+# ROI Plugin
+file NDPluginBase.template
+{
+    {
+    P               = "$(CAM):",
+    R               = "$(IMAGE_NAME):ROI:",
+    PORT            = "$(IMAGE_NAME):ROI",
+    PLUGIN_SRC      = "$(CAM_PORT)",
+    ADDR            = "\$(ADDR=0)",
+    TIMEOUT         = "\$(TIMEOUT=1)",
+    TSE             = "\$(TSE=-2)",
+    Enable          = "0",
+    NDARRAY_PORT    = "$(CAM_PORT)",
+    NDARRAY_ADDR    = "\$(NDARRAY_ADDR=0)",
+    }
+}
+file NDDefPluginBase.template
+{
+    {
+    P               = "$(CAM):",
+    R               = "$(IMAGE_NAME):ROI:",
+    Enable          = "0",
+    NDARRAY_PORT    = "$(CAM_PORT)",
+    NDARRAY_ADDR    = "\$(NDARRAY_ADDR=0)",
+    }
+}
+file NDROI.template
+{
+    {
+    PORT            = "$(IMAGE_NAME):ROI",
+    P               = "$(CAM):",
+    R               = "$(PORT):",
+    ADDR            = "\$(ADDR=0)",
+    TIMEOUT         = "\$(TIMEOUT=1)",
+    }
+}
+file NDDefROI.template
+{
+    {
+    P               = "$(CAM):",
+    R               = "$(IMAGE_NAME):ROI:",
+    }
+}
+
+# ColorConvert plugin
+file NDPluginBase.template
+{
+    {
+    PORT            = "$(IMAGE_NAME):CC",
+    P               = "$(CAM):",
+    R               = "$(PORT):",
+    ADDR            = "\$(ADDR=0)",
+    TIMEOUT         = "\$(TIMEOUT=1)",
+    TSE             = "\$(TSE=-2)",
+    Enable          = "0",
+    NDARRAY_PORT    = "$(CAM_PORT)",
+    NDARRAY_ADDR    = "\$(NDARRAY_ADDR=0)",
+    }
+}
+file NDDefPluginBase.template
+{
+    {
+    P               = "$(CAM):",
+    R               = "$(IMAGE_NAME):CC:",
+    Enable          = "0",
+    NDARRAY_PORT    = "$(CAM_PORT)",
+    NDARRAY_ADDR    = "\$(NDARRAY_ADDR=0)",
+    }
+}
+file NDColorConvert.template
+{
+    {
+    P               = "$(CAM):",
+    PORT            = "$(IMAGE_NAME):CC",
+    R               = "$(PORT):",
+    ADDR            = "\$(ADDR=0)",
+    TIMEOUT         = "\$(TIMEOUT=1)",
+    }
+}
+file NDDefColorConvert.template
+{
+    {
+    P               = "$(CAM):",
+    R               = "$(IMAGE_NAME):CC:",
+    MODE            = 0
+    }
+}
+
+# Overlay Plugin
+file NDPluginBase.template
+{
+    {
+    PORT            = "$(IMAGE_NAME):Over",
+    P               = "$(CAM):",
+    R               = "$(PORT):",
+    ADDR            = "\$(ADDR=0)",
+    TIMEOUT         = "\$(TIMEOUT=1)",
+    TSE             = "\$(TSE=-2)",
+    Enable          = "1",
+    NDARRAY_PORT    = "$(CAM_PORT)",
+    NDARRAY_ADDR    = "\$(NDARRAY_ADDR=0)",
+    }
+}
+file NDDefPluginBase.template
+{
+    {
+    P               = "$(CAM):",
+    R               = "$(IMAGE_NAME):Over:",
+    Enable          = "1",
+    NDARRAY_PORT    = "$(CAM_PORT)",
+    NDARRAY_ADDR    = "\$(NDARRAY_ADDR=0)",
+    }
+}
+file NDOverlay.template
+{
+    {
+    P           = $(CAM):,
+    R           = $(IMAGE_NAME):Over:,
+    PORT        = $(IMAGE_NAME):Over,
+    ADDR        = "\$(ADDR=0)",
+    TIMEOUT     = "\$(TIMEOUT=1)",
+    }
+}
+file NDDefOverlay.template
+{
+    {
+    P           = $(CAM):,
+    R           = $(IMAGE_NAME):Over:,
+    }
+}
+
+# SHAPE:    0 = cross, 1 = rectangle
+file NDOverlayN.template
+{
+    pattern
+    { ADDR, PORT, 		         P,        R,                    NAME,   SHAPE, O                   , YSIZE }
+    { 0,    $(IMAGE_NAME):Over,  $(CAM):, $(IMAGE_NAME):Box1:,   ROI1,   1,     $(IMAGE_NAME):Over: , ""	 }
+    { 1,    $(IMAGE_NAME):Over,  $(CAM):, $(IMAGE_NAME):Box2:,   ROI2,   1,     $(IMAGE_NAME):Over: , ""	 }
+    { 2,    $(IMAGE_NAME):Over,  $(CAM):, $(IMAGE_NAME):Box3:,   ROI3,   1,     $(IMAGE_NAME):Over: , ""	 }
+    { 3,    $(IMAGE_NAME):Over,  $(CAM):, $(IMAGE_NAME):Box4:,   ROI4,   1,     $(IMAGE_NAME):Over: , ""	 }
+    { 4,    $(IMAGE_NAME):Over,  $(CAM):, $(IMAGE_NAME):Cross1:, Cross1, 0,     $(IMAGE_NAME):Over: , ""	 }
+    { 5,    $(IMAGE_NAME):Over,  $(CAM):, $(IMAGE_NAME):Cross2:, Cross2, 0,     $(IMAGE_NAME):Over: , ""	 }
+    { 6,    $(IMAGE_NAME):Over,  $(CAM):, $(IMAGE_NAME):Cross3:, Cross3, 0,     $(IMAGE_NAME):Over: , ""	 }
+    { 7,    $(IMAGE_NAME):Over,  $(CAM):, $(IMAGE_NAME):Cross4:, Cross4, 0,     $(IMAGE_NAME):Over: , ""	 }
+}
+file NDDefOverlayN.template
+{
+    pattern
+    { ADDR, P,      R,                      NAME,   SHAPE   }
+    { 0,    $(CAM):, $(IMAGE_NAME):Box1:,   ROI1,   1       }
+    { 1,    $(CAM):, $(IMAGE_NAME):Box2:,   ROI2,   1       }
+    { 2,    $(CAM):, $(IMAGE_NAME):Box3:,   ROI3,   1       }
+    { 3,    $(CAM):, $(IMAGE_NAME):Box4:,   ROI4,   1       }
+    { 4,    $(CAM):, $(IMAGE_NAME):Cross1:, Cross1, 0       }
+    { 5,    $(CAM):, $(IMAGE_NAME):Cross2:, Cross2, 0       }
+    { 6,    $(CAM):, $(IMAGE_NAME):Cross3:, Cross3, 0       }
+    { 7,    $(CAM):, $(IMAGE_NAME):Cross4:, Cross4, 0       }
 }
 

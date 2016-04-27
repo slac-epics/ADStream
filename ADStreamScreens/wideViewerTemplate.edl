@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 814
-y 1187
+x 864
+y 1239
 w 999
 h 999
 font "helvetica-medium-r-12.0"
@@ -51,7 +51,7 @@ minor 0
 release 0
 x 0
 y 0
-w 844
+w 956
 h 40
 lineColor index 56
 fill
@@ -126,7 +126,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 788
+x 840
 y 8
 w 48
 h 24
@@ -453,7 +453,7 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 732
+x 780
 y 8
 w 48
 h 24
@@ -528,7 +528,7 @@ beginObjectProperties
 major 4
 minor 3
 release 0
-x 624
+x 676
 y 8
 w 92
 h 24
@@ -653,7 +653,7 @@ beginObjectProperties
 major 4
 minor 3
 release 0
-x 520
+x 572
 y 8
 w 92
 h 24
@@ -1234,5 +1234,28 @@ command {
   0 "P=$(CAM) R=: IMAGE=$(IMAGE) HUTCH=$(HUTCH) IOC=$(IOC) ADStreamScreens/edmViewer.sh"
 }
 execCursor
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 488
+y 8
+w 68
+h 24
+fgColor index 14
+bgColor index 3
+topShadowColor index 0
+botShadowColor index 14
+font "helvetica-medium-r-12.0"
+buttonLabel "Cam TOP"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "$(HOME)"
+}
 endObjectProperties
 

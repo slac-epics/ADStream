@@ -62,18 +62,6 @@ record(bo, "$(P)$(R)DefAutoSave")
     info( autosaveFields, "VAL" )
 }
 
-record(busy, "$(P)$(R)DefWriteFile")
-{
-    field(ZNAM, "Done")
-    field(ONAM, "Write")
-}
-
-record(busy, "$(P)$(R)DefReadFile")
-{
-    field(ZNAM, "Done")
-    field(ONAM, "Read")
-}
-
 record(mbbo, "$(P)$(R)DefFileFormat")
 {
     field(PINI, "YES")
@@ -122,62 +110,56 @@ record(bo, "$(P)$(R)DefDeleteDriverFile")
     info( autosaveFields, "VAL" )
 }
 
-record(waveform, "$(P)$(R)DefWriteMessage")
+record( seq, "$(P)$(R)ResetPlugin" )
 {
-    field(FTVL, "CHAR")
-    field(NELM, "256")
-    field(SCAN, "I/O Intr")
-}
-
-record( seq, "$(P)$(R)RestorePluginDefaults" )
-{
+field( TPRO, 2 )
 	field( SELM, "All" )
 	field( SELN, "0" )
 	field( DLY1, "0" )
 
 	# Defaults
-	field( DOL1, "$(P)$(R)DefFilePath")
-	field( DOL2, "$(P)$(R)DefFileName")
-	field( DOL3, "$(P)$(R)DefFileNumber")
-	field( DOL4, "$(P)$(R)DefFileNumber_write")
-	field( DOL5, "$(P)$(R)DefFileNumber_Sync")
-	field( DOL6, "$(P)$(R)DefAutoIncrement")
-	field( DOL7, "$(P)$(R)DefFileTemplate")
-	field( DOL8, "$(P)$(R)DefAutoSave")
-	field( DOL9, "$(P)$(R)DefFileFormat")
-	field( DOLA, "$(P)$(R)DefFileWriteMode")
+	field( DOL1, 1 )
+	field( DOL2, 1 )
+	field( DOL3, 1 )
+	field( DOL4, 1 )
+	field( DOL5, "$(P)$(R)DefFileNumber")
+	field( DOL6, "$(P)$(R)DefFileNumber_write")
+	field( DOL7, "$(P)$(R)DefFileNumber_Sync")
+	field( DOL8, "$(P)$(R)DefAutoIncrement")
+	field( DOL9, "$(P)$(R)DefAutoSave")
 
 	# Plugin values
-	field( DO1,  "$(P)$(R)FilePath")
-	field( DO2,  "$(P)$(R)FileName")
-	field( DO3,  "$(P)$(R)FileNumber")
-	field( DO4,  "$(P)$(R)FileNumber_write")
-	field( DO5,  "$(P)$(R)FileNumber_Sync")
-	field( DO6,  "$(P)$(R)AutoIncrement")
-	field( DO7,  "$(P)$(R)FileTemplate")
-	field( DO8,  "$(P)$(R)AutoSave")
-	field( DO9,  "$(P)$(R)FileFormat")
-	field( DOA,  "$(P)$(R)FileWriteMode")
+	field( LNK1, "$(P)$(R)ResetPluginBase.PROC" )
+#	field( LNK2, "$(P)$(R)ResetFilePath.PROC" )
+#	field( LNK3, "$(P)$(R)ResetFileName.PROC" )
+#	field( LNK4, "$(P)$(R)ResetFileTemplate.PROC" )
+	field( LNK5, "$(P)$(R)FileNumber PP")
+	field( LNK6, "$(P)$(R)FileNumber_write PP")
+	field( LNK7, "$(P)$(R)FileNumber_Sync PP")
+	field( LNK8, "$(P)$(R)AutoIncrement PP")
+	field( LNK9, "$(P)$(R)AutoSave PP")
 
-	field( FLNK, "$(P)$(R)RestorePluginDefaults2" )
+	field( FLNK, "$(P)$(R)ResetPlugin2" )
 	info( autosaveFields, "DLY1 DLY2 DLY3 DLY4 DLY5 DLY6 DLY7 DLY8 DLY9 DLYA" )
 }
 
-record( seq, "$(P)$(R)RestorePluginDefaults2" )
+record( seq, "$(P)$(R)ResetPlugin2" )
 {
 	field( SELM, "All" )
 	field( SELN, "0" )
 	field( DLY1, "0" )
 
 	# Defaults
-	field( DOL1, "$(P)$(R)DefNumCapture")
-	field( DOL2, "$(P)$(R)DefDeleteDriverFile")
-	field( DOL3, "$(P)$(R)DefWriteMessage")
+	field( DOL1, "$(P)$(R)DefFileFormat")
+	field( DOL2, "$(P)$(R)DefFileWriteMode")
+	field( DOL3, "$(P)$(R)DefNumCapture")
+	field( DOL4, "$(P)$(R)DefDeleteDriverFile")
 
 	# Plugin values
-	field( DO1,  "$(P)$(R)NumCapture")
-	field( DO2,  "$(P)$(R)DeleteDriverFile")
-	field( DO3,  "$(P)$(R)WriteMessage")
+	field( LNK1, "$(P)$(R)FileFormat PP")
+	field( LNK2, "$(P)$(R)FileWriteMode PP")
+	field( LNK3, "$(P)$(R)NumCapture PP")
+	field( LNK4, "$(P)$(R)DeleteDriverFile PP")
 
 	info( autosaveFields, "DLY1 DLY2 DLY3 DLY4 DLY5 DLY6 DLY7 DLY8 DLY9 DLYA" )
 }

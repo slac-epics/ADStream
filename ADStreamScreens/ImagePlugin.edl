@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 935
-y 576
+x 962
+y 1730
 w 409
 h 500
 font "helvetica-bold-r-12.0"
@@ -77,9 +77,9 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 356
+x 372
 y 8
-w 40
+w 32
 h 24
 fgColor index 14
 bgColor index 4
@@ -96,7 +96,7 @@ beginObjectProperties
 major 4
 minor 3
 release 0
-x 120
+x 112
 y 8
 w 92
 h 24
@@ -164,9 +164,9 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 272
+x 252
 y 8
-w 40
+w 32
 h 24
 fgColor index 14
 bgColor index 3
@@ -196,7 +196,7 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 220
+x 208
 y 8
 w 40
 h 24
@@ -228,7 +228,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 8
+x 4
 y 8
 w 104
 h 24
@@ -241,7 +241,7 @@ beginObjectProperties
 major 4
 minor 3
 release 0
-x 8
+x 4
 y 8
 w 104
 h 24
@@ -266,5 +266,60 @@ endGroup
 visPv "$(P)$(R)ColorMode_RBV"
 visMin "0"
 visMax "1"
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 284
+y 8
+w 40
+h 24
+fgColor index 14
+bgColor index 3
+topShadowColor index 2
+botShadowColor index 12
+font "helvetica-medium-r-14.0"
+buttonLabel "Over"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "areaDetectorScreens/NDOverlay.edl"
+}
+menuLabel {
+  0 "CC"
+}
+symbols {
+  0 "P=$(P),R=:Over:"
+}
+replaceSymbols {
+  0 1
+}
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 328
+y 8
+w 40
+h 24
+fgColor index 14
+onColor index 6
+offColor index 3
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(P)$(R)ResetStream.PROC"
+pressValue "1"
+onLabel "Reset"
+offLabel "Reset"
+3d
+font "helvetica-medium-r-12.0"
 endObjectProperties
 

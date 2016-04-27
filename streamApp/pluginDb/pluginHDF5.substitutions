@@ -14,7 +14,15 @@ file NDPluginBase.template
 	NDARRAY_ADDR=0,
 	}
 }
-
+file NDDefPluginBase.template
+{
+	{
+	P				= "$(CAM):",
+	R				= "HDF5$(N):",
+	NDARRAY_PORT    = "$(PLUGIN_SRC)",
+	NDARRAY_ADDR    = 0,
+	}
+}
 file NDFile.template
 {
 	{
@@ -25,7 +33,14 @@ file NDFile.template
 	TIMEOUT=1
 	}
 }
-
+file NDDefFile.template
+{
+	{ P=$(CAM):, R=HDF5$(N):  }
+}
+file NDFileAutoFileNumber.template
+{
+	{ P=$(CAM):, R=HDF5$(N):  }
+}
 file NDFileHDF5.template
 {
 	{
@@ -35,5 +50,9 @@ file NDFileHDF5.template
 	ADDR=0,
 	TIMEOUT=1
 	}
+}
+file NDDefFileHDF5.template
+{
+	{ P=$(CAM):, R=HDF5$(N):  }
 }
 
