@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 #
 # EDM Viewer launch script
 #
@@ -10,6 +10,7 @@
 #			Full camera PV prefix: $(P)$(R)
 #	IMAGE	Image name
 #			Full image PV prefix: $(P)$(R)$(IMAGE)
+#	EDM_TOP Path to edm top level camera screen
 # Example:
 # IOC=$(IOC) P=$(P) R=$(R) IMAGE=$(IMAGE) HUTCH=$(HUTCH) ADStreamScreens/edmViewer.sh
 
@@ -66,6 +67,7 @@ edm -x -eolc						\
 	-m "CAM=${P}"					\
 	-m "HUTCH=${HUTCH}"				\
 	-m "IMAGE=${IMAGE}"				\
+	-m "EDM_TOP=${EDM_TOP}"			\
 	-m "IMG_SIZE_X=${IMG_SIZE_X}"	\
 	-m "IMG_SIZE_Y=${IMG_SIZE_Y}"	\
 	-m "IMG_N_BITS=${IMG_N_BITS}"	\

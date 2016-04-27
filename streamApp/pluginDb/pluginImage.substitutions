@@ -14,15 +14,6 @@ file NDPluginBase.template
 	NDARRAY_ADDR=0,
 	}
 }
-file NDDefPluginBase.template
-{
-	{
-	P				= "$(CAM):",
-	R				= "$(IMAGE_NAME):",
-	NDARRAY_PORT    = $(PLUGIN_SRC),
-	NDARRAY_ADDR    = 0,
-	}
-}
 
 file NDStdArrays.template
 {
@@ -38,7 +29,3 @@ file NDStdArrays.template
 	}
 }
 
-file NDDefStdArrays.template
-{
-	{ P=$(CAM):, R=$(IMAGE_NAME):  }
-}

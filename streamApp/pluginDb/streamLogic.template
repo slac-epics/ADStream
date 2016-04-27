@@ -1,6 +1,42 @@
 # Database for Stream Logic
 # Provides the glue to keep the stream plugins working together
 
+record( mbbo, "$(P)$(R)StreamType" )
+{
+   field( PINI, "YES" )
+   field( DOL,  "$(TYPE=Viewer)" )
+   field( ZRST, "Data" )
+   field( ZRVL, "0" )
+   field( ONST, "Viewer" )
+   field( ONVL, "1" )
+   field( TWST, "Thumbnail" )
+   field( TWVL, "2" )
+}
+
+# Stream Target Height and Width, use zero for auto-sizing
+record( longout, "$(P)$(R)StreamHeight" )
+{
+    field( PINI, "YES")
+    field( DOL,  "$(HEIGHT=0)" )
+    info( autosaveFields, "VAL" )
+}
+record( longout, "$(P)$(R)StreamWidth" )
+{
+    field( PINI, "YES")
+    field( DOL,  "$(WIDTH=0)" )
+    info( autosaveFields, "VAL" )
+}
+
+# Stream Target Rate
+record( ao, "$(P)$(R)StreamRate" )
+{
+    field( PINI, "YES")
+    field( DOL,  "$(RATE=0.0)" )
+    field( EGU,  "Hz" )
+    info( autosaveFields, "VAL" )
+}
+
+# May want to drop this seq record
 record( seq, "$(P)$(R)ResetStream" )
 {
 	field( SELM, "All" )

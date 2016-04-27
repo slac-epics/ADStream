@@ -14,15 +14,6 @@ file NDPluginBase.template
 	NDARRAY_ADDR=0,
 	}
 }
-file NDDefPluginBase.template
-{
-	{
-	P				= "$(CAM):",
-	R				= "ROI$(N):",
-	NDARRAY_PORT    = $(PLUGIN_SRC),
-	NDARRAY_ADDR    = 0,
-	}
-}
 
 file NDROI.template
 {

@@ -5,6 +5,10 @@ file streamLogic.template
     {
     P           = "$(CAM):",
     R           = "$(IMAGE_NAME):",
+	TYPE		= "2",
+	RATE		= "\$(RATE=0)",
+	WIDTH		= "\$(WIDTH=0)",
+	HEIGHT		= "\$(HEIGHT=0)",
     }
 }
 
@@ -53,17 +57,6 @@ file NDPluginBase.template
     NDARRAY_ADDR    = "\$(NDARRAY_ADDR=0)",
     }
 }
-file NDDefPluginBase.template
-{
-    {
-    P               = "$(CAM):",
-    R               = "$(IMAGE_NAME):",
-    Enable          = "1",
-    NDARRAY_PORT    = "$(CAM_PORT)",
-    NDARRAY_ADDR    = "\$(NDARRAY_ADDR=0)",
-	MIN_CB			= "1.1",
-    }
-}
 file NDStdArrays.template
 {
     {
@@ -76,10 +69,6 @@ file NDStdArrays.template
     FTVL            = "CHAR",
     NELEMENTS       = "$(IMAGE_NELM)",
     }
-}
-file NDDefStdArrays.template
-{
-    { P = "$(CAM):", R = "$(IMAGE_NAME):" }
 }
 
 # ROI Plugin
@@ -98,17 +87,6 @@ file NDPluginBase.template
     NDARRAY_ADDR    = "\$(NDARRAY_ADDR=0)",
     }
 }
-file NDDefPluginBase.template
-{
-    {
-    P               = "$(CAM):",
-    R               = "$(IMAGE_NAME):ROI:",
-    Enable          = "1",
-    NDARRAY_PORT    = "$(CAM_PORT)",
-    NDARRAY_ADDR    = "\$(NDARRAY_ADDR=0)",
-	MIN_CB			= "1.1",
-    }
-}
 file NDROI.template
 {
     {
@@ -117,20 +95,6 @@ file NDROI.template
     R               = "$(PORT):",
     ADDR            = "\$(ADDR=0)",
     TIMEOUT         = "\$(TIMEOUT=1)",
-    BIN_X           = "\$(BIN_X=4)",
-    BIN_Y           = "\$(BIN_Y=4)",
-    ENABLE_X        = 1,
-    ENABLE_Y        = 1,
-    ENABLE_SCALE    = 1,
-    SCALE           = "\$(SCALE=16)",
-    DATA_TYPE_OUT   = 1,
-    }
-}
-file NDDefROI.template
-{
-    {
-    P               = "$(CAM):",
-    R               = "$(IMAGE_NAME):ROI:",
     BIN_X           = "\$(BIN_X=4)",
     BIN_Y           = "\$(BIN_Y=4)",
     ENABLE_X        = 1,
@@ -156,17 +120,6 @@ file NDPluginBase.template
     NDARRAY_ADDR    = "\$(NDARRAY_ADDR=0)",
     }
 }
-file NDDefPluginBase.template
-{
-    {
-    P               = "$(CAM):",
-    R               = "$(IMAGE_NAME):CC:",
-    Enable          = "0",
-    NDARRAY_PORT    = "$(CAM_PORT)",
-    NDARRAY_ADDR    = "\$(NDARRAY_ADDR=0)",
-	MIN_CB			= "1.1",
-    }
-}
 file NDColorConvert.template
 {
     {
@@ -175,14 +128,6 @@ file NDColorConvert.template
     R               = "$(PORT):",
     ADDR            = "\$(ADDR=0)",
     TIMEOUT         = "\$(TIMEOUT=1)",
-    }
-}
-file NDDefColorConvert.template
-{
-    {
-    P               = "$(CAM):",
-    R               = "$(IMAGE_NAME):CC:",
-    MODE            = 0
     }
 }
 
@@ -201,17 +146,6 @@ file NDPluginBase.template
     NDARRAY_ADDR    = "\$(NDARRAY_ADDR=0)",
     }
 }
-file NDDefPluginBase.template
-{
-    {
-    P               = "$(CAM):",
-    R               = "$(IMAGE_NAME):Over:",
-    Enable          = "1",
-    NDARRAY_PORT    = "$(CAM_PORT)",
-    NDARRAY_ADDR    = "\$(NDARRAY_ADDR=0)",
-	MIN_CB			= "1.1",
-    }
-}
 file NDOverlay.template
 {
     {
@@ -220,13 +154,6 @@ file NDOverlay.template
     PORT        = $(IMAGE_NAME):Over,
     ADDR        = "\$(ADDR=0)",
     TIMEOUT     = "\$(TIMEOUT=1)",
-    }
-}
-file NDDefOverlay.template
-{
-    {
-    P           = $(CAM):,
-    R           = $(IMAGE_NAME):Over:,
     }
 }
 
@@ -243,18 +170,5 @@ file NDOverlayN.template
     { 5,    $(IMAGE_NAME):Over,  $(CAM):, $(IMAGE_NAME):Cross2:, Cross2, 0,     $(IMAGE_NAME):Over: , ""	 }
     { 6,    $(IMAGE_NAME):Over,  $(CAM):, $(IMAGE_NAME):Cross3:, Cross3, 0,     $(IMAGE_NAME):Over: , ""	 }
     { 7,    $(IMAGE_NAME):Over,  $(CAM):, $(IMAGE_NAME):Cross4:, Cross4, 0,     $(IMAGE_NAME):Over: , ""	 }
-}
-file NDDefOverlayN.template
-{
-    pattern
-    { ADDR, P,      R,                      NAME,   SHAPE   }
-    { 0,    $(CAM):, $(IMAGE_NAME):Box1:,   ROI1,   1       }
-    { 1,    $(CAM):, $(IMAGE_NAME):Box2:,   ROI2,   1       }
-    { 2,    $(CAM):, $(IMAGE_NAME):Box3:,   ROI3,   1       }
-    { 3,    $(CAM):, $(IMAGE_NAME):Box4:,   ROI4,   1       }
-    { 4,    $(CAM):, $(IMAGE_NAME):Cross1:, Cross1, 0       }
-    { 5,    $(CAM):, $(IMAGE_NAME):Cross2:, Cross2, 0       }
-    { 6,    $(CAM):, $(IMAGE_NAME):Cross3:, Cross3, 0       }
-    { 7,    $(CAM):, $(IMAGE_NAME):Cross4:, Cross4, 0       }
 }
 

@@ -14,15 +14,6 @@ file NDPluginBase.template
 	NDARRAY_ADDR=0,
 	}
 }
-file NDDefPluginBase.template
-{
-	{
-	P				= "$(CAM):",
-	R				= "Proc$(N):",
-	NDARRAY_PORT    = $(PLUGIN_SRC),
-	NDARRAY_ADDR    = 0,
-	}
-}
 
 file NDProcess.template
 {
@@ -35,12 +26,5 @@ file NDProcess.template
 	}
 }
 
-file NDDefProcess.template
-{
-	{
-	P=$(CAM):,
-	R=Proc$(N):,
-	}
-}
 
 

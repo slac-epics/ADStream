@@ -14,15 +14,6 @@ file NDPluginBase.template
 	NDARRAY_ADDR=0,
 	}
 }
-file NDDefPluginBase.template
-{
-	{
-	P				= "$(CAM):",
-	R				= "Nexus$(N):",
-	NDARRAY_PORT    = "$(PLUGIN_SRC)",
-	NDARRAY_ADDR    = 0,
-	}
-}
 file NDFile.template
 {
 	{
@@ -32,10 +23,6 @@ file NDFile.template
 	ADDR=0,
 	TIMEOUT=1
 	}
-}
-file NDDefFile.template
-{
-	{ P=$(CAM):, R=Nexus$(N):  }
 }
 file NDFileAutoFileNumber.template
 {
@@ -50,9 +37,5 @@ file NDFileNexus.template
 	ADDR=0,
 	TIMEOUT=1
 	}
-}
-file NDDefFileNexus.template
-{
-	{ P=$(CAM):, R=Nexus$(N):  }
 }
 

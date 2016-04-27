@@ -1255,7 +1255,7 @@ buttonLabel "Cam TOP"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "$(HOME)"
+  0 "$(EDM_TOP)"
 }
 endObjectProperties
 
