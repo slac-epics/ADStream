@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1074
-y 1525
+x 1442
+y 1255
 w 409
 h 600
 font "helvetica-bold-r-12.0"
@@ -322,7 +322,7 @@ buttonLabel "Over"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "areaDetectorScreens/NDOverlay.edl"
+  0 "ADStreamScreens/streamOverlay.edl"
 }
 menuLabel {
   0 "CC"
