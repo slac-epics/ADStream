@@ -20,5 +20,5 @@ fi
 export PSPKG_RELEASE=controls-basic-0.0.2
 source $PSPKG_ROOT/etc/set_env.sh
 
-python ADStreamScreens/configStream.py --cameraPv $CAM_PV --stream $IMAGE 
+python ADStreamScreens/configStream.py --cameraPv $CAM_PV --stream $IMAGE
 

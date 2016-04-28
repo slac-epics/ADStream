@@ -115,6 +115,7 @@ def reconfigDataStream( cameraPvName, streamName, verbose=False ):
     streamPvName = cameraPvName + ":" + streamName
     caPutValue( streamPvName + ":NDArrayPort", "CAM" )
     caPutValue( streamPvName + ":MinCallbackTime", 0.0 )
+    caPutValue( streamPvName + ":EnableCallbacks", 1 )
     caPutValue( streamPvName + ":CC:EnableCallbacks", 0 )
     caPutValue( streamPvName + ":ROI:EnableCallbacks", 0 )
     caPutValue( streamPvName + ":Over:EnableCallbacks", 0 )
@@ -128,12 +129,16 @@ def reconfigThumbnailStream( cameraPvName, streamName, verbose=False ):
     streamWidth	= caGetValue( streamPvName + ":StreamWidth" )
     streamHeight= caGetValue( streamPvName + ":StreamHeight" )
     streamRate	= caGetValue( streamPvName + ":StreamRate" )
+    ccEnabled	= caGetValue( streamPvName + ":CC:EnableCallbacks" )
+    overEnabled	= caGetValue( streamPvName + ":Over:EnableCallbacks" )
+
+    if not imageBits:
+        imageBits = 16
+    tgtBits = imageBits
 
     minCallbackTime = 0.9
     if streamRate > 0:
         minCallbackTime = 1 / streamRate
-    if not imageBits:
-        imageBits = 16
     if not streamHeight:
         streamHeight = 174
     if not streamWidth:
@@ -157,12 +162,11 @@ def reconfigThumbnailStream( cameraPvName, streamName, verbose=False ):
             print "Image/Stream width ratio = %f, height ratio = %f, binning %dx%d" % ( xRatio, yRatio, binning, binning )
 
     upStreamPort	= "CAM"
-    if imageColor >= 1:
+    if imageColor >= 1 or ccEnabled:
         # Use CC
-        caPutValue( streamPvName + ":CC:EnableCallbacks", 0 )
+        caPutValue( streamPvName + ":CC:EnableCallbacks", 1 )
         caPutValue( streamPvName + ":CC:NDArrayPort", upStreamPort )
         caPutValue( streamPvName + ":CC:ColorModeOut", "Mono" )
-        imageBits	 = 8
         upStreamPort = streamName + ":CC"
     else:
         caPutValue( streamPvName + ":CC:EnableCallbacks", 0 )
@@ -176,17 +180,27 @@ def reconfigThumbnailStream( cameraPvName, streamName, verbose=False ):
         caPutValue( streamPvName + ":ROI:BinX", binning )
         caPutValue( streamPvName + ":ROI:BinY", binning )
         caPutValue( streamPvName + ":ROI:EnableScale", 1 )
-        scale = binning * binning
-        if imageBits > 8:
-            scale = scale * ( 2 ** (imageBits - 8) )
-        if verbose:
-            print "imageBits = %d, scale = %d" % ( imageBits, scale )
-        caPutValue( streamPvName + ":ROI:Scale", scale )
         caPutValue( streamPvName + ":ROI:DataTypeOut", "UInt8" )
+        tgtBits	 = 8
+        scale = binning * binning
+        if imageBits > tgtBits:
+            scale = scale * ( 2 ** (imageBits - tgtBits) )
+        if verbose:
+            print "imageBits = %d, tgtBits = %d, scale = %d" % ( imageBits, tgtBits, scale )
+        caPutValue( streamPvName + ":ROI:Scale", scale )
         upStreamPort = streamName + ":ROI"
     else:
         caPutValue( streamPvName + ":ROI:EnableCallbacks", 0 )
 
+    if overEnabled:
+        # Use Overlays
+        caPutValue( streamPvName + ":Over:EnableCallbacks", 1 )
+        caPutValue( streamPvName + ":Over:NDArrayPort", upStreamPort )
+        upStreamPort = streamName + ":Over"
+    else:
+        caPutValue( streamPvName + ":Over:EnableCallbacks", 0 )
+
+    caPutValue( streamPvName + ":EnableCallbacks", 1 )
     caPutValue( streamPvName + ":NDArrayPort", upStreamPort )
     caPutValue( streamPvName + ":MinCallbackTime", minCallbackTime )
     caPutValue( streamPvName + ":CC:MinCallbackTime", minCallbackTime )
@@ -198,9 +212,16 @@ def reconfigViewerStream( cameraPvName, streamName, verbose=False ):
     imageWidth	= caGetValue( cameraPvName + ":ArraySizeX_RBV" )
     imageHeight	= caGetValue( cameraPvName + ":ArraySizeY_RBV" )
     imageColor	= caGetValue( cameraPvName + ":ColorMode_RBV" )
+    imageBits	= caGetValue( cameraPvName + ":BitsPerPixel_RBV" )
     streamWidth	= caGetValue( streamPvName + ":StreamWidth" )
     streamHeight= caGetValue( streamPvName + ":StreamHeight" )
     streamRate	= caGetValue( streamPvName + ":StreamRate" )
+    ccEnabled	= caGetValue( streamPvName + ":CC:EnableCallbacks" )
+    overEnabled	= caGetValue( streamPvName + ":Over:EnableCallbacks" )
+
+    if not imageBits:
+        imageBits = 16
+    tgtBits = imageBits
 
     minCallbackTime = 0.1
     if streamRate > 0:
@@ -228,6 +249,17 @@ def reconfigViewerStream( cameraPvName, streamName, verbose=False ):
             print "Image/Stream width ratio = %f, height ratio = %f, binning %dx%d" % ( xRatio, yRatio, binning, binning )
 
     upStreamPort	= "CAM"
+    if ccEnabled:
+        # Use CC
+        caPutValue( streamPvName + ":CC:EnableCallbacks", 1 )
+        caPutValue( streamPvName + ":CC:NDArrayPort", upStreamPort )
+        ccOut = caGetValue( streamPvName + ":CC:ColorModeOut_RBV" )
+        if ccOut == 0:
+            imageBits	 = 8
+        upStreamPort = streamName + ":CC"
+    else:
+        caPutValue( streamPvName + ":CC:EnableCallbacks", 0 )
+
     if binning > 1:
         # Use ROI
         caPutValue( streamPvName + ":ROI:EnableCallbacks", 1 )
@@ -237,12 +269,29 @@ def reconfigViewerStream( cameraPvName, streamName, verbose=False ):
         caPutValue( streamPvName + ":ROI:BinX", binning )
         caPutValue( streamPvName + ":ROI:BinY", binning )
         caPutValue( streamPvName + ":ROI:EnableScale", 1 )
-        caPutValue( streamPvName + ":ROI:Scale", binning * binning )
+        roiDataType = caGetValue( streamPvName + ":ROI:DataTypeOut" )
+        if roiDataType < 2:
+            tgtBits	 = 8
+        scale = binning * binning
+        if imageBits > tgtBits:
+            scale = scale * ( 2 ** (imageBits - tgtBits) )
+        if verbose:
+            print "imageBits = %d, tgtBits = %d, scale = %d" % ( imageBits, tgtBits, scale )
+        caPutValue( streamPvName + ":ROI:Scale", scale )
         caPutValue( streamPvName + ":ROI:DataTypeOut", "Automatic" )
         upStreamPort = streamName + ":ROI"
     else:
         caPutValue( streamPvName + ":ROI:EnableCallbacks", 0 )
 
+    if overEnabled:
+        # Use Overlays
+        caPutValue( streamPvName + ":Over:EnableCallbacks", 1 )
+        caPutValue( streamPvName + ":Over:NDArrayPort", upStreamPort )
+        upStreamPort = streamName + ":Over"
+    else:
+        caPutValue( streamPvName + ":Over:EnableCallbacks", 0 )
+
+    caPutValue( streamPvName + ":EnableCallbacks", 1 )
     caPutValue( streamPvName + ":NDArrayPort", upStreamPort )
     caPutValue( streamPvName + ":MinCallbackTime", minCallbackTime )
     caPutValue( streamPvName + ":CC:MinCallbackTime", minCallbackTime )
@@ -253,7 +302,7 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
     streamPvName = cameraPvName + ":" + streamName
     streamType	= caGetValue( streamPvName + ":StreamType" )
     if streamType is None:
-        print "Unable to fetch %s" % ( streamPvName + ":StreamType" )
+        print "Unable to reconfigure stream %s" % ( streamPvName )
         return
     if verbose:
         print "StreamType = %s" % streamType
@@ -285,8 +334,18 @@ if __name__ == "__main__":
         print "Camera not accessible: ", msg
         sys.exit()
 
+    verbose = False
     if options.verbose is not None:
-        showCAErrors = True
-    reconfigStream( cameraPvName, streamName, verbose=showCAErrors )
+        verbose = True
+    if streamName != 'all':
+        reconfigStream( cameraPvName, streamName, verbose=verbose )
+    else:
+        showCAErrors = False
+        reconfigStream( cameraPvName, "DATA1",		verbose=verbose )
+        reconfigStream( cameraPvName, "IMAGE1",		verbose=verbose )
+        reconfigStream( cameraPvName, "IMAGE2",		verbose=verbose )
+        reconfigStream( cameraPvName, "THUMBNAIL",	verbose=verbose )
+        reconfigStream( cameraPvName, "DATA2",		verbose=verbose )
+        reconfigStream( cameraPvName, "IMAGE3",		verbose=verbose )
 
     # Done
