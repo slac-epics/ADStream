@@ -11,7 +11,3 @@ NDOverlayConfigure(      "$(IMAGE_NAME):Over", 16,      0, "$(CAM_PORT)", 0, 8 )
 # Load the viewerStream records
 dbLoadRecords( "db/viewerStream.db", "CAM=$(CAM_PV),CAM_PORT=$(CAM_PORT),PLUGIN_SRC=$(PLUGIN_SRC),IMAGE_NAME=$(IMAGE_NAME),IMAGE_NELM=$(IMAGE_NELM),IMAGE_FTVL=$(IMAGE_FTVL),IMAGE_TYPE=$(IMAGE_TYPE)" )
 
-# Temporary for backward compatibility
-NDROIConfigure( "ROI6", $(QSIZE), 0, "$(CAM_PORT)", 0 )
-dbLoadRecords(  "db/pluginROI.db",  "CAM=$(CAM_PV),CAM_PORT=$(CAM_PORT),PLUGIN_SRC=$(PLUGIN_SRC),N=6" )
-

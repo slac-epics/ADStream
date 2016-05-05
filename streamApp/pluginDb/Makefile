@@ -27,11 +27,6 @@ DB += pluginStats.db
 DB += pluginTIFF.db
 DB += pluginTransform.db
 
-# Enable these if you use ffmpegServer
-# Also enable ffmpegServer in configure/RELEASE
-#DB += pluginFileMPEG.db
-#DB += pluginMJPG.db
-
 # Install viewer cmd scripts
 DB_INSTALLS += $(TOP)/streamApp/pluginDb/dataStream.cmd
 DB_INSTALLS += $(TOP)/streamApp/pluginDb/viewerStream.cmd
@@ -46,12 +41,10 @@ DB_INSTALLS += $(TOP)/streamApp/pluginDb/pcdsPlugins.cmd
 
 # Install individual plugin cmd scripts
 DB_INSTALLS += $(TOP)/streamApp/pluginDb/pluginColorConvert.cmd
-DB_INSTALLS += $(TOP)/streamApp/pluginDb/pluginFileMPEG.cmd
 DB_INSTALLS += $(TOP)/streamApp/pluginDb/pluginHDF5.cmd
 DB_INSTALLS += $(TOP)/streamApp/pluginDb/pluginImage.cmd
 DB_INSTALLS += $(TOP)/streamApp/pluginDb/pluginJPEG.cmd
 DB_INSTALLS += $(TOP)/streamApp/pluginDb/pluginMagick.cmd
-DB_INSTALLS += $(TOP)/streamApp/pluginDb/pluginMJPG.cmd
 DB_INSTALLS += $(TOP)/streamApp/pluginDb/pluginNetCDF.cmd
 DB_INSTALLS += $(TOP)/streamApp/pluginDb/pluginNexus.cmd
 DB_INSTALLS += $(TOP)/streamApp/pluginDb/pluginOverlay.cmd
@@ -84,10 +77,6 @@ ARCHIVE += pluginROI.archive
 ARCHIVE += pluginStats.archive
 ARCHIVE += pluginTIFF.archive
 ARCHIVE += pluginTransform.archive
-
-# Enable these if you use ffmpegServer
-#ARCHIVE += pluginFileMPEG.archive
-#ARCHIVE += pluginMJPG.archive
 
 include $(TOP)/configure/RULES
 #----------------------------------------
