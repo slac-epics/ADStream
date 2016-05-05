@@ -13,6 +13,29 @@ record( mbbo, "$(P)$(R)StreamType" )
    field( TWVL, "2" )
 }
 
+record( mbbo, "$(P)$(R)StreamInput" )
+{
+	field( PINI, "YES" )
+	field( DOL,  "0" )
+	field( ZRVL, "0" ) field( ZRST, "CAM" )
+	field( ONVL, "1" ) field( ONST, "ROI1" )
+	field( TWVL, "2" ) field( TWST, "ROI2" )
+	field( THVL, "3" ) field( THST, "ROI3" )
+	field( FRVL, "4" ) field( FRST, "ROI4" )
+	field( FVVL, "5" ) field( FVST, "Proc1" )
+	field( SXVL, "6" ) field( SXST, "Trans1" )
+	field( SVVL, "7" ) field( SVST, "CC1" )
+	field( EIVL, "8" ) field( EIST, "CC2" )
+	field( FLNK, "$(P)$(R)StreamPort" )
+    info( autosaveFields, "VAL" )
+}
+
+record( stringout, "$(P)$(R)StreamPort" )
+{
+	field( OMSL, "closed_loop" )
+    field( DOL,  "$(P)$(R)StreamInput" )
+}
+
 # Stream Target Height and Width, use zero for auto-sizing
 record( longout, "$(P)$(R)StreamHeight" )
 {
