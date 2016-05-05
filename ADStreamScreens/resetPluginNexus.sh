@@ -8,4 +8,6 @@ caput -S ${PLUGIN}:FilePath     "$IOC_DATA/$IOCNAME/images"
 caput -S ${PLUGIN}:FileName      "test1"
 caput -S ${PLUGIN}:FileTemplate  "%s%s_%d.nexus"
 caput ${PLUGIN}:FileNumber       1
-caput ${PLUGIN}:ResetPlugin.PROC 1
+caput ${PLUGIN}:FileWriteMode	 "Capture"
+caput ${PLUGIN}:AutoSave         1
+caput ${PLUGIN}:NumCapture       100

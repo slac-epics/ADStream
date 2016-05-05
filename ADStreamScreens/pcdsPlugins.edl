@@ -2320,7 +2320,7 @@ commandLabel {
   0 "Reset Plugins"
 }
 command {
-  0 "ADStreamScreens/resetPCDSPlugins.sh"
+  0 "CAM=$(CAM) IOC=$(IOC) ADStreamScreens/resetPCDSPlugins.sh"
 }
 endObjectProperties
 

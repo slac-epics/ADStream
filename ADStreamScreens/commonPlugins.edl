@@ -927,7 +927,7 @@ commandLabel {
   0 "Reset Plugins"
 }
 command {
-  0 "ADStreamScreens/resetCommonPlugins.sh"
+  0 "CAM=$(CAM) IOC=$(IOC) ADStreamScreens/resetCommonPlugins.sh"
 }
 endObjectProperties
 
