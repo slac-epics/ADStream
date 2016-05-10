@@ -240,6 +240,8 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
         upStreamPort = streamName + ":ROI"
     else:
         caPutValue( streamPvName + ":ROI:EnableCallbacks", 0 )
+        caPutValue( streamPvName + ":ROI:BinX", 1 )
+        caPutValue( streamPvName + ":ROI:BinY", 1 )
 
     if overEnabled:
         # Use Overlays

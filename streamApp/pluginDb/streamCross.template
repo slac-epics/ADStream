@@ -1,24 +1,50 @@
 # Database for Stream Overlay Cross
 
+record( sel, "$(P)$(R)Cross$(N):InputMinX_RBV" )
+{
+	field( SELM, "Specified" )
+	field( NVL,  "$(P)$(R)StreamInput      CPP MS" )
+	field( INPA, "$(CAM):MinX_RBV          CPP MS" )
+	field( INPB, "$(CAM):ROI1:MinX_RBV     CPP MS" )
+	field( INPC, "$(CAM):ROI2:MinX_RBV     CPP MS" )
+	field( INPD, "$(CAM):ROI3:MinX_RBV     CPP MS" )
+	field( INPE, "$(CAM):ROI4:MinX_RBV     CPP MS" )
+	field( FLNK, "$(P)$(R)Cross$(N):MinX_Calc" )
+}
+
+record( sel, "$(P)$(R)Cross$(N):InputMinY_RBV" )
+{
+	field( SELM, "Specified" )
+	field( NVL,  "$(P)$(R)StreamInput      CPP MS" )
+	field( INPA, "$(CAM):MinY_RBV          CPP MS" )
+	field( INPB, "$(CAM):ROI1:MinY_RBV     CPP MS" )
+	field( INPC, "$(CAM):ROI2:MinY_RBV     CPP MS" )
+	field( INPD, "$(CAM):ROI3:MinY_RBV     CPP MS" )
+	field( INPE, "$(CAM):ROI4:MinY_RBV     CPP MS" )
+	field( FLNK, "$(P)$(R)Cross$(N):MinY_Calc" )
+}
+
 record( calcout, "$(P)$(R)Cross$(N):MinX_Calc" )
 {
-	field( INPA, "$(CAM):ROI$(N):MinX_RBV  CPP MS" )
+	field( INPA, "$(CAM):Cross$(N)X  CPP MS" )
 	field( INPB, "$(P)$(R)ROI:BinX_RBV CPP MS" )
-	field( CALC, "A/B" )
-	field( OUT,  "$(P)$(R)Cross$(N):MinX PP MS" )
+	field( INPC, "$(P)$(R)Cross$(N):InputMinX_RBV NPP MS" )
+	field( CALC, "(A-C)/B" )
+	field( OUT,  "$(P)$(R)Cross$(N):PositionX PP MS" )
 }
 
 record( calcout, "$(P)$(R)Cross$(N):MinY_Calc" )
 {
-	field( INPA, "$(CAM):ROI$(N):MinY_RBV  CPP MS" )
+	field( INPA, "$(CAM):Cross$(N)Y  CPP MS" )
 	field( INPB, "$(P)$(R)ROI:BinY_RBV CPP MS" )
-	field( CALC, "A/B" )
-	field( OUT,  "$(P)$(R)Cross$(N):MinY PP MS" )
+	field( INPC, "$(P)$(R)Cross$(N):InputMinY_RBV NPP MS" )
+	field( CALC, "(A-C)/B" )
+	field( OUT,  "$(P)$(R)Cross$(N):PositionY PP MS" )
 }
 
 record( calcout, "$(P)$(R)Cross$(N):SizeX_Calc" )
 {
-	field( INPA, "$(CAM):ROI$(N):SizeX_RBV  CPP MS" )
+	field( INPA, "$(CAM):Cross$(N)SizeX  CPP MS" )
 	field( INPB, "$(P)$(R)ROI:BinX_RBV CPP MS" )
 	field( CALC, "A/B" )
 	field( OUT,  "$(P)$(R)Cross$(N):SizeX PP MS" )
@@ -26,8 +52,8 @@ record( calcout, "$(P)$(R)Cross$(N):SizeX_Calc" )
 
 record( calcout, "$(P)$(R)Cross$(N):SizeY_Calc" )
 {
-	field( INPA, "$(CAM):ROI$(N):SizeY_RBV  CPP MS" )
-	field( INPB, "$(P)$(R)ROI:BinY_RBV CPP MS" )
+	field( INPA, "$(CAM):Cross$(N)SizeY CPP MS" )
+	field( INPB, "$(P)$(R)ROI:BinY_RBV  CPP MS" )
 	field( CALC, "A/B" )
 	field( OUT,  "$(P)$(R)Cross$(N):SizeY PP MS" )
 }

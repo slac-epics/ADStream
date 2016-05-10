@@ -65,6 +65,7 @@ edm -x -eolc						\
 	-m "IOC=${IOC}"					\
 	-m "P=${P},R=${R}"				\
 	-m "CAM=${P}"					\
+	-m "EVR=${EVR}"					\
 	-m "HUTCH=${HUTCH}"				\
 	-m "IMAGE=${IMAGE}"				\
 	-m "EDM_TOP=${EDM_TOP}"			\
