@@ -3,9 +3,9 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 3884
-y 2249
-w 648
+x 60
+y 1214
+w 791
 h 812
 font "helvetica-medium-r-12.0"
 ctlFont "helvetica-medium-r-12.0"
@@ -33,7 +33,7 @@ minor 0
 release 0
 x 20
 y 416
-w 612
+w 764
 h 80
 lineColor index 3
 fill
@@ -47,7 +47,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 352
+x 516
 y 440
 w 260
 h 24
@@ -107,7 +107,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 352
+x 516
 y 464
 w 260
 h 24
@@ -128,7 +128,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 76
+x 148
 y 464
 w 260
 h 24
@@ -169,7 +169,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 76
+x 148
 y 420
 w 260
 h 14
@@ -189,7 +189,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 352
+x 516
 y 420
 w 256
 h 16
@@ -211,7 +211,7 @@ minor 0
 release 0
 x 20
 y 516
-w 612
+w 764
 h 80
 lineColor index 3
 fill
@@ -225,7 +225,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 76
+x 148
 y 540
 w 260
 h 24
@@ -246,7 +246,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 352
+x 516
 y 540
 w 260
 h 24
@@ -306,7 +306,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 352
+x 516
 y 564
 w 260
 h 24
@@ -327,7 +327,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 76
+x 148
 y 564
 w 260
 h 24
@@ -368,7 +368,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 76
+x 148
 y 520
 w 260
 h 14
@@ -388,7 +388,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 352
+x 516
 y 520
 w 256
 h 16
@@ -410,7 +410,7 @@ minor 0
 release 0
 x 20
 y 20
-w 612
+w 764
 h 80
 lineColor index 3
 fill
@@ -424,7 +424,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 76
+x 148
 y 44
 w 260
 h 24
@@ -445,7 +445,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 352
+x 516
 y 44
 w 260
 h 24
@@ -505,7 +505,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 352
+x 516
 y 68
 w 260
 h 24
@@ -526,7 +526,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 76
+x 148
 y 68
 w 260
 h 24
@@ -567,7 +567,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 76
+x 148
 y 24
 w 260
 h 14
@@ -587,7 +587,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 352
+x 516
 y 24
 w 256
 h 16
@@ -609,7 +609,7 @@ minor 0
 release 0
 x 20
 y 120
-w 612
+w 764
 h 80
 lineColor index 3
 fill
@@ -623,7 +623,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 76
+x 148
 y 144
 w 260
 h 24
@@ -644,7 +644,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 352
+x 516
 y 144
 w 260
 h 24
@@ -704,7 +704,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 352
+x 516
 y 168
 w 260
 h 24
@@ -725,7 +725,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 76
+x 148
 y 168
 w 260
 h 24
@@ -766,7 +766,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 76
+x 148
 y 124
 w 260
 h 14
@@ -786,7 +786,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 352
+x 516
 y 124
 w 256
 h 16
@@ -808,7 +808,7 @@ minor 0
 release 0
 x 20
 y 216
-w 612
+w 764
 h 80
 lineColor index 3
 fill
@@ -822,7 +822,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 76
+x 148
 y 240
 w 260
 h 24
@@ -843,7 +843,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 352
+x 516
 y 240
 w 260
 h 24
@@ -903,7 +903,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 352
+x 516
 y 264
 w 260
 h 24
@@ -924,7 +924,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 76
+x 148
 y 264
 w 260
 h 24
@@ -965,7 +965,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 76
+x 148
 y 220
 w 260
 h 14
@@ -985,7 +985,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 352
+x 516
 y 220
 w 256
 h 16
@@ -1007,7 +1007,7 @@ minor 0
 release 0
 x 20
 y 316
-w 612
+w 764
 h 80
 lineColor index 3
 fill
@@ -1021,7 +1021,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 76
+x 148
 y 340
 w 260
 h 24
@@ -1042,7 +1042,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 352
+x 516
 y 340
 w 260
 h 24
@@ -1102,7 +1102,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 352
+x 516
 y 364
 w 260
 h 24
@@ -1123,7 +1123,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 76
+x 148
 y 364
 w 260
 h 24
@@ -1164,7 +1164,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 76
+x 148
 y 320
 w 260
 h 14
@@ -1184,7 +1184,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 352
+x 516
 y 320
 w 256
 h 16
@@ -1206,7 +1206,7 @@ minor 0
 release 0
 x 20
 y 616
-w 612
+w 764
 h 80
 lineColor index 3
 fill
@@ -1220,7 +1220,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 76
+x 148
 y 640
 w 260
 h 24
@@ -1241,7 +1241,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 352
+x 516
 y 640
 w 260
 h 24
@@ -1301,7 +1301,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 352
+x 516
 y 664
 w 260
 h 24
@@ -1322,7 +1322,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 76
+x 148
 y 664
 w 260
 h 24
@@ -1363,7 +1363,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 76
+x 148
 y 620
 w 260
 h 14
@@ -1383,7 +1383,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 352
+x 516
 y 620
 w 256
 h 16
@@ -1405,7 +1405,7 @@ minor 0
 release 0
 x 20
 y 716
-w 612
+w 764
 h 80
 lineColor index 3
 fill
@@ -1419,7 +1419,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 76
+x 148
 y 740
 w 260
 h 24
@@ -1440,7 +1440,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 352
+x 516
 y 740
 w 260
 h 24
@@ -1500,7 +1500,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 352
+x 516
 y 764
 w 260
 h 24
@@ -1521,7 +1521,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 76
+x 148
 y 764
 w 260
 h 24
@@ -1562,7 +1562,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 76
+x 148
 y 720
 w 260
 h 14
@@ -1582,7 +1582,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 352
+x 516
 y 720
 w 256
 h 16
@@ -1602,7 +1602,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 76
+x 148
 y 440
 w 260
 h 24
@@ -1615,5 +1615,1381 @@ controlPv "$(CAM):Cross1X"
 controlLabelType "pvName"
 font "helvetica-medium-r-12.0"
 limitsFromDb
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 92
+y 44
+w 50
+h 20
+controlPv "$(CAM):ROI1:MinX_RBV"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 44
+y 44
+w 50
+h 20
+controlPv "$(CAM):ROI1:MinX"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 464
+y 44
+w 50
+h 20
+controlPv "$(CAM):ROI1:SizeX_RBV"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 416
+y 44
+w 50
+h 20
+controlPv "$(CAM):ROI1:SizeX"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 92
+y 68
+w 50
+h 20
+controlPv "$(CAM):ROI1:MinY_RBV"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 44
+y 68
+w 50
+h 20
+controlPv "$(CAM):ROI1:MinY"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 464
+y 68
+w 50
+h 20
+controlPv "$(CAM):ROI1:SizeY_RBV"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 416
+y 68
+w 50
+h 20
+controlPv "$(CAM):ROI1:SizeY"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 464
+y 144
+w 50
+h 20
+controlPv "$(CAM):ROI2:SizeX_RBV"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 416
+y 144
+w 50
+h 20
+controlPv "$(CAM):ROI2:SizeX"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 464
+y 168
+w 50
+h 20
+controlPv "$(CAM):ROI2:SizeY_RBV"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 416
+y 168
+w 50
+h 20
+controlPv "$(CAM):ROI2:SizeY"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 92
+y 144
+w 50
+h 20
+controlPv "$(CAM):ROI2:MinX_RBV"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 44
+y 144
+w 50
+h 20
+controlPv "$(CAM):ROI2:MinX"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 92
+y 168
+w 50
+h 20
+controlPv "$(CAM):ROI2:MinY_RBV"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 44
+y 168
+w 50
+h 20
+controlPv "$(CAM):ROI2:MinY"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 464
+y 240
+w 50
+h 20
+controlPv "$(CAM):ROI3:SizeX_RBV"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 416
+y 240
+w 50
+h 20
+controlPv "$(CAM):ROI3:SizeX"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 464
+y 264
+w 50
+h 20
+controlPv "$(CAM):ROI3:SizeY_RBV"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 416
+y 264
+w 50
+h 20
+controlPv "$(CAM):ROI3:SizeY"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 92
+y 240
+w 50
+h 20
+controlPv "$(CAM):ROI3:MinX_RBV"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 44
+y 240
+w 50
+h 20
+controlPv "$(CAM):ROI3:MinX"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 92
+y 264
+w 50
+h 20
+controlPv "$(CAM):ROI3:MinY_RBV"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 44
+y 264
+w 50
+h 20
+controlPv "$(CAM):ROI3:MinY"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 464
+y 340
+w 50
+h 20
+controlPv "$(CAM):ROI4:SizeX_RBV"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 416
+y 340
+w 50
+h 20
+controlPv "$(CAM):ROI4:SizeX"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 464
+y 364
+w 50
+h 20
+controlPv "$(CAM):ROI4:SizeY_RBV"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 416
+y 364
+w 50
+h 20
+controlPv "$(CAM):ROI4:SizeY"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 92
+y 340
+w 50
+h 20
+controlPv "$(CAM):ROI4:MinX"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 44
+y 340
+w 50
+h 20
+controlPv "$(CAM):ROI4:MinX"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 92
+y 364
+w 50
+h 20
+controlPv "$(CAM):ROI4:MinY_RBV"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 44
+y 364
+w 50
+h 20
+controlPv "$(CAM):ROI4:MinY"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 464
+y 440
+w 50
+h 20
+controlPv "$(CAM):Cross1SizeX"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 416
+y 440
+w 50
+h 20
+controlPv "$(CAM):Cross1SizeX"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 464
+y 464
+w 50
+h 20
+controlPv "$(CAM):Cross1SizeY"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 416
+y 464
+w 50
+h 20
+controlPv "$(CAM):Cross1SizeY"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 92
+y 440
+w 50
+h 20
+controlPv "$(CAM):Cross1X"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 44
+y 440
+w 50
+h 20
+controlPv "$(CAM):Cross1X"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 92
+y 464
+w 50
+h 20
+controlPv "$(CAM):Cross1Y"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 44
+y 464
+w 50
+h 20
+controlPv "$(CAM):Cross1Y"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 464
+y 540
+w 50
+h 20
+controlPv "$(CAM):Cross2SizeX"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 416
+y 540
+w 50
+h 20
+controlPv "$(CAM):Cross2SizeX"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 464
+y 564
+w 50
+h 20
+controlPv "$(CAM):Cross2SizeY"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 416
+y 564
+w 50
+h 20
+controlPv "$(CAM):Cross2SizeY"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 92
+y 540
+w 50
+h 20
+controlPv "$(CAM):Cross2X"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 44
+y 540
+w 50
+h 20
+controlPv "$(CAM):Cross2X"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 92
+y 564
+w 50
+h 20
+controlPv "$(CAM):Cross2Y"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 44
+y 564
+w 50
+h 20
+controlPv "$(CAM):Cross2Y"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 464
+y 640
+w 50
+h 20
+controlPv "$(CAM):Cross3SizeX"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 416
+y 640
+w 50
+h 20
+controlPv "$(CAM):Cross3SizeX"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 464
+y 664
+w 50
+h 20
+controlPv "$(CAM):Cross3SizeY"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 416
+y 664
+w 50
+h 20
+controlPv "$(CAM):Cross3SizeY"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 92
+y 640
+w 50
+h 20
+controlPv "$(CAM):Cross3X"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 44
+y 640
+w 50
+h 20
+controlPv "$(CAM):Cross3X"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 92
+y 664
+w 50
+h 20
+controlPv "$(CAM):Cross3Y"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 44
+y 664
+w 50
+h 20
+controlPv "$(CAM):Cross3Y"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 464
+y 740
+w 50
+h 20
+controlPv "$(CAM):Cross4SizeX"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 416
+y 740
+w 50
+h 20
+controlPv "$(CAM):Cross4SizeX"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 464
+y 764
+w 50
+h 20
+controlPv "$(CAM):Cross4SizeY"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 416
+y 764
+w 50
+h 20
+controlPv "$(CAM):Cross4SizeY"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 92
+y 740
+w 50
+h 20
+controlPv "$(CAM):Cross4X"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 44
+y 740
+w 50
+h 20
+controlPv "$(CAM):Cross4X"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 92
+y 764
+w 50
+h 20
+controlPv "$(CAM):Cross4Y"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 44
+y 764
+w 50
+h 20
+controlPv "$(CAM):Cross4Y"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
 endObjectProperties
 

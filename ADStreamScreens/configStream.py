@@ -113,6 +113,14 @@ def caPutValue( pvName, value, verbose=True ):
 
 def reconfigStream( cameraPvName, streamName, verbose=False ):
     streamPvName	= cameraPvName + ":" + streamName
+    try:
+        streamTypePv = Pv( streamPvName + ":StreamType" )
+        streamTypePv.connect(0.1)
+        streamTypePv.get( timeout=1.0 )
+    except Exception, msg:
+        if verbose:
+            print "Stream %s not found." % streamName
+        return
     streamType		= caGetValue( streamPvName + ":StreamType" )
     upStreamPort	= "CAM"
     streamPort		= caGetValue( streamPvName + ":StreamPort" )
@@ -123,16 +131,25 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
     else:
         imagePvName	= cameraPvName + ":" + streamPort
 
-    imageWidth	= caGetValue( imagePvName + ":ArraySizeX_RBV" )
-    imageHeight	= caGetValue( imagePvName + ":ArraySizeY_RBV" )
-    imageColor	= caGetValue( imagePvName + ":ColorMode_RBV" )
-    imageBits	= caGetValue( imagePvName + ":BitsPerPixel_RBV" )
+    imageWidth		= caGetValue( imagePvName + ":ArraySizeX_RBV" )
+    imageHeight		= caGetValue( imagePvName + ":ArraySizeY_RBV" )
+    imageColor		= caGetValue( imagePvName + ":ColorMode_RBV" )
+    imageBits		= caGetValue( imagePvName + ":BitsPerPixel_RBV" )
 
-    streamWidth	= caGetValue( streamPvName + ":StreamWidth" )
-    streamHeight= caGetValue( streamPvName + ":StreamHeight" )
-    streamRate	= caGetValue( streamPvName + ":StreamRate" )
-    ccEnabled	= caGetValue( streamPvName + ":CC:EnableCallbacks" )
-    overEnabled	= caGetValue( streamPvName + ":Over:EnableCallbacks" )
+    streamWidth		= caGetValue( streamPvName + ":StreamWidth" )
+    streamHeight	= caGetValue( streamPvName + ":StreamHeight" )
+    streamRate		= caGetValue( streamPvName + ":StreamRate" )
+    ccEnabled		= caGetValue( streamPvName + ":CC:EnableCallbacks" )
+    cross1Enabled	= caGetValue( streamPvName + ":Cross1:Use" )
+    cross2Enabled	= caGetValue( streamPvName + ":Cross2:Use" )
+    cross3Enabled	= caGetValue( streamPvName + ":Cross3:Use" )
+    cross4Enabled	= caGetValue( streamPvName + ":Cross4:Use" )
+    box1Enabled		= caGetValue( streamPvName + ":Box1:Use" )
+    box2Enabled		= caGetValue( streamPvName + ":Box2:Use" )
+    box3Enabled		= caGetValue( streamPvName + ":Box3:Use" )
+    box4Enabled		= caGetValue( streamPvName + ":Box4:Use" )
+    overEnabled     = ( cross1Enabled | cross2Enabled | cross3Enabled | cross4Enabled |
+                        box1Enabled   | box2Enabled   | box3Enabled   | box4Enabled   )
 
     if streamType == TY_STREAM_DATA:
         defCallbackTime = 0.0
@@ -245,8 +262,43 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
 
     if overEnabled:
         # Use Overlays
+        caPutValue( streamPvName + ":Over:EnableCallbacks", 1 )
         caPutValue( streamPvName + ":Over:NDArrayPort", upStreamPort )
         upStreamPort = streamName + ":Over"
+
+    # Make sure we don't have zero size for ROI and crosses
+    if  caGetValue( cameraPvName + ":ROI1:SizeX_RBV" ) == 0:
+        caPutValue( cameraPvName + ":ROI1:SizeX", 10 )
+    if  caGetValue( cameraPvName + ":ROI1:SizeY_RBV" ) == 0:
+        caPutValue( cameraPvName + ":ROI1:SizeY", 10 )
+    if  caGetValue( cameraPvName + ":ROI2:SizeX_RBV" ) == 0:
+        caPutValue( cameraPvName + ":ROI2:SizeX", 10 )
+    if  caGetValue( cameraPvName + ":ROI2:SizeY_RBV" ) == 0:
+        caPutValue( cameraPvName + ":ROI2:SizeY", 10 )
+    if  caGetValue( cameraPvName + ":ROI3:SizeX_RBV" ) == 0:
+        caPutValue( cameraPvName + ":ROI3:SizeX", 10 )
+    if  caGetValue( cameraPvName + ":ROI3:SizeY_RBV" ) == 0:
+        caPutValue( cameraPvName + ":ROI3:SizeY", 10 )
+    if  caGetValue( cameraPvName + ":ROI4:SizeX_RBV" ) == 0:
+        caPutValue( cameraPvName + ":ROI4:SizeX", 10 )
+    if  caGetValue( cameraPvName + ":ROI4:SizeY_RBV" ) == 0:
+        caPutValue( cameraPvName + ":ROI4:SizeY", 10 )
+    if  caGetValue( cameraPvName + ":Cross1SizeX" ) == 0:
+        caPutValue( cameraPvName + ":Cross1SizeX", 10 )
+    if  caGetValue( cameraPvName + ":Cross1SizeY" ) == 0:
+        caPutValue( cameraPvName + ":Cross1SizeY", 10 )
+    if  caGetValue( cameraPvName + ":Cross2SizeX" ) == 0:
+        caPutValue( cameraPvName + ":Cross2SizeX", 10 )
+    if  caGetValue( cameraPvName + ":Cross2SizeY" ) == 0:
+        caPutValue( cameraPvName + ":Cross2SizeY", 10 )
+    if  caGetValue( cameraPvName + ":Cross3SizeX" ) == 0:
+        caPutValue( cameraPvName + ":Cross3SizeX", 10 )
+    if  caGetValue( cameraPvName + ":Cross3SizeY" ) == 0:
+        caPutValue( cameraPvName + ":Cross3SizeY", 10 )
+    if  caGetValue( cameraPvName + ":Cross4SizeX" ) == 0:
+        caPutValue( cameraPvName + ":Cross4SizeX", 10 )
+    if  caGetValue( cameraPvName + ":Cross4SizeY" ) == 0:
+        caPutValue( cameraPvName + ":Cross4SizeY", 10 )
 
     caPutValue( streamPvName + ":EnableCallbacks", 1 )
     caPutValue( streamPvName + ":NDArrayPort",			upStreamPort )

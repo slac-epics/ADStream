@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 582
-y 1196
+x 977
+y 1104
 w 479
 h 400
 font "helvetica-medium-r-12.0"
@@ -357,7 +357,7 @@ setPosition {
   0 "button"
 }
 symbols {
-  0 "P=$(P),R=$(R),IMAGE=$(IMAGE),HUTCH=$(HUTCH),CAM=$(CAM),IOC=$(IOC)"
+  0 "P=$(P),R=$(R),IMAGE=$(IMAGE),HUTCH=$(HUTCH),CAM=$(CAM),IOC=$(IOC),EVR=$(EVR),EDM_TOP=$(EDM_TOP)"
 }
 replaceSymbols {
   0 1

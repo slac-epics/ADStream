@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 864
-y 1239
+x 829
+y 1165
 w 999
 h 999
 font "helvetica-medium-r-12.0"
@@ -24,6 +24,120 @@ showGrid
 snapToGrid
 gridSize 4
 endScreenProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 200
+y 52
+w 460
+h 116
+lineColor index 3
+fill
+fillColor index 3
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 204
+y 84
+w 204
+h 80
+lineColor index 14
+fill
+fillColor index 3
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 416
+y 88
+w 88
+h 76
+lineColor index 14
+fill
+fillColor index 3
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 524
+y 88
+w 88
+h 76
+lineColor index 14
+fill
+fillColor index 3
+endObjectProperties
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+x 528
+y 116
+w 80
+h 40
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 14
+font "helvetica-medium-r-12.0"
+invisible
+buttonLabel "ReConfig Stream"
+numCmds 1
+commandLabel {
+  0 "Reconfigure stream"
+}
+command {
+  0 "CAM=$(CAM) IMAGE=$(IMAGE) IOC=$(IOC) ADStreamScreens/configStream.sh $(CAM) $(IMAGE)"
+}
+execCursor
+endObjectProperties
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+x 420
+y 116
+w 80
+h 40
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 14
+font "helvetica-medium-r-12.0"
+invisible
+buttonLabel "ReConfig Stream"
+numCmds 1
+commandLabel {
+  0 "Reconfigure stream"
+}
+command {
+  0 "CAM=$(CAM) IMAGE=$(IMAGE) IOC=$(IOC) ADStreamScreens/configStream.sh $(CAM) $(IMAGE)"
+}
+execCursor
+endObjectProperties
 
 # (Hoff Video)
 object TwoDProfileMonitorClass
@@ -51,7 +165,7 @@ minor 0
 release 0
 x 0
 y 0
-w 956
+w 928
 h 40
 lineColor index 56
 fill
@@ -65,41 +179,10 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 200
-y 52
-w 384
-h 116
-lineColor index 3
-fill
-fillColor index 3
-endObjectProperties
-
-# (Rectangle)
-object activeRectangleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 588
-y 64
-w 176
-h 80
-lineColor index 7
-fill
-fillColor index 5
-lineWidth 0
-endObjectProperties
-
-# (Rectangle)
-object activeRectangleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 772
+x 668
 y 60
 w 184
-h 84
+h 108
 lineColor index 3
 fill
 fillColor index 3
@@ -126,7 +209,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 840
+x 876
 y 8
 w 48
 h 24
@@ -184,8 +267,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 408
-y 104
+x 684
+y 116
 w 72
 h 24
 font "helvetica-medium-r-12.0"
@@ -203,7 +286,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 772
+x 668
 y 52
 w 72
 h 24
@@ -213,25 +296,6 @@ fgColor index 14
 bgColor index 3
 value {
   "Parameters"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 588
-y 52
-w 140
-h 16
-font "helvetica-bold-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 5
-value {
-  "HW Region of Interest"
 }
 endObjectProperties
 
@@ -260,86 +324,6 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 636
-y 68
-w 56
-h 16
-font "helvetica-bold-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 0
-useDisplayBg
-value {
-  "X"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 704
-y 68
-w 56
-h 16
-font "helvetica-bold-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 0
-useDisplayBg
-value {
-  "Y"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 592
-y 92
-w 30
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 0
-useDisplayBg
-value {
-  "Start"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 592
-y 116
-w 30
-h 20
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 0
-useDisplayBg
-value {
-  "Size"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
 x 160
 y 0
 w 196
@@ -359,7 +343,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 788
+x 684
 y 76
 w 72
 h 16
@@ -378,7 +362,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 788
+x 684
 y 92
 w 72
 h 24
@@ -426,36 +410,15 @@ closeDisplay {
 }
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 412
-y 56
-w 68
-h 24
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 1
-useDisplayBg
-value {
-  "Delay btw"
-  "images"
-}
-endObjectProperties
-
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
 major 4
 minor 4
 release 0
-x 780
+x 828
 y 8
-w 48
+w 44
 h 24
 fgColor index 14
 bgColor index 3
@@ -528,7 +491,7 @@ beginObjectProperties
 major 4
 minor 3
 release 0
-x 676
+x 668
 y 8
 w 92
 h 24
@@ -553,9 +516,9 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 312
-y 84
-w 76
+x 768
+y 8
+w 56
 h 24
 fgColor index 14
 bgColor index 3
@@ -627,33 +590,13 @@ useEnumNumeric
 font "helvetica-medium-r-14.0"
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 216
-y 84
-w 76
-h 24
-font "helvetica-medium-r-12.0"
-fontAlign "right"
-fgColor index 14
-bgColor index 1
-useDisplayBg
-value {
-  "Plugins"
-}
-endObjectProperties
-
 # (Shell Command)
 object shellCmdClass
 beginObjectProperties
 major 4
 minor 3
 release 0
-x 572
+x 568
 y 8
 w 92
 h 24
@@ -688,7 +631,7 @@ fgColor index 14
 bgColor index 0
 useDisplayBg
 value {
-  "Full Image Rate"
+  "Img Stream Rate"
 }
 endObjectProperties
 
@@ -717,62 +660,15 @@ objType "monitors"
 noExecuteClipMask
 endObjectProperties
 
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 488
-y 56
-w 64
-h 20
-controlPv "$(CAM):$(IMAGE):MinCallbackTime"
-format "decimal"
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 25
-bgColor index 5
-editable
-motifWidget
-limitsFromDb
-nullColor index 0
-smartRefresh
-autoSelect
-newPos
-objType "controls"
-clipToDspLimits
-noExecuteClipMask
-endObjectProperties
-
 # (Static Text)
 object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
 release 1
-x 552
+x 268
 y 56
-w 28
-h 20
-font "helvetica-medium-r-12.0"
-fgColor index 14
-bgColor index 0
-useDisplayBg
-value {
-  "sec"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 216
-y 56
-w 76
+w 52
 h 20
 font "helvetica-medium-r-12.0"
 fontAlign "right"
@@ -790,7 +686,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 308
+x 324
 y 56
 w 44
 h 20
@@ -814,7 +710,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 352
+x 368
 y 56
 w 40
 h 20
@@ -861,7 +757,7 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 868
+x 764
 y 72
 w 80
 h 20
@@ -886,7 +782,7 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 868
+x 764
 y 96
 w 80
 h 20
@@ -911,268 +807,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 392
-y 140
-w 184
-h 20
-controlPv "$(IOC):TOD"
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-fgAlarm
-bgColor index 12
-useDisplayBg
-limitsFromDb
-nullColor index 0
-smartRefresh
-useHexPrefix
-newPos
-objType "monitors"
-noExecuteClipMask
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 700
-y 92
-w 56
-h 20
-
-beginGroup
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 701
-y 92
-w 56
-h 20
-controlPv "$(P)$(R)MinY"
-font "helvetica-bold-r-12.0"
-fontAlign "center"
-fgColor index 25
-bgColor index 5
-editable
-motifWidget
-limitsFromDb
-nullColor index 40
-smartRefresh
-newPos
-endObjectProperties
-
-endGroup
-
-visPv "$(P)$(R)MinY.DISA"
-visMin "0"
-visMax "1"
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 636
-y 92
-w 56
-h 20
-
-beginGroup
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 636
-y 92
-w 56
-h 20
-controlPv "$(P)$(R)MinX"
-font "helvetica-bold-r-12.0"
-fontAlign "center"
-fgColor index 25
-bgColor index 5
-editable
-motifWidget
-limitsFromDb
-nullColor index 40
-smartRefresh
-newPos
-endObjectProperties
-
-endGroup
-
-visPv "$(P)$(R)MinX.DISA"
-visMin "0"
-visMax "1"
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 700
-y 116
-w 56
-h 20
-
-beginGroup
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 700
-y 116
-w 56
-h 20
-controlPv "$(P)$(R)SizeY"
-font "helvetica-bold-r-12.0"
-fontAlign "center"
-fgColor index 25
-bgColor index 5
-editable
-motifWidget
-limitsFromDb
-nullColor index 40
-smartRefresh
-newPos
-endObjectProperties
-
-endGroup
-
-visPv "$(P)$(R)SizeY.DISA"
-visMin "0"
-visMax "1"
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 636
-y 116
-w 56
-h 20
-
-beginGroup
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 636
-y 116
-w 56
-h 20
-controlPv "$(P)$(R)SizeX"
-font "helvetica-bold-r-12.0"
-fontAlign "center"
-fgColor index 25
-bgColor index 5
-editable
-motifWidget
-limitsFromDb
-nullColor index 40
-smartRefresh
-newPos
-endObjectProperties
-
-endGroup
-
-visPv "$(P)$(R)SizeX.DISA"
-visMin "0"
-visMax "1"
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 408
-y 80
-w 172
-h 20
-
-beginGroup
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 408
-y 80
-w 68
-h 18
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 0
-useDisplayBg
-value {
-  "Gain"
-}
-endObjectProperties
-
-# (Motif Slider)
-object activeMotifSliderClass
-beginObjectProperties
-major 4
-minor 2
-release 0
-x 488
-y 80
-w 92
-h 20
-fgColor index 14
-bgColor index 2
-2ndBgColor index 14
-topShadowColor index 2
-botShadowColor index 14
-increment 40
-controlPv "$(CAM):Gain"
-controlLabelType "pvName"
-font "helvetica-medium-r-12.0"
-limitsFromDb
-endObjectProperties
-
-endGroup
-
-visPv "$(CAM):Gain.DISA"
-visMin "0"
-visMax "1"
-endObjectProperties
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 488
-y 108
+x 764
+y 120
 w 80
 h 20
 controlPv "$(CAM):$(IMAGE):BitsPerPixel_RBV"
@@ -1256,6 +892,714 @@ numPvs 4
 numDsps 1
 displayFileName {
   0 "$(EDM_TOP)"
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 580
+y 92
+w 28
+h 20
+fgColor index 14
+bgColor index 3
+topShadowColor index 2
+botShadowColor index 12
+font "helvetica-medium-r-12.0"
+buttonLabel "Adj"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "ADStreamScreens/adjustROI.edl"
+}
+menuLabel {
+  0 "adjustROI"
+}
+endObjectProperties
+
+# (Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 568
+y 136
+w 40
+h 20
+fgColor index 25
+onColor index 6
+offColor index 3
+inconsistentColor index 3
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(P)$(R)$(IMAGE):Box4:Use"
+onLabel "4 On"
+offLabel "4 Off"
+labelType "literal"
+3d
+font "helvetica-bold-r-12.0"
+objType "controls"
+endObjectProperties
+
+# (Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 528
+y 136
+w 40
+h 20
+fgColor index 25
+onColor index 6
+offColor index 3
+inconsistentColor index 3
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(P)$(R)$(IMAGE):Box3:Use"
+onLabel "3 On"
+offLabel "3 Off"
+labelType "literal"
+3d
+font "helvetica-bold-r-12.0"
+objType "controls"
+endObjectProperties
+
+# (Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 568
+y 116
+w 40
+h 20
+fgColor index 25
+onColor index 6
+offColor index 3
+inconsistentColor index 3
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(P)$(R)$(IMAGE):Box2:Use"
+onLabel "2 On"
+offLabel "2 Off"
+labelType "literal"
+3d
+font "helvetica-bold-r-12.0"
+objType "controls"
+endObjectProperties
+
+# (Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 528
+y 116
+w 40
+h 20
+fgColor index 25
+onColor index 6
+offColor index 3
+inconsistentColor index 3
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(P)$(R)$(IMAGE):Box1:Use"
+onLabel "1 On"
+offLabel "1 Off"
+labelType "literal"
+3d
+font "helvetica-bold-r-12.0"
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 524
+y 84
+w 52
+h 16
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 5
+value {
+  "Boxes"
+}
+border
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 472
+y 92
+w 28
+h 20
+fgColor index 14
+bgColor index 3
+topShadowColor index 2
+botShadowColor index 12
+font "helvetica-medium-r-12.0"
+buttonLabel "Adj"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "ADStreamScreens/adjustROI.edl"
+}
+menuLabel {
+  0 "adjustROI"
+}
+endObjectProperties
+
+# (Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 460
+y 136
+w 40
+h 20
+fgColor index 25
+onColor index 6
+offColor index 3
+inconsistentColor index 3
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(P)$(R)$(IMAGE):Cross4:Use"
+onLabel "4 On"
+offLabel "4 Off"
+labelType "literal"
+3d
+font "helvetica-bold-r-12.0"
+objType "controls"
+endObjectProperties
+
+# (Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 420
+y 136
+w 40
+h 20
+fgColor index 25
+onColor index 6
+offColor index 3
+inconsistentColor index 3
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(P)$(R)$(IMAGE):Cross3:Use"
+onLabel "3 On"
+offLabel "3 Off"
+labelType "literal"
+3d
+font "helvetica-bold-r-12.0"
+objType "controls"
+endObjectProperties
+
+# (Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 460
+y 116
+w 40
+h 20
+fgColor index 25
+onColor index 6
+offColor index 3
+inconsistentColor index 3
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(P)$(R)$(IMAGE):Cross2:Use"
+onLabel "2 On"
+offLabel "2 Off"
+labelType "literal"
+3d
+font "helvetica-bold-r-12.0"
+objType "controls"
+endObjectProperties
+
+# (Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 420
+y 116
+w 40
+h 20
+fgColor index 25
+onColor index 6
+offColor index 3
+inconsistentColor index 3
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(P)$(R)$(IMAGE):Cross1:Use"
+onLabel "1 On"
+offLabel "1 Off"
+labelType "literal"
+3d
+font "helvetica-bold-r-12.0"
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 416
+y 84
+w 52
+h 16
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 5
+value {
+  "Crosses"
+}
+border
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 516
+y 56
+w 92
+h 20
+controlPv "$(P)$(R)AcquireTime"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 416
+y 56
+w 92
+h 20
+font "helvetica-bold-r-12.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Exposure Time"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 204
+y 76
+w 40
+h 16
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 5
+value {
+  "Input"
+}
+border
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 232
+y 96
+w 80
+h 20
+font "helvetica-bold-r-12.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Stream Input"
+}
+endObjectProperties
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+x 212
+y 140
+w 184
+h 20
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 14
+font "helvetica-medium-r-12.0"
+invisible
+buttonLabel "ReConfig Stream"
+numCmds 1
+commandLabel {
+  0 "Reconfigure stream"
+}
+command {
+  0 "CAM=$(CAM) IMAGE=$(IMAGE) IOC=$(IOC) ADStreamScreens/configStream.sh $(CAM) $(IMAGE)"
+}
+execCursor
+endObjectProperties
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+x 244
+y 120
+w 152
+h 20
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 14
+font "helvetica-medium-r-12.0"
+invisible
+buttonLabel "ReConfig Stream"
+numCmds 1
+commandLabel {
+  0 "Reconfigure stream"
+}
+command {
+  0 "CAM=$(CAM) IMAGE=$(IMAGE) IOC=$(IOC) ADStreamScreens/configStream.sh $(CAM) $(IMAGE)"
+}
+execCursor
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 280
+y 140
+w 36
+h 20
+fgColor index 25
+onColor index 6
+offColor index 5
+topShadowColor index 2
+botShadowColor index 11
+controlPv "$(P)$(R)$(IMAGE):StreamInput"
+pressValue "4"
+onLabel "ROI4"
+offLabel "ROI4"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 244
+y 140
+w 36
+h 20
+fgColor index 25
+onColor index 6
+offColor index 5
+topShadowColor index 2
+botShadowColor index 11
+controlPv "$(P)$(R)$(IMAGE):StreamInput"
+pressValue "3"
+onLabel "ROI3"
+offLabel "ROI3"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 208
+y 140
+w 36
+h 20
+fgColor index 25
+onColor index 6
+offColor index 5
+topShadowColor index 2
+botShadowColor index 11
+controlPv "$(P)$(R)$(IMAGE):StreamInput"
+pressValue "0"
+onLabel "CAM"
+offLabel "CAM"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 280
+y 120
+w 36
+h 20
+fgColor index 25
+onColor index 6
+offColor index 5
+topShadowColor index 2
+botShadowColor index 11
+controlPv "$(P)$(R)$(IMAGE):StreamInput"
+pressValue "2"
+onLabel "ROI2"
+offLabel "ROI2"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 244
+y 120
+w 36
+h 20
+fgColor index 25
+onColor index 6
+offColor index 5
+topShadowColor index 2
+botShadowColor index 11
+controlPv "$(P)$(R)$(IMAGE):StreamInput"
+pressValue "1"
+onLabel "ROI1"
+offLabel "ROI1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 316
+y 120
+w 44
+h 20
+fgColor index 25
+onColor index 6
+offColor index 5
+topShadowColor index 2
+botShadowColor index 11
+controlPv "$(P)$(R)$(IMAGE):StreamInput"
+pressValue "5"
+onLabel "Proc1"
+offLabel "Proc1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 316
+y 140
+w 44
+h 20
+fgColor index 25
+onColor index 6
+offColor index 5
+topShadowColor index 2
+botShadowColor index 11
+controlPv "$(P)$(R)$(IMAGE):StreamInput"
+pressValue "6"
+onLabel "Trans1"
+offLabel "Trans1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 360
+y 120
+w 36
+h 20
+fgColor index 25
+onColor index 6
+offColor index 5
+topShadowColor index 2
+botShadowColor index 11
+controlPv "$(P)$(R)$(IMAGE):StreamInput"
+pressValue "7"
+onLabel "CC1"
+offLabel "CC1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 360
+y 140
+w 36
+h 20
+fgColor index 25
+onColor index 6
+offColor index 5
+topShadowColor index 2
+botShadowColor index 11
+controlPv "$(P)$(R)$(IMAGE):StreamInput"
+pressValue "8"
+onLabel "CC2"
+offLabel "CC2"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 316
+y 96
+w 76
+h 20
+controlPv "$(P)$(R)$(IMAGE):StreamPort"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 15
+fgAlarm
+bgColor index 12
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 208
+y 120
+w 36
+h 20
+fgColor index 14
+bgColor index 3
+topShadowColor index 2
+botShadowColor index 12
+font "helvetica-medium-r-12.0"
+buttonLabel "More"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "ADStreamScreens/ImagePlugin.edl"
+}
+menuLabel {
+  0 "ROI"
+}
+setPosition {
+  0 "button"
+}
+symbols {
+  0 "P=$(P):$(IMAGE),R=$(R),IMAGE=$(IMAGE),HUTCH=$(HUTCH),CAM=$(CAM),IOC=$(IOC),EVR=$(EVR),EDM_TOP=$(EDM_TOP)"
+}
+replaceSymbols {
+  0 1
+}
+propagateMacros {
+  0 0
 }
 endObjectProperties
 
