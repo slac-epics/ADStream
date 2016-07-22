@@ -7,7 +7,9 @@ if [ -z "$CONFIG_SITE_TOP" ]; then
 	fi
 fi
 echo Entry: $0 $*
-HUTCH=$1
+HUTCH=`awk '{print tolower($0)}' <<< $1`
+#Note that $HUTCH should be lowercase for this script!
+
 shift
 echo Running: $0 $*
 $CONFIG_SITE_TOP/$HUTCH/camviewer/run_viewer.csh --instrument ${HUTCH} --pvlist $CONFIG_SITE_TOP/${HUTCH}/camviewer.cfg --rate 5 $*
