@@ -116,6 +116,7 @@ edm -x -eolc						\
 	-m "IMG_SIZE_X=${IMG_SIZE_X}"	\
 	-m "IMG_SIZE_Y=${IMG_SIZE_Y}"	\
 	-m "IMG_N_BITS=${IMG_N_BITS}"	\
+	-m "ORIG=${VIEWER}"				\
 	${VIEWER}
 
 /bin/rm -f ${VIEWER}
