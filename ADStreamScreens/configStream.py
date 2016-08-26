@@ -57,11 +57,11 @@ def stringToTuple( strValue ):
     newByteArray = bytearray( strValue, 'ascii', 'ignore' )
     return tuple(newByteArray)
 
-def caGetValue( pvName, verbose=True ):
+def caGetValue( pvName, verbose=True, timeout=0.1 ):
     try:
         # See if this PV exists
         pv	= Pv( pvName )
-        pv.connect(0.1)
+        pv.connect( timeout )
         pv.get()
         return pv.value
     except Exception, msg:
@@ -115,7 +115,7 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
     streamPvName	= cameraPvName + ":" + streamName
     try:
         streamTypePv = Pv( streamPvName + ":StreamType" )
-        streamTypePv.connect(0.1)
+        streamTypePv.connect(0.5)
         streamTypePv.get( timeout=1.0 )
     except Exception, msg:
         if verbose:
@@ -131,15 +131,21 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
     else:
         imagePvName	= cameraPvName + ":" + streamPort
 
-    imageWidth		= caGetValue( imagePvName + ":ArraySizeX_RBV" )
-    imageHeight		= caGetValue( imagePvName + ":ArraySizeY_RBV" )
+    pluginType		= caGetValue( imagePvName + ":PluginType_RBV", verbose=False )
+    if pluginType == "NDPluginProcess":
+        imageWidth		= caGetValue( imagePvName + ":ArraySize0_RBV" )
+        imageHeight		= caGetValue( imagePvName + ":ArraySize1_RBV" )
+    else:
+        imageWidth		= caGetValue( imagePvName + ":ArraySizeX_RBV" )
+        imageHeight		= caGetValue( imagePvName + ":ArraySizeY_RBV" )
     imageColor		= caGetValue( imagePvName + ":ColorMode_RBV" )
     imageBits		= caGetValue( imagePvName + ":BitsPerPixel_RBV" )
 
     streamWidth		= caGetValue( streamPvName + ":StreamWidth" )
     streamHeight	= caGetValue( streamPvName + ":StreamHeight" )
     streamRate		= caGetValue( streamPvName + ":StreamRate" )
-    ccEnabled		= caGetValue( streamPvName + ":CC:EnableCallbacks" )
+    avgEnabled		= caGetValue( streamPvName + ":Proc:EnableFilter", verbose=False )
+    ccEnabled		= False # TODO: caGetValue( streamPvName + ":UseCC" )
     cross1Enabled	= caGetValue( streamPvName + ":Cross1:Use" )
     cross2Enabled	= caGetValue( streamPvName + ":Cross2:Use" )
     cross3Enabled	= caGetValue( streamPvName + ":Cross3:Use" )
@@ -259,6 +265,14 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
         caPutValue( streamPvName + ":ROI:EnableCallbacks", 0 )
         caPutValue( streamPvName + ":ROI:BinX", 1 )
         caPutValue( streamPvName + ":ROI:BinY", 1 )
+
+    if avgEnabled:
+        # Use Recursive Averaging Filter in Process plugin
+        avgNum		= caGetValue( streamPvName + ":Proc:NumFilter" )
+        if avgNum > 1:
+            caPutValue( streamPvName + ":Proc:EnableCallbacks", 1 )
+            caPutValue( streamPvName + ":Proc:NDArrayPort", upStreamPort )
+            upStreamPort = streamName + ":Proc"
 
     if overEnabled:
         # Use Overlays

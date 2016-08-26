@@ -4,6 +4,7 @@ file NDPluginBase.tpl-arch
     {   P = "$(CAM):",	R = "$(IMAGE_NAME):"		}
     {   P = "$(CAM):",	R = "$(IMAGE_NAME):ROI:"	}
     {   P = "$(CAM):",	R = "$(IMAGE_NAME):CC:"		}
+    {   P = "$(CAM):",	R = "$(IMAGE_NAME):Proc:"	}
 }
 file NDStdArrays.tpl-arch
 {
@@ -17,4 +18,7 @@ file NDColorConvert.tpl-arch
 {
     {   P = "$(CAM):",	R = "$(IMAGE_NAME):CC:"		}
 }
-
+file NDProcess.tpl-arch
+{
+    {   P = "$(CAM):",	R = "$(IMAGE_NAME):Proc:"	}
+}

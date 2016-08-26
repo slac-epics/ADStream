@@ -26,8 +26,8 @@ record( sel, "$(P)$(R)Cross$(N):InputMinY_RBV" )
 
 record( calcout, "$(P)$(R)Cross$(N):MinX_Calc" )
 {
-	field( INPA, "$(CAM):Cross$(N)X  CPP MS" )
-	field( INPB, "$(P)$(R)ROI:BinX_RBV CPP MS" )
+	field( INPA, "$(CAM):Cross$(N):MinX CPP MS" )
+	field( INPB, "$(P)$(R)ROI:BinX_RBV  CPP MS" )
 	field( INPC, "$(P)$(R)Cross$(N):InputMinX_RBV NPP MS" )
 	field( CALC, "(A-C)/B" )
 	field( OUT,  "$(P)$(R)Cross$(N):PositionX PP MS" )
@@ -35,8 +35,8 @@ record( calcout, "$(P)$(R)Cross$(N):MinX_Calc" )
 
 record( calcout, "$(P)$(R)Cross$(N):MinY_Calc" )
 {
-	field( INPA, "$(CAM):Cross$(N)Y  CPP MS" )
-	field( INPB, "$(P)$(R)ROI:BinY_RBV CPP MS" )
+	field( INPA, "$(CAM):Cross$(N):MinY CPP MS" )
+	field( INPB, "$(P)$(R)ROI:BinY_RBV  CPP MS" )
 	field( INPC, "$(P)$(R)Cross$(N):InputMinY_RBV NPP MS" )
 	field( CALC, "(A-C)/B" )
 	field( OUT,  "$(P)$(R)Cross$(N):PositionY PP MS" )
@@ -44,16 +44,16 @@ record( calcout, "$(P)$(R)Cross$(N):MinY_Calc" )
 
 record( calcout, "$(P)$(R)Cross$(N):SizeX_Calc" )
 {
-	field( INPA, "$(CAM):Cross$(N)SizeX  CPP MS" )
-	field( INPB, "$(P)$(R)ROI:BinX_RBV CPP MS" )
+	field( INPA, "$(CAM):Cross$(N):SizeX  CPP MS" )
+	field( INPB, "$(P)$(R)ROI:BinX_RBV    CPP MS" )
 	field( CALC, "A/B" )
 	field( OUT,  "$(P)$(R)Cross$(N):SizeX PP MS" )
 }
 
 record( calcout, "$(P)$(R)Cross$(N):SizeY_Calc" )
 {
-	field( INPA, "$(CAM):Cross$(N)SizeY CPP MS" )
-	field( INPB, "$(P)$(R)ROI:BinY_RBV  CPP MS" )
+	field( INPA, "$(CAM):Cross$(N):SizeY CPP MS" )
+	field( INPB, "$(P)$(R)ROI:BinY_RBV   CPP MS" )
 	field( CALC, "A/B" )
 	field( OUT,  "$(P)$(R)Cross$(N):SizeY PP MS" )
 }

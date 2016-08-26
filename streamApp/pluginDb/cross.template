@@ -1,32 +1,93 @@
-# Database for generic cross records to hold common X, Y and color for cross overlays
+# cross.template - generic cross records to hold common X, Y and color for cross overlays
 
-record(longout, "$(P)$(R)Cross$(N)X")
+record( longout, "$(P)$(R)Cross$(N):MinX" )
 {
-   field(FLNK, "$(P)$(R)Cross$(N)X_RBV")
-   field(OUT,  "$(P)$(R)Cross$(N)X_RBV")
+	field( FLNK, "$(P)$(R)Cross$(N):MinX_RBV" )
+	info( autosaveFields, "VAL" )
 }
 
-record(longin, "$(P)$(R)Cross$(N)X_RBV")
+record( longin, "$(P)$(R)Cross$(N):MinX_RBV" )
 {
+	field( INP,  "$(P)$(R)Cross$(N):MinX" )
 }
 
-record(longout, "$(P)$(R)Cross$(N)Y")
+record( longout, "$(P)$(R)Cross$(N):MinY" )
 {
-   field(FLNK, "$(P)$(R)Cross$(N)Y_RBV")
-   field(OUT,  "$(P)$(R)Cross$(N)Y_RBV")
+	field( FLNK, "$(P)$(R)Cross$(N):MinY_RBV" )
+	info( autosaveFields, "VAL" )
 }
 
-record(longin, "$(P)$(R)Cross$(N)Y_RBV")
+record( longin, "$(P)$(R)Cross$(N):MinY_RBV" )
 {
+	field( INP,  "$(P)$(R)Cross$(N):MinY" )
 }
 
-record(longout, "$(P)$(R)Cross$(N)Color")
+record( longout, "$(P)$(R)Cross$(N)Color" )
 {
-   field(FLNK, "$(P)$(R)Cross$(N)Color_RBV")
-   field(OUT,  "$(P)$(R)Cross$(N)Color_RBV")
+	field( FLNK, "$(P)$(R)Cross$(N)Color_RBV" )
 }
 
-record(longin, "$(P)$(R)Cross$(N)Color_RBV")
+record( longin, "$(P)$(R)Cross$(N)Color_RBV" )
 {
+	field( INP,  "$(P)$(R)Cross$(N)Color" )
 }
 
+record( longout, "$(P)$(R)Cross$(N):SizeX" )
+{
+	field( FLNK, "$(P)$(R)Cross$(N):SizeX_RBV" )
+	info( autosaveFields, "VAL" )
+}
+
+record( longin, "$(P)$(R)Cross$(N):SizeX_RBV" )
+{
+	field( INP,  "$(P)$(R)Cross$(N):SizeX" )
+}
+
+record( longout, "$(P)$(R)Cross$(N):SizeY" )
+{
+	field( FLNK, "$(P)$(R)Cross$(N):SizeY_RBV" )
+	info( autosaveFields, "VAL" )
+}
+
+record( longin, "$(P)$(R)Cross$(N):SizeY_RBV" )
+{
+	field( INP,  "$(P)$(R)Cross$(N):SizeY" )
+}
+
+record( dfanout, "$(P)$(R)Cross_HOPR_X" )
+{
+	field( OMSL, "closed_loop" )
+	field( SELM, "All" )
+	field( DOL,  "$(P)$(R)ArraySizeX_RBV CPP MS" )
+	field( OUTA, "$(P)$(R)Cross1:MinX.HOPR PP MS" )
+	field( OUTB, "$(P)$(R)Cross2:MinX.HOPR PP MS" )
+	field( OUTC, "$(P)$(R)Cross3:MinX.HOPR PP MS" )
+	field( OUTD, "$(P)$(R)Cross4:MinX.HOPR PP MS" )
+	field( OUTE, "$(P)$(R)Cross1:SizeX.HOPR PP MS" )
+	field( OUTF, "$(P)$(R)Cross2:SizeX.HOPR PP MS" )
+	field( OUTG, "$(P)$(R)Cross3:SizeX.HOPR PP MS" )
+	field( OUTH, "$(P)$(R)Cross4:SizeX.HOPR PP MS" )
+}
+
+record( dfanout, "$(P)$(R)Cross_HOPR_Y" )
+{
+	field( OMSL, "closed_loop" )
+	field( SELM, "All" )
+	field( DOL,  "$(P)$(R)ArraySizeY_RBV CPP MS" )
+	field( OUTA, "$(P)$(R)Cross1:MinY.HOPR PP MS" )
+	field( OUTB, "$(P)$(R)Cross2:MinY.HOPR PP MS" )
+	field( OUTC, "$(P)$(R)Cross3:MinY.HOPR PP MS" )
+	field( OUTD, "$(P)$(R)Cross4:MinY.HOPR PP MS" )
+	field( OUTE, "$(P)$(R)Cross1:SizeY.HOPR PP MS" )
+	field( OUTF, "$(P)$(R)Cross2:SizeY.HOPR PP MS" )
+	field( OUTG, "$(P)$(R)Cross3:SizeY.HOPR PP MS" )
+	field( OUTH, "$(P)$(R)Cross4:SizeY.HOPR PP MS" )
+}
+
+# Support old names that don't follow the AD naming convention
+alias( "$(P)$(R)Cross$(N):MinX",		"$(P)$(R)Cross$(N)X"		)
+alias( "$(P)$(R)Cross$(N):MinX_RBV",	"$(P)$(R)Cross$(N)X_RBV"	)
+alias( "$(P)$(R)Cross$(N):MinY",		"$(P)$(R)Cross$(N)Y"		)
+alias( "$(P)$(R)Cross$(N):MinY_RBV",	"$(P)$(R)Cross$(N)Y_RBV"	)
+alias( "$(P)$(R)Cross$(N):SizeX",		"$(P)$(R)Cross$(N)SizeX"	)
+alias( "$(P)$(R)Cross$(N):SizeY",		"$(P)$(R)Cross$(N)SizeY"	)

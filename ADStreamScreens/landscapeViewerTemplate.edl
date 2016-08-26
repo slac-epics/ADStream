@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 887
-y 1121
+x 239
+y 1185
 w 999
 h 999
 font "helvetica-medium-r-12.0"
@@ -48,24 +48,9 @@ major 4
 minor 0
 release 0
 x 4
-y 136
+y 204
 w 200
-h 284
-lineColor index 3
-fill
-fillColor index 3
-endObjectProperties
-
-# (Rectangle)
-object activeRectangleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 4
-y 444
-w 200
-h 84
+h 308
 lineColor index 3
 fill
 fillColor index 3
@@ -80,7 +65,7 @@ release 0
 x 4
 y 56
 w 200
-h 64
+h 132
 lineColor index 3
 fill
 fillColor index 3
@@ -99,7 +84,7 @@ h 699
 dataPvStr "$(CAM):$(IMAGE):ArrayData"
 widthPvStr "$(CAM):$(IMAGE):ArraySize0_RBV"
 heightPvStr "$(CAM):$(IMAGE):ArraySize1_RBV"
-dataWidth 428
+dataWidth 512
 pvBasedDataSize 1
 nBitsPerPixel 8
 endObjectProperties
@@ -131,7 +116,7 @@ minor 1
 release 1
 x 12
 y 64
-w 92
+w 104
 h 20
 font "helvetica-medium-r-12.0"
 fontAlign "right"
@@ -168,11 +153,12 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 20
-y 496
-w 72
-h 24
+x 12
+y 160
+w 104
+h 20
 font "helvetica-medium-r-12.0"
+fontAlign "right"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -188,26 +174,7 @@ major 4
 minor 1
 release 1
 x 4
-y 432
-w 72
-h 24
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 3
-value {
-  "Parameters"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 4
-y 128
+y 196
 w 60
 h 20
 font "helvetica-bold-r-12.0"
@@ -225,11 +192,12 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 20
-y 456
-w 72
-h 16
+x 12
+y 112
+w 104
+h 20
 font "helvetica-medium-r-12.0"
+fontAlign "right"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -244,11 +212,12 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 20
-y 472
-w 72
-h 24
+x 12
+y 136
+w 104
+h 20
 font "helvetica-medium-r-12.0"
+fontAlign "right"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -324,8 +293,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 108
-y 92
+x 120
+y 88
 w 76
 h 20
 controlPv "$(CAM):$(IMAGE):ArrayRate_RBV"
@@ -400,54 +369,6 @@ propagateMacros {
 }
 endObjectProperties
 
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 12
-y 156
-w 80
-h 20
-fgColor index 25
-onColor index 6
-offColor index 3
-topShadowColor index 1
-botShadowColor index 13
-controlPv "$(CAM):AsynIO.CNCT"
-pressValue "1"
-onLabel "Connect"
-offLabel "Connect"
-3d
-useEnumNumeric
-font "helvetica-medium-r-14.0"
-endObjectProperties
-
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 100
-y 156
-w 80
-h 20
-fgColor index 25
-onColor index 6
-offColor index 3
-topShadowColor index 1
-botShadowColor index 13
-controlPv "$(CAM):AsynIO.CNCT"
-pressValue "0"
-onLabel "Disconnect"
-offLabel "Disconnect"
-3d
-useEnumNumeric
-font "helvetica-medium-r-14.0"
-endObjectProperties
-
 # (Shell Command)
 object shellCmdClass
 beginObjectProperties
@@ -480,8 +401,8 @@ major 4
 minor 1
 release 1
 x 12
-y 92
-w 92
+y 88
+w 104
 h 20
 font "helvetica-medium-r-12.0"
 fontAlign "right"
@@ -489,7 +410,7 @@ fgColor index 14
 bgColor index 0
 useDisplayBg
 value {
-  "Img Stream Rate"
+  "Image Stream Rate"
 }
 endObjectProperties
 
@@ -499,7 +420,7 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 108
+x 120
 y 64
 w 76
 h 20
@@ -525,7 +446,7 @@ major 4
 minor 1
 release 1
 x 8
-y 184
+y 220
 w 76
 h 20
 font "helvetica-medium-r-12.0"
@@ -545,7 +466,7 @@ major 4
 minor 1
 release 0
 x 100
-y 184
+y 220
 w 44
 h 20
 fgColor index 25
@@ -569,7 +490,7 @@ major 4
 minor 1
 release 0
 x 144
-y 184
+y 220
 w 40
 h 20
 fgColor index 25
@@ -593,7 +514,7 @@ major 4
 minor 1
 release 1
 x 64
-y 136
+y 204
 w 116
 h 20
 font "helvetica-medium-r-12.0"
@@ -615,9 +536,9 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 100
-y 452
-w 80
+x 120
+y 112
+w 76
 h 20
 controlPv "$(CAM):$(IMAGE):ArraySize0_RBV"
 font "helvetica-medium-r-12.0"
@@ -640,9 +561,9 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 100
-y 476
-w 80
+x 120
+y 136
+w 76
 h 20
 controlPv "$(CAM):$(IMAGE):ArraySize1_RBV"
 font "helvetica-medium-r-12.0"
@@ -665,9 +586,9 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 4
-y 532
-w 184
+x 8
+y 520
+w 196
 h 20
 controlPv "$(IOC):TOD"
 font "helvetica-medium-r-12.0"
@@ -691,9 +612,9 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 100
-y 500
-w 80
+x 120
+y 160
+w 76
 h 20
 controlPv "$(CAM):$(IMAGE):BitsPerPixel_RBV"
 font "helvetica-medium-r-12.0"
@@ -829,7 +750,7 @@ major 4
 minor 0
 release 0
 x 8
-y 240
+y 276
 w 192
 h 80
 lineColor index 14
@@ -844,7 +765,7 @@ major 4
 minor 1
 release 1
 x 32
-y 252
+y 288
 w 80
 h 20
 font "helvetica-bold-r-12.0"
@@ -863,7 +784,7 @@ major 4
 minor 0
 release 0
 x 8
-y 336
+y 364
 w 88
 h 76
 lineColor index 14
@@ -878,7 +799,7 @@ major 4
 minor 3
 release 0
 x 12
-y 364
+y 392
 w 80
 h 40
 fgColor index 14
@@ -905,7 +826,7 @@ major 4
 minor 4
 release 0
 x 64
-y 340
+y 368
 w 28
 h 20
 fgColor index 14
@@ -931,7 +852,7 @@ major 4
 minor 1
 release 0
 x 52
-y 384
+y 412
 w 40
 h 20
 fgColor index 25
@@ -956,7 +877,7 @@ major 4
 minor 1
 release 0
 x 12
-y 384
+y 412
 w 40
 h 20
 fgColor index 25
@@ -981,7 +902,7 @@ major 4
 minor 1
 release 0
 x 52
-y 364
+y 392
 w 40
 h 20
 fgColor index 25
@@ -1006,7 +927,7 @@ major 4
 minor 1
 release 0
 x 12
-y 364
+y 392
 w 40
 h 20
 fgColor index 25
@@ -1031,7 +952,7 @@ major 4
 minor 0
 release 0
 x 104
-y 336
+y 364
 w 88
 h 76
 lineColor index 14
@@ -1046,7 +967,7 @@ major 4
 minor 3
 release 0
 x 108
-y 364
+y 392
 w 80
 h 40
 fgColor index 14
@@ -1073,7 +994,7 @@ major 4
 minor 4
 release 0
 x 160
-y 340
+y 368
 w 28
 h 20
 fgColor index 14
@@ -1099,7 +1020,7 @@ major 4
 minor 1
 release 0
 x 148
-y 384
+y 412
 w 40
 h 20
 fgColor index 25
@@ -1124,7 +1045,7 @@ major 4
 minor 1
 release 0
 x 108
-y 384
+y 412
 w 40
 h 20
 fgColor index 25
@@ -1149,7 +1070,7 @@ major 4
 minor 1
 release 0
 x 148
-y 364
+y 392
 w 40
 h 20
 fgColor index 25
@@ -1174,7 +1095,7 @@ major 4
 minor 1
 release 0
 x 108
-y 364
+y 392
 w 40
 h 20
 fgColor index 25
@@ -1199,10 +1120,10 @@ major 4
 minor 1
 release 1
 x 8
-y 208
+y 244
 w 88
 h 24
-font "helvetica-bold-r-12.0"
+font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -1218,7 +1139,7 @@ major 4
 minor 7
 release 0
 x 100
-y 208
+y 244
 w 92
 h 24
 controlPv "$(P)$(R)AcquireTime"
@@ -1242,7 +1163,7 @@ major 4
 minor 1
 release 1
 x 8
-y 236
+y 272
 w 36
 h 16
 font "helvetica-medium-r-12.0"
@@ -1262,7 +1183,7 @@ major 4
 minor 1
 release 1
 x 8
-y 332
+y 360
 w 52
 h 16
 font "helvetica-medium-r-12.0"
@@ -1282,7 +1203,7 @@ major 4
 minor 1
 release 1
 x 104
-y 332
+y 360
 w 52
 h 16
 font "helvetica-medium-r-12.0"
@@ -1302,7 +1223,7 @@ major 4
 minor 3
 release 0
 x 12
-y 296
+y 332
 w 184
 h 20
 fgColor index 14
@@ -1329,7 +1250,7 @@ major 4
 minor 3
 release 0
 x 44
-y 276
+y 312
 w 152
 h 20
 fgColor index 14
@@ -1356,7 +1277,7 @@ major 4
 minor 1
 release 0
 x 80
-y 296
+y 332
 w 36
 h 20
 fgColor index 25
@@ -1380,7 +1301,7 @@ major 4
 minor 1
 release 0
 x 44
-y 296
+y 332
 w 36
 h 20
 fgColor index 25
@@ -1404,7 +1325,7 @@ major 4
 minor 1
 release 0
 x 8
-y 296
+y 332
 w 36
 h 20
 fgColor index 25
@@ -1428,7 +1349,7 @@ major 4
 minor 1
 release 0
 x 80
-y 276
+y 312
 w 36
 h 20
 fgColor index 25
@@ -1452,7 +1373,7 @@ major 4
 minor 1
 release 0
 x 44
-y 276
+y 312
 w 36
 h 20
 fgColor index 25
@@ -1476,7 +1397,7 @@ major 4
 minor 1
 release 0
 x 116
-y 276
+y 312
 w 44
 h 20
 fgColor index 25
@@ -1500,7 +1421,7 @@ major 4
 minor 1
 release 0
 x 116
-y 296
+y 332
 w 44
 h 20
 fgColor index 25
@@ -1524,7 +1445,7 @@ major 4
 minor 1
 release 0
 x 160
-y 276
+y 312
 w 36
 h 20
 fgColor index 25
@@ -1548,7 +1469,7 @@ major 4
 minor 1
 release 0
 x 160
-y 296
+y 332
 w 36
 h 20
 fgColor index 25
@@ -1572,7 +1493,7 @@ major 4
 minor 7
 release 0
 x 116
-y 252
+y 288
 w 76
 h 20
 controlPv "$(P)$(R)$(IMAGE):StreamPort"
@@ -1598,7 +1519,7 @@ major 4
 minor 4
 release 0
 x 8
-y 276
+y 312
 w 36
 h 20
 fgColor index 14
@@ -1627,5 +1548,233 @@ replaceSymbols {
 propagateMacros {
   0 0
 }
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 136
+y 452
+w 40
+h 20
+fgColor index 25
+onColor index 4
+offColor index 3
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(CAM):$(IMAGE):Proc:SaveBackground"
+pressValue "1"
+onLabel "Save"
+offLabel "Save"
+3d
+useEnumNumeric
+font "helvetica-bold-r-10.0"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 136
+y 480
+w 60
+h 20
+controlPv "$(CAM):$(IMAGE):Proc:NumFilter"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 104
+y 480
+w 28
+h 20
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Num"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 8
+y 452
+w 52
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Bkgd Sub"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 8
+y 480
+w 24
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Avg"
+}
+endObjectProperties
+
+# (Byte)
+object ByteClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 184
+y 452
+w 18
+h 18
+controlPv "$(CAM):$(IMAGE):Proc:SaveBackground_RBV"
+lineColor index 14
+onColor index 15
+offColor index 19
+lineWidth 2
+numBits 1
+endObjectProperties
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+x 64
+y 452
+w 64
+h 20
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 14
+font "helvetica-medium-r-12.0"
+invisible
+buttonLabel "ReConfig Stream"
+numCmds 1
+commandLabel {
+  0 "Reconfigure stream"
+}
+command {
+  0 "CAM=$(CAM) IMAGE=$(IMAGE) IOC=$(IOC) ADStreamScreens/configStream.sh $(CAM) $(IMAGE)"
+}
+execCursor
+endObjectProperties
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+x 36
+y 480
+w 64
+h 20
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 14
+font "helvetica-medium-r-12.0"
+invisible
+buttonLabel "ReConfig Stream"
+numCmds 1
+commandLabel {
+  0 "Reconfigure stream"
+}
+command {
+  0 "CAM=$(CAM) IMAGE=$(IMAGE) IOC=$(IOC) ADStreamScreens/configStream.sh $(CAM) $(IMAGE)"
+}
+execCursor
+endObjectProperties
+
+# (Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 64
+y 452
+w 64
+h 20
+fgColor index 25
+onColor index 6
+offColor index 3
+inconsistentColor index 40
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(CAM):$(IMAGE):Proc:EnableBackground"
+indicatorPv "$(CAM):$(IMAGE):Proc:EnableBackground_RBV"
+onLabel "BkgdSub"
+offLabel "NoBkgdSub"
+3d
+font "helvetica-bold-r-10.0"
+objType "controls"
+endObjectProperties
+
+# (Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 36
+y 480
+w 64
+h 20
+fgColor index 25
+onColor index 6
+offColor index 3
+inconsistentColor index 40
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(CAM):$(IMAGE):Proc:EnableFilter"
+indicatorPv "$(CAM):$(IMAGE):Proc:EnableFilter_RBV"
+onLabel "Avg"
+offLabel "NoAvg"
+3d
+font "helvetica-bold-r-12.0"
+objType "controls"
 endObjectProperties
 

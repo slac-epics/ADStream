@@ -3,10 +3,10 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 494
+x 1062
 y 1104
-w 409
-h 734
+w 428
+h 758
 font "helvetica-bold-r-12.0"
 ctlFont "helvetica-bold-r-12.0"
 btnFont "helvetica-bold-r-12.0"
@@ -20,8 +20,37 @@ ctlBgColor2 index 3
 topShadowColor index 1
 botShadowColor index 11
 showGrid
+snapToGrid
 gridSize 4
 endScreenProperties
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+x 204
+y 28
+w 48
+h 24
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 14
+font "helvetica-medium-r-12.0"
+invisible
+buttonLabel "ReConfig Stream"
+initialDelay 0.5
+numCmds 1
+commandLabel {
+  0 "Reconfigure stream"
+}
+command {
+  0 "CAM=$(CAM) IMAGE=$(IMAGE) IOC=$(IOC) ADStreamScreens/configStream.sh $(CAM) $(IMAGE)"
+}
+execCursor
+endObjectProperties
 
 # (Rectangle)
 object activeRectangleClass
@@ -30,7 +59,7 @@ major 4
 minor 0
 release 0
 x 4
-y 194
+y 220
 w 216
 h 82
 lineColor index 14
@@ -45,7 +74,7 @@ major 4
 minor 1
 release 1
 x 4
-y 187
+y 212
 w 136
 h 16
 font "helvetica-medium-r-12.0"
@@ -65,7 +94,7 @@ major 4
 minor 1
 release 0
 x 0
-y 312
+y 336
 w 400
 h 384
 fgColor index 14
@@ -90,7 +119,7 @@ major 4
 minor 3
 release 0
 x 0
-y 704
+y 728
 w 396
 h 24
 fgColor index 14
@@ -111,7 +140,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 368
+x 384
 y 4
 w 32
 h 24
@@ -131,7 +160,7 @@ major 4
 minor 3
 release 0
 x 312
-y 36
+y 60
 w 88
 h 24
 fgColor index 14
@@ -156,7 +185,7 @@ major 4
 minor 1
 release 1
 x 0
-y 280
+y 304
 w 76
 h 24
 font "helvetica-medium-r-14.0"
@@ -175,7 +204,7 @@ major 4
 minor 7
 release 0
 x 80
-y 280
+y 304
 w 312
 h 24
 controlPv "$(P)$(R)PortName_RBV.DESC"
@@ -198,9 +227,9 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 312
-y 64
-w 32
+x 272
+y 124
+w 40
 h 24
 fgColor index 14
 bgColor index 3
@@ -230,8 +259,8 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 264
-y 64
+x 228
+y 124
 w 40
 h 24
 fgColor index 14
@@ -263,7 +292,7 @@ major 4
 minor 0
 release 0
 x 224
-y 36
+y 60
 w 80
 h 24
 
@@ -276,7 +305,7 @@ major 4
 minor 3
 release 0
 x 224
-y 36
+y 60
 w 79
 h 24
 fgColor index 14
@@ -308,8 +337,8 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 352
-y 64
+x 316
+y 124
 w 40
 h 24
 fgColor index 14
@@ -340,8 +369,8 @@ beginObjectProperties
 major 4
 minor 3
 release 0
-x 264
-y 92
+x 224
+y 88
 w 128
 h 32
 fgColor index 14
@@ -366,9 +395,9 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 276
-y 4
-w 84
+x 92
+y 28
+w 68
 h 24
 controlPv "$(P)$(R)StreamType"
 font "helvetica-bold-r-12.0"
@@ -391,14 +420,13 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 192
-y 4
+x 4
+y 28
 w 80
 h 24
 font "helvetica-bold-r-12.0"
 fgColor index 14
 bgColor index 3
-useDisplayBg
 value {
   "Stream Type"
 }
@@ -410,8 +438,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 107
-y 226
+x 108
+y 252
 w 36
 h 20
 font "helvetica-bold-r-12.0"
@@ -429,8 +457,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 151
-y 226
+x 152
+y 252
 w 52
 h 20
 controlPv "$(P)$(R)StreamHeight"
@@ -453,8 +481,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 47
-y 226
+x 48
+y 252
 w 52
 h 20
 controlPv "$(P)$(R)StreamWidth"
@@ -477,8 +505,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 11
-y 226
+x 12
+y 252
 w 36
 h 20
 font "helvetica-bold-r-12.0"
@@ -497,7 +525,7 @@ major 4
 minor 1
 release 1
 x 12
-y 250
+y 276
 w 36
 h 20
 font "helvetica-bold-r-12.0"
@@ -516,7 +544,7 @@ major 4
 minor 7
 release 0
 x 48
-y 250
+y 276
 w 36
 h 20
 controlPv "$(P)$(R)StreamRate"
@@ -539,8 +567,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 11
-y 203
+x 12
+y 228
 w 192
 h 20
 font "helvetica-medium-r-12.0"
@@ -559,7 +587,7 @@ major 4
 minor 1
 release 1
 x 88
-y 250
+y 276
 w 16
 h 20
 font "helvetica-bold-r-12.0"
@@ -578,7 +606,7 @@ major 4
 minor 0
 release 0
 x 4
-y 36
+y 60
 w 216
 h 48
 lineColor index 14
@@ -593,7 +621,7 @@ major 4
 minor 7
 release 0
 x 128
-y 60
+y 84
 w 56
 h 20
 controlPv "$(P)$(R)StreamPort"
@@ -619,7 +647,7 @@ major 4
 minor 3
 release 0
 x 52
-y 40
+y 64
 w 72
 h 20
 fgColor index 14
@@ -647,7 +675,7 @@ major 4
 minor 3
 release 0
 x 16
-y 60
+y 84
 w 108
 h 20
 fgColor index 14
@@ -675,7 +703,7 @@ major 4
 minor 1
 release 0
 x 52
-y 40
+y 64
 w 36
 h 20
 fgColor index 25
@@ -699,7 +727,7 @@ major 4
 minor 1
 release 0
 x 88
-y 40
+y 64
 w 36
 h 20
 fgColor index 25
@@ -723,7 +751,7 @@ major 4
 minor 1
 release 0
 x 16
-y 60
+y 84
 w 36
 h 20
 fgColor index 25
@@ -747,7 +775,7 @@ major 4
 minor 1
 release 0
 x 52
-y 60
+y 84
 w 36
 h 20
 fgColor index 25
@@ -771,7 +799,7 @@ major 4
 minor 1
 release 0
 x 88
-y 60
+y 84
 w 36
 h 20
 fgColor index 25
@@ -795,7 +823,7 @@ major 4
 minor 1
 release 1
 x 4
-y 32
+y 56
 w 40
 h 16
 font "helvetica-medium-r-12.0"
@@ -814,16 +842,16 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 4
-y 4
-w 80
+x 168
+y 28
+w 32
 h 24
 font "helvetica-bold-r-12.0"
+fontAlign "right"
 fgColor index 14
 bgColor index 3
-useDisplayBg
 value {
-  "Stream Input"
+  "Input"
 }
 endObjectProperties
 
@@ -833,17 +861,16 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 92
-y 4
-w 92
+x 204
+y 28
+w 48
 h 24
-controlPv "$(P)$(R)StreamPort"
+controlPv "$(P)$(R)StreamInput"
 font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 25
 bgColor index 5
 editable
-motifWidget
 limitsFromDb
 nullColor index 40
 smartRefresh
@@ -858,7 +885,7 @@ major 4
 minor 0
 release 0
 x 4
-y 96
+y 120
 w 216
 h 40
 lineColor index 14
@@ -873,7 +900,7 @@ major 4
 minor 3
 release 0
 x 8
-y 112
+y 136
 w 160
 h 20
 fgColor index 14
@@ -901,7 +928,7 @@ major 4
 minor 1
 release 1
 x 4
-y 92
+y 116
 w 52
 h 16
 font "helvetica-medium-r-12.0"
@@ -921,7 +948,7 @@ major 4
 minor 1
 release 0
 x 8
-y 112
+y 136
 w 40
 h 20
 fgColor index 25
@@ -946,7 +973,7 @@ major 4
 minor 1
 release 0
 x 48
-y 112
+y 136
 w 40
 h 20
 fgColor index 25
@@ -971,7 +998,7 @@ major 4
 minor 1
 release 0
 x 88
-y 112
+y 136
 w 40
 h 20
 fgColor index 25
@@ -996,7 +1023,7 @@ major 4
 minor 1
 release 0
 x 128
-y 112
+y 136
 w 40
 h 20
 fgColor index 25
@@ -1021,7 +1048,7 @@ major 4
 minor 4
 release 0
 x 172
-y 112
+y 136
 w 40
 h 20
 fgColor index 14
@@ -1047,7 +1074,7 @@ major 4
 minor 0
 release 0
 x 4
-y 144
+y 168
 w 216
 h 40
 lineColor index 14
@@ -1062,7 +1089,7 @@ major 4
 minor 3
 release 0
 x 8
-y 160
+y 184
 w 159
 h 20
 fgColor index 14
@@ -1090,15 +1117,15 @@ major 4
 minor 1
 release 1
 x 4
-y 140
-w 52
+y 164
+w 71
 h 16
 font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 5
 value {
-  "Boxes"
+  "ROI Boxes"
 }
 border
 endObjectProperties
@@ -1110,7 +1137,7 @@ major 4
 minor 1
 release 0
 x 8
-y 160
+y 184
 w 40
 h 20
 fgColor index 25
@@ -1135,7 +1162,7 @@ major 4
 minor 1
 release 0
 x 48
-y 160
+y 184
 w 40
 h 20
 fgColor index 25
@@ -1160,7 +1187,7 @@ major 4
 minor 1
 release 0
 x 88
-y 160
+y 184
 w 40
 h 20
 fgColor index 25
@@ -1185,7 +1212,7 @@ major 4
 minor 1
 release 0
 x 128
-y 160
+y 184
 w 40
 h 20
 fgColor index 25
@@ -1210,7 +1237,7 @@ major 4
 minor 4
 release 0
 x 172
-y 159
+y 184
 w 40
 h 20
 fgColor index 14
@@ -1226,6 +1253,434 @@ displayFileName {
 }
 menuLabel {
   0 "adjustROI"
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 360
+y 124
+w 40
+h 24
+fgColor index 14
+bgColor index 3
+topShadowColor index 2
+botShadowColor index 12
+font "helvetica-medium-r-14.0"
+buttonLabel "Proc"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "areaDetectorScreens/NDProcess.edl"
+}
+menuLabel {
+  0 "Proc"
+}
+symbols {
+  0 "P=$(P),R=:Proc:"
+}
+replaceSymbols {
+  0 1
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 228
+y 156
+w 40
+h 20
+controlPv "$(P)$(R)ROI:ArrayRate_RBV"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 16
+fgAlarm
+bgColor index 12
+precision 0
+nullColor index 40
+smartRefresh
+useHexPrefix
+showUnits
+newPos
+objType "monitors"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 272
+y 156
+w 40
+h 20
+controlPv "$(P)$(R)CC:ArrayRate_RBV"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 16
+fgAlarm
+bgColor index 12
+precision 0
+nullColor index 40
+smartRefresh
+useHexPrefix
+showUnits
+newPos
+objType "monitors"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 316
+y 156
+w 40
+h 20
+controlPv "$(P)$(R)Over:ArrayRate_RBV"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 16
+fgAlarm
+bgColor index 12
+precision 0
+nullColor index 40
+smartRefresh
+useHexPrefix
+showUnits
+newPos
+objType "monitors"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 360
+y 156
+w 40
+h 20
+controlPv "$(P)$(R)Proc:ArrayRate_RBV"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 16
+fgAlarm
+bgColor index 12
+precision 0
+nullColor index 40
+smartRefresh
+useHexPrefix
+showUnits
+newPos
+objType "monitors"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 200
+y 0
+w 120
+h 24
+font "helvetica-bold-r-14.0"
+fgColor index 14
+bgColor index 3
+value {
+  "$(IMAGE)"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 300
+y 28
+w 80
+h 24
+controlPv "$(P)$(R)ArrayRate_RBV"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 15
+fgAlarm
+bgColor index 12
+precision 1
+nullColor index 40
+smartRefresh
+useHexPrefix
+showUnits
+newPos
+objType "monitors"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 260
+y 28
+w 32
+h 24
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 3
+value {
+  "Rate"
+}
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 224
+y 216
+w 200
+h 84
+lineColor index 14
+fill
+fillColor index 3
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 224
+y 212
+w 112
+h 16
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 5
+value {
+  "Image Processing"
+}
+border
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 360
+y 240
+w 40
+h 20
+fgColor index 25
+onColor index 4
+offColor index 3
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(P)$(R)Proc:SaveBackground"
+pressValue "1"
+onLabel "Save"
+offLabel "Save"
+3d
+useEnumNumeric
+font "helvetica-bold-r-12.0"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 356
+y 268
+w 60
+h 20
+controlPv "$(P)$(R)Proc:NumFilter"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 324
+y 268
+w 28
+h 20
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Num"
+}
+endObjectProperties
+
+# (Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 292
+y 240
+w 64
+h 20
+fgColor index 25
+onColor index 6
+offColor index 3
+inconsistentColor index 40
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(P)$(R)Proc:EnableBackground"
+indicatorPv "$(P)$(R)Proc:EnableBackground_RBV"
+onLabel "BkgdSub"
+offLabel "NoBkgdSub"
+3d
+font "helvetica-bold-r-12.0"
+objType "controls"
+endObjectProperties
+
+# (Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 256
+y 268
+w 64
+h 20
+fgColor index 25
+onColor index 6
+offColor index 3
+inconsistentColor index 40
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(P)$(R)Proc:EnableFilter"
+indicatorPv "$(P)$(R)Proc:EnableFilter_RBV"
+onLabel "Avg"
+offLabel "NoAvg"
+3d
+font "helvetica-bold-r-12.0"
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 228
+y 240
+w 58
+h 20
+font "helvetica-bold-r-12.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Bkgd Sub"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 228
+y 268
+w 24
+h 20
+font "helvetica-bold-r-12.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Avg"
+}
+endObjectProperties
+
+# (Byte)
+object ByteClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 404
+y 240
+w 18
+h 18
+controlPv "$(P)$(R)Proc:SaveBackground_RBV"
+lineColor index 14
+onColor index 15
+offColor index 19
+lineWidth 2
+numBits 1
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 92
+y 0
+w 96
+h 24
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Image Stream"
 }
 endObjectProperties
 

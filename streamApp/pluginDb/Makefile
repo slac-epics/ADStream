@@ -3,6 +3,9 @@ include $(TOP)/configure/CONFIG
 #----------------------------------------
 #  ADD MACRO DEFINITIONS AFTER THIS LINE
 
+# Install cross template
+DB += cross.db
+
 # Create and install image stream DB Files
 DB += dataStream.db
 DB += viewerStream.db
