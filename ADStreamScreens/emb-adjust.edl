@@ -1,0 +1,410 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 870
+y 1784
+w 780
+h 191
+font "helvetica-medium-r-12.0"
+ctlFont "helvetica-medium-r-12.0"
+btnFont "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 7
+textColor index 14
+ctlFgColor1 index 14
+ctlFgColor2 index 0
+ctlBgColor1 index 0
+ctlBgColor2 index 14
+topShadowColor index 0
+botShadowColor index 14
+title "$(CAM) emb-adjust"
+showGrid
+snapToGrid
+gridSize 4
+endScreenProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 0
+w 420
+h 72
+lineColor index 3
+fill
+fillColor index 3
+lineWidth 0
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 0
+y 0
+w 56
+h 72
+font "helvetica-bold-r-14.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+value {
+  "$(ADJ)"
+}
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 184
+y 4
+w 50
+h 28
+controlPv "$(CAM):$(ADJ):MinX_RBV"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-bold-r-14.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 128
+y 4
+w 50
+h 28
+controlPv "$(CAM):$(ADJ):MinX"
+font "helvetica-bold-r-14.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 364
+y 4
+w 50
+h 28
+controlPv "$(CAM):$(ADJ):SizeX_RBV"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-bold-r-14.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 308
+y 4
+w 50
+h 28
+controlPv "$(CAM):$(ADJ):SizeX"
+font "helvetica-bold-r-14.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 184
+y 36
+w 50
+h 28
+controlPv "$(CAM):$(ADJ):MinY_RBV"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-bold-r-14.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 128
+y 36
+w 50
+h 28
+controlPv "$(CAM):$(ADJ):MinY"
+font "helvetica-bold-r-14.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 364
+y 36
+w 50
+h 28
+controlPv "$(CAM):$(ADJ):SizeY_RBV"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-bold-r-14.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 308
+y 36
+w 50
+h 28
+controlPv "$(CAM):$(ADJ):SizeY"
+font "helvetica-bold-r-14.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+newPos
+noExecuteClipMask
+endObjectProperties
+
+# (Up/Down Button)
+object activeUpdownButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 60
+y 4
+w 64
+h 32
+fgColor index 25
+bgColor index 5
+topShadowColor index 68
+botShadowColor index 47
+controlPv "$(CAM):$(ADJ):MinX"
+coarseValue "10"
+fineValue "1"
+3d
+invisible
+rate 0.1
+font "helvetica-bold-r-10.0"
+limitsFromDb
+endObjectProperties
+
+# (Up/Down Button)
+object activeUpdownButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 60
+y 36
+w 64
+h 32
+fgColor index 25
+bgColor index 5
+topShadowColor index 68
+botShadowColor index 47
+controlPv "$(CAM):$(ADJ):MinY"
+coarseValue "10"
+fineValue "1"
+3d
+invisible
+rate 0.1
+font "helvetica-bold-r-10.0"
+limitsFromDb
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 64
+y 4
+w 52
+h 28
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "X Origin"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 64
+y 36
+w 52
+h 28
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Y Origin"
+}
+endObjectProperties
+
+# (Up/Down Button)
+object activeUpdownButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 240
+y 4
+w 64
+h 32
+fgColor index 25
+bgColor index 5
+topShadowColor index 68
+botShadowColor index 47
+controlPv "$(CAM):$(ADJ):SizeX"
+coarseValue "10"
+fineValue "1"
+3d
+invisible
+rate 0.1
+font "helvetica-bold-r-10.0"
+limitsFromDb
+endObjectProperties
+
+# (Up/Down Button)
+object activeUpdownButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 240
+y 36
+w 64
+h 32
+fgColor index 25
+bgColor index 5
+topShadowColor index 68
+botShadowColor index 47
+controlPv "$(CAM):$(ADJ):SizeY"
+coarseValue "10"
+fineValue "1"
+3d
+invisible
+rate 0.1
+font "helvetica-bold-r-10.0"
+limitsFromDb
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 244
+y 4
+w 52
+h 28
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "X Size"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 244
+y 36
+w 52
+h 28
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Y Size"
+}
+endObjectProperties
+
