@@ -1,4 +1,13 @@
 #! /usr/bin/env python
+##############################################################################
+## This file is part of 'ADStream'.
+## It is subject to the license terms in the LICENSE.txt file found in the 
+## top-level directory of this distribution and at: 
+##    https://confluence.slac.stanford.edu/display/ppareg/LICENSE.html. 
+## No part of 'ADStream', including this file, 
+## may be copied, modified, propagated, or distributed except according to 
+## the terms contained in the LICENSE.txt file.
+##############################################################################
 # Sample pyca script for python 2.7.2
 # Before running;
 # source /reg/g/pcds/setup/epicsenv-3.14.12.sh
