@@ -121,25 +121,34 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
         if verbose:
             print "Stream %s not found." % streamName
         return
+
+    # Fetch the stream's type and input port
     streamType		= caGetValue( streamPvName + ":StreamType" )
-    upStreamPort	= "CAM"
     streamPort		= caGetValue( streamPvName + ":StreamPort" )
+    upStreamPort	= "CAM"
     if streamPort:
         upStreamPort = streamPort
-    if upStreamPort	== "CAM":
-        imagePvName = cameraPvName
-    else:
-        imagePvName	= cameraPvName + ":" + streamPort
 
-    pluginType		= caGetValue( imagePvName + ":PluginType_RBV", verbose=False )
-    if pluginType == "NDPluginProcess":
-        imageWidth		= caGetValue( imagePvName + ":ArraySize0_RBV" )
-        imageHeight		= caGetValue( imagePvName + ":ArraySize1_RBV" )
+    # Determine the sourcePvName
+    if upStreamPort	== "CAM":
+        sourcePvName = cameraPvName
+        pluginType	= None
     else:
-        imageWidth		= caGetValue( imagePvName + ":ArraySizeX_RBV" )
-        imageHeight		= caGetValue( imagePvName + ":ArraySizeY_RBV" )
-    imageColor		= caGetValue( imagePvName + ":ColorMode_RBV" )
-    imageBits		= caGetValue( imagePvName + ":BitsPerPixel_RBV" )
+        # This stream's input is another plugin
+        sourcePvName	= cameraPvName + ":" + upStreamPort
+
+        # Make sure the plugin they asked for is enabled
+        caPutValue( sourcePvName + ":EnableCallbacks", 1 )
+        pluginType = caGetValue( sourcePvName + ":PluginType_RBV", verbose=False )
+
+    if pluginType == "NDPluginProcess":
+        sourceWidth		= caGetValue( sourcePvName + ":ArraySize0_RBV" )
+        sourceHeight	= caGetValue( sourcePvName + ":ArraySize1_RBV" )
+    else:
+        sourceWidth		= caGetValue( sourcePvName + ":ArraySizeX_RBV" )
+        sourceHeight	= caGetValue( sourcePvName + ":ArraySizeY_RBV" )
+    sourceColor		= caGetValue( sourcePvName + ":ColorMode_RBV" )
+    sourceBits		= caGetValue( sourcePvName + ":BitsPerPixel_RBV" )
 
     streamWidth		= caGetValue( streamPvName + ":StreamWidth" )
     streamHeight	= caGetValue( streamPvName + ":StreamHeight" )
@@ -160,10 +169,10 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
     if streamType == TY_STREAM_DATA:
         defCallbackTime = 0.0
         minCallbackTime = 0.0
-        defStreamWidth	= imageWidth
-        defStreamHeight = imageHeight
-        maxStreamWidth	= imageWidth
-        maxStreamHeight = imageHeight
+        defStreamWidth	= sourceWidth
+        defStreamHeight = sourceHeight
+        maxStreamWidth	= sourceWidth
+        maxStreamHeight = sourceHeight
         maxBits			= 16
         monoOnly		= False
     elif streamType == TY_STREAM_THUMBNAIL:
@@ -171,8 +180,8 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
         minCallbackTime = 0.2
         defStreamWidth	= 174
         defStreamHeight = 130
-        maxStreamWidth	= min( 200, imageWidth )
-        maxStreamHeight = min( 200, imageHeight )
+        maxStreamWidth	= min( 200, sourceWidth )
+        maxStreamHeight = min( 200, sourceHeight )
         maxBits			= 8
         monoOnly		= True
     else:
@@ -180,8 +189,8 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
         minCallbackTime = 0.03333
         defStreamHeight = 560
         defStreamWidth	= 640
-        maxStreamWidth	= min(  960, imageWidth )
-        maxStreamHeight = min( 1080, imageHeight )
+        maxStreamWidth	= min(  960, sourceWidth )
+        maxStreamHeight = min( 1080, sourceHeight )
         maxBits			= 16
         monoOnly		= False
 
@@ -200,47 +209,47 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
 
     # Set streamWidth
     if not streamWidth:
-        if imageHeight:
-            streamWidth = int(imageWidth * (float(streamHeight) / imageHeight))
+        if sourceHeight:
+            streamWidth = int(sourceWidth * (float(streamHeight) / sourceHeight))
         else:
             streamWidth = defStreamHeight
     if  streamWidth > maxStreamWidth:
         streamWidth = maxStreamWidth
 
     if verbose:
-        print "%s Image is %d x %d, target %d x %d" % ( streamPort,
-                imageWidth, imageHeight, streamWidth, streamHeight )
+        print "%s image is %d x %d, target %d x %d" % ( streamPort,
+                sourceWidth, sourceHeight, streamWidth, streamHeight )
 
     binning = 1
-    if imageWidth > streamWidth or imageHeight > streamHeight:
-        xRatio = float(imageWidth)  / streamWidth
-        yRatio = float(imageHeight) / streamHeight
+    if sourceWidth > streamWidth or sourceHeight > streamHeight:
+        xRatio = float(sourceWidth)  / streamWidth
+        yRatio = float(sourceHeight) / streamHeight
 
         # If ratio is between 1.1 and 2.1, bin by 2
         binX = int( round( xRatio + 0.4) )
         binY = int( round( yRatio + 0.4) )
         binning = max( binX, binY )
         if verbose:
-            print "Image/Stream width ratio = %f, height ratio = %f, binning %dx%d" % ( xRatio, yRatio, binning, binning )
+            print "Source/Stream width ratio = %f, height ratio = %f, binning %dx%d" % ( xRatio, yRatio, binning, binning )
 
-    if ccEnabled or ( monoOnly and imageColor >= 1 ):
+    if ccEnabled or ( monoOnly and sourceColor >= 1 ):
         # Use CC
         caPutValue( streamPvName + ":CC:EnableCallbacks", 1 )
         caPutValue( streamPvName + ":CC:NDArrayPort", upStreamPort )
         ccOut = caGetValue( streamPvName + ":CC:ColorModeOut_RBV" )
         if ccOut == 0:
-            imageBits	 = 8
+            sourceBits	 = 8
         upStreamPort = streamName + ":CC"
     else:
         caPutValue( streamPvName + ":CC:EnableCallbacks", 0 )
 
-    if not imageBits:
-        imageBits = 16
-    tgtBits = imageBits
+    if not sourceBits:
+        sourceBits = 16
+    tgtBits = sourceBits
     if  tgtBits > maxBits:
         tgtBits = maxBits
 
-    if binning > 1 or tgtBits < imageBits:
+    if binning > 1 or tgtBits < sourceBits:
         # Use ROI
         caPutValue( streamPvName + ":ROI:EnableCallbacks", 1 )
         caPutValue( streamPvName + ":ROI:NDArrayPort", upStreamPort )
@@ -255,10 +264,10 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
             caPutValue( streamPvName + ":ROI:DataTypeOut", "Automatic" )
 
         scale = binning * binning
-        if imageBits > tgtBits:
-            scale = scale * ( 2 ** (imageBits - tgtBits) )
+        if sourceBits > tgtBits:
+            scale = scale * ( 2 ** (sourceBits - tgtBits) )
         if verbose:
-            print "imageBits = %d, tgtBits = %d, scale = %d" % ( imageBits, tgtBits, scale )
+            print "sourceBits = %d, tgtBits = %d, scale = %d" % ( sourceBits, tgtBits, scale )
         caPutValue( streamPvName + ":ROI:Scale", scale )
         upStreamPort = streamName + ":ROI"
     else:
@@ -334,9 +343,9 @@ if __name__ == "__main__":
     cameraPvName = options.cameraPv
     streamName	 = options.stream
     try:
-        imageSizeXPv = Pv( cameraPvName + ":ArraySizeX_RBV" )
-        imageSizeXPv.connect(0.1)
-        imageSizeXPv.get( timeout=1.0 )
+        camSizeXPv = Pv( cameraPvName + ":ArraySizeX_RBV" )
+        camSizeXPv.connect(0.1)
+        camSizeXPv.get( timeout=1.0 )
     except Exception, msg:
         print "Camera not accessible: ", msg
         sys.exit()
