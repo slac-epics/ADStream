@@ -49,7 +49,7 @@ Most of the remaining required env variables characterize the camera characteris
 * IMAGE\_FTVL
 
 We typically define these by sourcing an env file specific to the camera model.
-For example, our MantaG201B.env file, which we've added to our ADProsilica module,
+For example, our MantaG146C.env file, which we've added to our ADProsilica module,
 looks like this:
 ```
 #
