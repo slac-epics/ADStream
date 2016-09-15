@@ -28,8 +28,10 @@ There are also cmd scripts and db files for each type of stream.
 
 To use in an IOC, define the ADSTREAM macro in your configure/RELEASE file and add the following lines
 in your App/Db/Makefile:
+```
 DB\_INSTALLS += $(wildcard $(ADSTREAM)/db/\*.cmd)
 DB\_INSTALLS += $(wildcard $(ADSTREAM)/db/\*.db)
+```
 
 In your st.cmd file, you'll need to define macros for the camera base prefix and port.
 For example:
@@ -47,27 +49,33 @@ Most of the remaining required env variables characterize the camera characteris
 We typically define these by sourcing an env file specific to the camera model.
 For example, our MantaG201B.env file, which we've added to our ADProsilica module,
 looks like this:
-> #
-> # ----- Manta G146C ENV Vars -----
-> #
-> epicsEnvSet( "IMAGE\_FTVL",			"UCHAR"		)
-> epicsEnvSet( "IMAGE\_TYPE",			"Int8"		)
-> epicsEnvSet( "IMAGE\_BIT\_DEPTH",		"12"		)
-> epicsEnvSet( "IMAGE\_XSIZE",			"1388"		)
-> epicsEnvSet( "IMAGE\_YSIZE",			"1038"		)
-> epicsEnvSet( "IMAGE\_NELM",			"4322232"	)	# X\*Y (B/W) or X\*Y\*3 (Color)
+```
+\#
+\# ----- Manta G146C ENV Vars -----
+\#
+epicsEnvSet( "IMAGE\_FTVL",         "UCHAR"     )
+epicsEnvSet( "IMAGE\_TYPE",         "Int8"      )
+epicsEnvSet( "IMAGE\_BIT\_DEPTH",   "12"        )
+epicsEnvSet( "IMAGE\_XSIZE",        "1388"      )
+epicsEnvSet( "IMAGE\_YSIZE",        "1038"      )
+epicsEnvSet( "IMAGE\_NELM",         "4322232"   )   # X\*Y (B/W) or X\*Y\*3 (Color)
+```
 
 In st.cmd, you can then install as many image streams as desired by defining the common env variables
 and then adding lines like this:
+```
 epicsEnvSet( "IMAGE\_NAME", "IMAGE1" )
 . db/ViewerStream.cmd
+```
 
 Individual plugins can be loaded by defining macros N and PLUGIN\_SRC, along w/ any plugin specific macros,
 and sourcing the appropriate cmd script.
 For example, you can load an additional Stats plugin like this:
+```
 epicsEnvSet( "N", 2 )
 epicsEnvSet( "PLUGIN\_SRC", "$(CAM_PORT)" )
 . db/pluginStats.cmd
+```
 
 ## EDM usage
 From edm, the way it works is that any buttons that change stream characteristics are stacked
