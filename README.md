@@ -6,6 +6,7 @@ width, and desired update rate.
 
 You can also do image averaging, and view and adjust 4 crosses and 4 ROI overlay boxes.
 The overlays have calc records to handle binning differences between streams.
+A python script is used to reconfigure each stream's plugin chain as needed to produce the desired result.
 
 Stream types include:
 * DataStream: Full rate, full res
