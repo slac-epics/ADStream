@@ -1,8 +1,11 @@
+archive
+autosave
 bin
 lib
 include
 db
 dbd
+tags
 *_BAK.adl
 documentation.html
 envPaths*

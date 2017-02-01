@@ -1,0 +1,127 @@
+#==============================================================
+#
+#  Name: RELEASE_NOTES
+#
+#==============================================================
+
+R1.7.0		2017-01-31 Bruce Hill
+	Fixed visibility of BayerMode vs BitsPerPixel in emb-stream-sts.edl
+	Problem was due to nested visibility groups based on the same PV w/ different visibility settings.
+		edm does not support this so reworked visibility groups on ColorMode to avoid nesting.
+	Added comment re python script
+	Broke out error checking of RELEASE_SITE and EPICS_BASE to TOP/../../RELEASE_SITE.check
+		and TOP/../../EPICS_BASE.check
+
+R1.6.2		2016-10-14 Bruce Hill
+	Updated ADCore to R2.2-1.0.0
+	Updated build files for git module work-flow
+
+R1.6.1		2016-10-14 Bruce Hill
+	Updated build files for git module work-flow
+	Fixed mismatch in model name for MantaG146C.env example
+	Added some more examples for loading and configuring streams.
+	Added a README.md file for github
+	Applied SLAC licensing script.
+	Added check to make sure a plugin such as ROI1 selected as a stream source is enabled.
+	Also changed variable names such as imageFoo to sourceFoo as its a more intuitive naming scheme
+		for the stream's source, while image could be related to either the source or the output.
+	Arranged order of stream plugin rates to match processing order.
+	Removed SaveBackground_RBV green status square as it wasn't helpful.
+	Tweaked some image processing button labels to be more intuitive.
+
+R1.6.0		2016-08-26 Bruce Hill
+	Added a Process plugin to each stream.
+	Also fixed some bugs w/ selecting the top level Proc1 plugin as a stream source.
+	Added controls for averaging and bkgd selection to the stream controls,
+		including on the wide and landscape edm viewer templates.
+	Added new emb-adjust.edl screen
+	Fixed name of ORIG screen for thumbnail.edl to expand to on + button
+	Also fixed some bugs w/ selecting the top level Proc1 plugin as a stream source.
+	Modified script to convert incoming hutch macro to lowercase.
+	This is what we want because the /reg/g/pcds/pyps/config/* directories are lowercase, and Mike's script ignores case
+
+R1.5.0		2016-07-01 Bruce Hill
+	Screens and scripts update.
+	Fixes some launch and configuration issues for generated viewer edm files.
+	Adds support for selecting all stream sources and overlay on/off via edm viewers.
+
+R1.4.0		2016-05-10 Bruce Hill
+	Added an adjustROI screen and fixed cross and box calculations for overlays inside an roi'd image.
+
+R1.3.0		2016-05-05 Bruce Hill
+	Added a StreamInput mbbi to each stream to allow pushbutton selection of it's input port, along w/
+		updates to configStream.py to support it and buttons for CAM, ROI1, ROI2, etc on the embedded stream screen.
+	Updated plugin reset mechanism to not use the obsolete pluginReset seq records.
+	Removed some old stuff left in for backward compatibility that's now causing more trouble than help.
+
+R1.2.0		2016-04-28 Bruce Hill
+	Added python configStream.py script for automatic stream configuration.
+	Renamed stream overlays Box1-4 and Cross1-4 and added calc records so they track top
+		level ROI and cross values w/ appropriate scaling by bin factors
+	Added support for overlays and configuring all streams.
+	Added a streamOverlay screen w/ stream appropriate naviagation.
+	Expanded commonStreams to show DATA1, DATA2, IMAGE1-3, and THUMBNAIL streams.
+	Fixed links in box and cross calc records
+	Replaced db based resetStream sequences w/ python configStream and configPlugin scripts for more flexibility.
+	Fixed issues w/ resetPlugin logic for string parameters.
+	reset sequences are working, but may prove to be too inflexible.
+	Updated the resetPCDSPlugins.sh script, modifified ImagePlugin.edl to hide
+		Bayer widget when in mono mode, and removed some obsolete fixed dimension viewer screens.
+	Adding more default db files for all ADCore plugins
+	Added files to support defining and restoring plugin default settings.
+
+R1.1.0		2016-04-21 Bruce Hill
+	Added embedded thumbnail viewer whose + button creates and launches a new viewer via ADStreamScreens/edmViewer.sh
+	Also fixed missing HUTCH macro in reconfigure button and tweaked emb-stream-sts.edl layout.
+
+R1.0.0		2016-03-26 Bruce Hill
+	Major rework adding support for dataStream, viewerStream, and thumbnailStream, each w/ it's own dedicated ROI plugin.
+	Also fixed issues w/ python viewer launchers and fixed support for pcdsPlugins
+
+R0.9.3		2016-03-11 Bruce Hill
+	Fixed some issues w/ the automatic edmViewer creation and reconfig.
+	Rolled back to asyn/R4.23-0.5.0 till EDT SER works w/ newer asyn.
+
+R0.9.2		2016-03-04 Bruce Hill
+	Bumped ADCore up to R2.1-0.4.1 and removed ffmpegServer dependency
+	Followed new pattern of defining one PKG_TOP per pkg and adding /lib, /include, etc.
+	Also moved the ffmpeg related plugin scripts and substitution files here from ADStream
+	so it didn't have to depend on a specific ffmpegServer version.
+
+R0.9.1		2016-02-11 Bruce Hill
+	Updated ffmpegServer to R1.9-1.0.4
+	Modified camviewer launchers to use configSiteTop soft link instead of hard coding the NEH NFS path /reg/g/pcds/pyps/...
+
+R0.9.0		2016-02-04 Bruce Hill
+	Removed final uses of setupScript, installing all scripts and db files to db.
+	Also updated to latest dependent module versions.
+
+R0.8.1		2015-12-10 Michael C. Browne
+	Latest and greatest ADCore.
+
+R0.8.0		2015-03-18 Bruce Hill
+	Updated to ADCore R2.1-0.3.0 for bitsPerPixel fix
+
+R0.7.0		2015-03-06 Bruce Hill
+	Updated ADCore version, fixed python launcher, improved edm custom viewers
+
+R0.6.0		2015-02-14 Bruce Hill
+	Added more viewers for different bit depths and updated to latest ADCore R2.0-0.8.0
+
+R0.5.0		2015-01-15 Bruce Hill
+	Adding a variety of ADCore compatible viewers for different resolutions and bit depths.
+	Bumped up to ADCore R2.0-0.7.0
+
+R0.4.0		2014-12-03 Bruce Hill
+	Bumped up to ADCore R2.0-0.7.0
+
+R0.3.0		2014-10-10 Bruce Hill
+	Bumped up ADCore to R2.0-0.6.0
+
+R0.2.0		2014-10-01 Bruce Hill
+	Bumped up ADCore to R2.0-0.5.0
+
+R0.1.0		2014-09-17 Bruce Hill
+	First version of ADStreams.
+	Just makes common setupScripts available.
+	More to come later
