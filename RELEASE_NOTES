@@ -4,6 +4,9 @@
 #
 #==============================================================
 
+R1.7.1		2017-01-31 Bruce Hill
+	Updated ADCore to R2.2-1.1.1
+
 R1.7.0		2017-01-31 Bruce Hill
 	Fixed visibility of BayerMode vs BitsPerPixel in emb-stream-sts.edl
 	Problem was due to nested visibility groups based on the same PV w/ different visibility settings.
