@@ -4,6 +4,10 @@
 #
 #==============================================================
 
+R1.8.0		2017-04-12 Bruce Hill
+	Updated for compatibility w/ ADCore/R2.6.0
+	(macro name Enabled changed to ENABLED) 
+
 R1.7.1		2017-01-31 Bruce Hill
 	Updated ADCore to R2.2-1.1.1
 
