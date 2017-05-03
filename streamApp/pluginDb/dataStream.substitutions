@@ -33,20 +33,6 @@ file streamCross.template
 }
 
 # stdArray Plugin
-file NDPluginBase.template
-{
-    {
-    PORT            = "$(IMAGE_NAME)",
-    P               = "$(CAM):",
-    R               = "$(PORT):",
-    ADDR            = "\$(ADDR=0)",
-    TIMEOUT         = "\$(TIMEOUT=1)",
-    TSE             = "\$(TSE=-2)",
-    ENABLED          = "1",
-    NDARRAY_PORT    = "$(CAM_PORT)",
-    NDARRAY_ADDR    = "\$(NDARRAY_ADDR=0)",
-    }
-}
 file NDStdArrays.template
 {
     {
@@ -55,6 +41,10 @@ file NDStdArrays.template
     R               = "$(PORT):",
     ADDR            = "\$(ADDR=0)",
     TIMEOUT         = "\$(TIMEOUT=1)",
+    TSE             = "\$(TSE=-2)",
+    ENABLED         = "1",
+    NDARRAY_PORT    = "\$(CAM_PORT)",
+    NDARRAY_ADDR    = "\$(NDARRAY_ADDR=0)",
     TYPE            = "$(IMAGE_TYPE)",
     FTVL            = "$(IMAGE_FTVL)",
     NELEMENTS       = "$(IMAGE_NELM)",
@@ -62,34 +52,24 @@ file NDStdArrays.template
 }
 
 # ROI Plugin
-file NDPluginBase.template
-{
-    {
-    P               = "$(CAM):",
-    R               = "$(IMAGE_NAME):ROI:",
-    PORT            = "$(IMAGE_NAME):ROI",
-    PLUGIN_SRC      = "$(CAM_PORT)",
-    ADDR            = "\$(ADDR=0)",
-    TIMEOUT         = "\$(TIMEOUT=1)",
-    TSE             = "\$(TSE=-2)",
-    ENABLED          = "0",
-    NDARRAY_PORT    = "$(CAM_PORT)",
-    NDARRAY_ADDR    = "\$(NDARRAY_ADDR=0)",
-    }
-}
 file NDROI.template
 {
     {
     PORT            = "$(IMAGE_NAME):ROI",
     P               = "$(CAM):",
     R               = "$(PORT):",
+    PLUGIN_SRC      = "\$(CAM_PORT)",
     ADDR            = "\$(ADDR=0)",
     TIMEOUT         = "\$(TIMEOUT=1)",
+    TSE             = "\$(TSE=-2)",
+    ENABLED         = "0",
+    NDARRAY_PORT    = "\$(CAM_PORT)",
+    NDARRAY_ADDR    = "\$(NDARRAY_ADDR=0)",
     }
 }
 
 # ColorConvert plugin
-file NDPluginBase.template
+file NDColorConvert.template
 {
     {
     PORT            = "$(IMAGE_NAME):CC",
@@ -98,24 +78,14 @@ file NDPluginBase.template
     ADDR            = "\$(ADDR=0)",
     TIMEOUT         = "\$(TIMEOUT=1)",
     TSE             = "\$(TSE=-2)",
-    ENABLED          = "0",
-    NDARRAY_PORT    = "$(CAM_PORT)",
+    ENABLED         = "0",
+    NDARRAY_PORT    = "\$(CAM_PORT)",
     NDARRAY_ADDR    = "\$(NDARRAY_ADDR=0)",
-    }
-}
-file NDColorConvert.template
-{
-    {
-    P               = "$(CAM):",
-    PORT            = "$(IMAGE_NAME):CC",
-    R               = "$(PORT):",
-    ADDR            = "\$(ADDR=0)",
-    TIMEOUT         = "\$(TIMEOUT=1)",
     }
 }
 
 # Process plugin
-file NDPluginBase.template
+file NDProcess.template
 {
     {
     PORT            = "$(IMAGE_NAME):Proc",
@@ -124,24 +94,14 @@ file NDPluginBase.template
     ADDR            = "\$(ADDR=0)",
     TIMEOUT         = "\$(TIMEOUT=1)",
     TSE             = "\$(TSE=-2)",
-    ENABLED          = "0",
-    NDARRAY_PORT    = "$(CAM_PORT)",
+    ENABLED         = "0",
+    NDARRAY_PORT    = "\$(CAM_PORT)",
     NDARRAY_ADDR    = "\$(NDARRAY_ADDR=0)",
-    }
-}
-file NDProcess.template
-{
-    {
-    P               = "$(CAM):",
-    PORT            = "$(IMAGE_NAME):Proc",
-    R               = "$(PORT):",
-    ADDR            = "\$(ADDR=0)",
-    TIMEOUT         = "\$(TIMEOUT=1)",
     }
 }
 
 # Overlay Plugin
-file NDPluginBase.template
+file NDOverlay.template
 {
     {
     PORT            = "$(IMAGE_NAME):Over",
@@ -150,19 +110,9 @@ file NDPluginBase.template
     ADDR            = "\$(ADDR=0)",
     TIMEOUT         = "\$(TIMEOUT=1)",
     TSE             = "\$(TSE=-2)",
-    ENABLED          = "1",
-    NDARRAY_PORT    = "$(CAM_PORT)",
+    ENABLED         = "1",
+    NDARRAY_PORT    = "\$(CAM_PORT)",
     NDARRAY_ADDR    = "\$(NDARRAY_ADDR=0)",
-    }
-}
-file NDOverlay.template
-{
-    {
-    P           = $(CAM):,
-    R           = $(IMAGE_NAME):Over:,
-    PORT        = $(IMAGE_NAME):Over,
-    ADDR        = "\$(ADDR=0)",
-    TIMEOUT     = "\$(TIMEOUT=1)",
     }
 }
 

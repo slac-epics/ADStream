@@ -11,6 +11,7 @@ documentation.html
 envPaths*
 cdCommands
 dllPath.bat
+RELEASE_SITE
 auto_settings.sav*
 configure/*.local
 O.*/

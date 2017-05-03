@@ -58,28 +58,28 @@ DB_INSTALLS += $(TOP)/streamApp/pluginDb/pluginTIFF.cmd
 DB_INSTALLS += $(TOP)/streamApp/pluginDb/pluginTransform.cmd
 
 # Create and install image stream archive Files
-ARCHIVE += dataStream.archive
-ARCHIVE += viewerStream.archive
-ARCHIVE += thumbnailStream.archive
+# ARCHIVE += dataStream.archive
+# ARCHIVE += viewerStream.archive
+# ARCHIVE += thumbnailStream.archive
 
 # Create and install plugin set archive files
-ARCHIVE += commonPlugins.archive
-ARCHIVE += pcdsPlugins.archive
+# ARCHIVE += commonPlugins.archive
+# ARCHIVE += pcdsPlugins.archive
 
 # Create and install individual plugin archive Files
-ARCHIVE += pluginColorConvert.archive
-ARCHIVE += pluginHDF5.archive
-ARCHIVE += pluginImage.archive
-ARCHIVE += pluginJPEG.archive
-ARCHIVE += pluginMagick.archive
-ARCHIVE += pluginNetCDF.archive
-ARCHIVE += pluginNexus.archive
-ARCHIVE += pluginOverlay.archive
-ARCHIVE += pluginProcess.archive
-ARCHIVE += pluginROI.archive
-ARCHIVE += pluginStats.archive
-ARCHIVE += pluginTIFF.archive
-ARCHIVE += pluginTransform.archive
+# ARCHIVE += pluginColorConvert.archive
+# ARCHIVE += pluginHDF5.archive
+# ARCHIVE += pluginImage.archive
+# ARCHIVE += pluginJPEG.archive
+# ARCHIVE += pluginMagick.archive
+# ARCHIVE += pluginNetCDF.archive
+# ARCHIVE += pluginNexus.archive
+# ARCHIVE += pluginOverlay.archive
+# ARCHIVE += pluginProcess.archive
+# ARCHIVE += pluginROI.archive
+# ARCHIVE += pluginStats.archive
+# ARCHIVE += pluginTIFF.archive
+# ARCHIVE += pluginTransform.archive
 
 include $(TOP)/configure/RULES
 #----------------------------------------

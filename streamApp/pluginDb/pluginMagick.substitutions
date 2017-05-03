@@ -2,40 +2,34 @@
 # pluginMagick.substitutions
 #
 
-file NDPluginBase.template
-{
-	{
-	P=$(CAM):,
-	R=Magick$(N):,
-	PORT=Magick$(N),
-	ADDR=0,
-	TIMEOUT=1,
-	NDARRAY_PORT=$(PLUGIN_SRC),
-	NDARRAY_ADDR=0,
-	}
-}
 file NDFile.template
 {
 	{
-	P=$(CAM):,
-	R=Magick$(N):,
-	PORT=Magick$(N),
-	ADDR=0,
-	TIMEOUT=1
+    PORT            = "Magick\$(N)",
+    P               = "$(CAM):",
+	R				= "$(PORT):",
+    ADDR            = "\$(ADDR=0)",
+    TIMEOUT         = "\$(TIMEOUT=1)",
 	}
 }
 file NDFileAutoFileNumber.template
 {
-	{ P=$(CAM):, R=Magick$(N):  }
+	{
+    PORT            = "Magick\$(N)",
+    P               = "$(CAM):",
+	R				= "$(PORT):",
+	}
 }
 file NDFileMagick.template
 {
 	{
-	P=$(CAM):,
-	R=Magick$(N):,
-	PORT=Magick$(N),
-	ADDR=0,
-	TIMEOUT=1
+    PORT            = "Magick\$(N)",
+    P               = "$(CAM):",
+	R				= "$(PORT):",
+    ADDR            = "\$(ADDR=0)",
+    TIMEOUT         = "\$(TIMEOUT=1)",
+    NDARRAY_PORT    = "\$(PLUGIN_SRC)",
+    NDARRAY_ADDR    = "\$(NDARRAY_ADDR=0)",
 	}
 }
 
