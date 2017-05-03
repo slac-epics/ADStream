@@ -4,6 +4,11 @@
 #
 #==============================================================
 
+R1.9.0		2017-05-03 Bruce Hill
+	Updated to latest ADCore/R2.6-2.1.0
+	Fixed numerous substitutions issues related to NDPluginBase.template
+		now being included in each plugin template file.
+
 R1.8.1		2017-04-20 Bruce Hill
 	Updated for ADCore/R2.6-0.3.0
 
