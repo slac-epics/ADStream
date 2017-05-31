@@ -241,6 +241,10 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
         if verbose:
             print "Source/Stream width ratio = %f, height ratio = %f, binning %dx%d" % ( xRatio, yRatio, binning, binning )
 
+    # Check for Bayer mode conversion turned off
+    if sourceColor == 1: # Bayer
+        caPutValue( cameraPvName + ":BayerConvert", 1 ) # RGB1
+        
     if ccEnabled or ( monoOnly and sourceColor >= 1 ):
         # Use CC
         caPutValue( streamPvName + ":CC:EnableCallbacks", 1 )
