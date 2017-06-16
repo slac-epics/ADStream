@@ -205,7 +205,7 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
         monoOnly		= False
 
     # Check against streamNELM
-    if  maxStreameWidth * maxStreameHeight > streamNELM:
+    if  maxStreamWidth * maxStreamHeight > streamNELM:
         maxStreamWidth	= int(streamNELM / 2)
         maxStreamHeight = int(streamNELM / 2)
 
