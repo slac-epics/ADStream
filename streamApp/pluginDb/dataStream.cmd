@@ -8,5 +8,5 @@ NDOverlayConfigure(      "$(IMAGE_NAME):Over", 16,      0, "$(CAM_PORT)", 0, 8 )
 NDProcessConfigure(      "$(IMAGE_NAME):Proc",$(QSIZE), 0, "$(CAM_PORT)", 0 )
 
 # Load the dataStream records
-dbLoadRecords( "db/dataStream.db",      "CAM=$(CAM_PV),CAM_PORT=$(CAM_PORT),PLUGIN_SRC=$(PLUGIN_SRC),IMAGE_NAME=$(IMAGE_NAME),IMAGE_NELM=$(IMAGE_NELM),IMAGE_FTVL=$(IMAGE_FTVL),IMAGE_TYPE=$(IMAGE_TYPE)" )
+dbLoadRecords( "db/dataStream.db",      "CAM=$(CAM_PV),CAM_PORT=$(CAM_PORT),PLUGIN_SRC=$(PLUGIN_SRC),IMAGE_NAME=$(IMAGE_NAME),STREAM_NELM=$(STREAM_NELM),IMAGE_FTVL=$(IMAGE_FTVL),IMAGE_TYPE=$(IMAGE_TYPE)" )
 

@@ -67,12 +67,19 @@ epicsEnvSet( "IMAGE_NELM",      "4322232"   )   # X*Y (B/W) or X*Y*3 (Color)
 In st.cmd, you can then install as many image streams as desired by defining the common env variables
 and then adding lines like this:
 ```
+# Add DataStream named DATA1
 epicsEnvSet( "IMAGE_NAME", "DATA1" )
 . db/DataStream.cmd
+
+# Add ViewerStreams named IMAGE1 and IMAGE2
+epicsEnvSet( "VIEWER_NELM", $(IMAGE_NELM) )
 epicsEnvSet( "IMAGE_NAME", "IMAGE1" )
 . db/ViewerStream.cmd
 epicsEnvSet( "IMAGE_NAME", "IMAGE2" )
 . db/ViewerStream.cmd
+
+# Add a ThumbnailStream named THUMBNAIL
+epicsEnvSet( "THUMBNAIL_NELM", $(IMAGE_NELM) )
 epicsEnvSet( "IMAGE_NAME", "THUMBNAIL" )
 . db/ThumbnailStream.cmd
 ```

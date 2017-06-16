@@ -3,8 +3,8 @@
 file streamLogic.template
 {
     {
-    P           = "$(CAM):",
-    R           = "$(IMAGE_NAME):",
+    P           = "\$(CAM):",
+    R           = "\$(IMAGE_NAME):",
 	TYPE		= "1",
 	RATE		= "\$(RATE=0)",
 	WIDTH		= "\$(WIDTH=0)",
@@ -16,28 +16,28 @@ file streamBox.template
 {
 	pattern
 	{	N,	P,			R					}
-    { 	1,	"$(CAM):",  "$(IMAGE_NAME):"	}
-    { 	2,	"$(CAM):",  "$(IMAGE_NAME):"	}
-    { 	3,	"$(CAM):",  "$(IMAGE_NAME):"	}
-    { 	4,	"$(CAM):",  "$(IMAGE_NAME):"	}
+    { 	1,	"\$(CAM):",  "\$(IMAGE_NAME):"	}
+    { 	2,	"\$(CAM):",  "\$(IMAGE_NAME):"	}
+    { 	3,	"\$(CAM):",  "\$(IMAGE_NAME):"	}
+    { 	4,	"\$(CAM):",  "\$(IMAGE_NAME):"	}
 }
 
 file streamCross.template
 {
 	pattern
 	{	N,	P,			R					}
-    { 	1,	"$(CAM):",  "$(IMAGE_NAME):"	}
-    { 	2,	"$(CAM):",  "$(IMAGE_NAME):"	}
-    { 	3,	"$(CAM):",  "$(IMAGE_NAME):"	}
-    { 	4,	"$(CAM):",  "$(IMAGE_NAME):"	}
+    { 	1,	"\$(CAM):",  "\$(IMAGE_NAME):"	}
+    { 	2,	"\$(CAM):",  "\$(IMAGE_NAME):"	}
+    { 	3,	"\$(CAM):",  "\$(IMAGE_NAME):"	}
+    { 	4,	"\$(CAM):",  "\$(IMAGE_NAME):"	}
 }
 
 # stdArray Plugin
 file NDStdArrays.template
 {
     {
-    PORT            = "$(IMAGE_NAME)",
-    P               = "$(CAM):",
+    PORT            = "\$(IMAGE_NAME)",
+    P               = "\$(CAM):",
     R               = "$(PORT):",
     ADDR            = "\$(ADDR=0)",
     TIMEOUT         = "\$(TIMEOUT=1)",
@@ -45,9 +45,9 @@ file NDStdArrays.template
     ENABLED         = "\$(ENABLED=1)"
     NDARRAY_PORT    = "\$(CAM_PORT)",
     NDARRAY_ADDR    = "\$(NDARRAY_ADDR=0)",
-    TYPE            = "$(IMAGE_TYPE)",
-    FTVL            = "$(IMAGE_FTVL)",
-    NELEMENTS       = "$(IMAGE_NELM)",
+    TYPE            = "\$(IMAGE_TYPE)",
+    FTVL            = "\$(IMAGE_FTVL)",
+    NELEMENTS       = "\$(STREAM_NELM=\$(IMAGE_NELM))",
     }
 }
 
@@ -55,8 +55,8 @@ file NDStdArrays.template
 file NDROI.template
 {
     {
-    PORT            = "$(IMAGE_NAME):ROI",
-    P               = "$(CAM):",
+    PORT            = "\$(IMAGE_NAME):ROI",
+    P               = "\$(CAM):",
     R               = "$(PORT):",
     ADDR            = "\$(ADDR=0)",
     TIMEOUT         = "\$(TIMEOUT=1)",
@@ -79,8 +79,8 @@ file NDROI.template
 file NDColorConvert.template
 {
     {
-    PORT            = "$(IMAGE_NAME):CC",
-    P               = "$(CAM):",
+    PORT            = "\$(IMAGE_NAME):CC",
+    P               = "\$(CAM):",
     R               = "$(PORT):",
     ADDR            = "\$(ADDR=0)",
     TIMEOUT         = "\$(TIMEOUT=1)",
@@ -95,8 +95,8 @@ file NDColorConvert.template
 file NDProcess.template
 {
     {
-    PORT            = "$(IMAGE_NAME):Proc",
-    P               = "$(CAM):",
+    PORT            = "\$(IMAGE_NAME):Proc",
+    P               = "\$(CAM):",
     R               = "$(PORT):",
     ADDR            = "\$(ADDR=0)",
     TIMEOUT         = "\$(TIMEOUT=1)",
@@ -111,8 +111,8 @@ file NDProcess.template
 file NDOverlay.template
 {
     {
-    PORT            = "$(IMAGE_NAME):Over",
-    P               = "$(CAM):",
+    PORT            = "\$(IMAGE_NAME):Over",
+    P               = "\$(CAM):",
     R               = "$(PORT):",
     ADDR            = "\$(ADDR=0)",
     TIMEOUT         = "\$(TIMEOUT=1)",

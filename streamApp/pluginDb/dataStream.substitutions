@@ -47,7 +47,7 @@ file NDStdArrays.template
     NDARRAY_ADDR    = "\$(NDARRAY_ADDR=0)",
     TYPE            = "$(IMAGE_TYPE)",
     FTVL            = "$(IMAGE_FTVL)",
-    NELEMENTS       = "$(IMAGE_NELM)",
+    NELEMENTS       = "\$(STREAM_NELM=\$(IMAGE_NELM))",
     }
 }
 

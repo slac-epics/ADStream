@@ -134,6 +134,7 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
     # Fetch the stream's type and input port
     streamType		= caGetValue( streamPvName + ":StreamType" )
     streamPort		= caGetValue( streamPvName + ":StreamPort" )
+    streamNELM		= caGetValue( streamPvName + ":ArrayData.NELM" )
     upStreamPort	= "CAM"
     if streamPort:
         upStreamPort = streamPort
@@ -193,7 +194,7 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
         maxStreamHeight = min( 200, sourceHeight )
         maxBits			= 8
         monoOnly		= True
-    else:
+    else: # streamType == TY_STREAM_VIEWER
         defCallbackTime = 0.1
         minCallbackTime = 0.03333
         defStreamHeight = 560
@@ -202,6 +203,11 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
         maxStreamHeight = min( 1080, sourceHeight )
         maxBits			= 16
         monoOnly		= False
+
+    # Check against streamNELM
+    if  maxStreameWidth * maxStreameHeight > streamNELM:
+        maxStreamWidth	= int(streamNELM / 2)
+        maxStreamHeight = int(streamNELM / 2)
 
     # Set callbackTime
     callbackTime = defCallbackTime
@@ -288,19 +294,24 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
         caPutValue( streamPvName + ":ROI:BinX", 1 )
         caPutValue( streamPvName + ":ROI:BinY", 1 )
 
+    avgNum = 1
     if avgEnabled:
         # Use Recursive Averaging Filter in Process plugin
         avgNum		= caGetValue( streamPvName + ":Proc:NumFilter" )
-        if avgNum > 1:
-            caPutValue( streamPvName + ":Proc:EnableCallbacks", 1 )
-            caPutValue( streamPvName + ":Proc:NDArrayPort", upStreamPort )
-            upStreamPort = streamName + ":Proc"
+    if avgNum > 1:
+        caPutValue( streamPvName + ":Proc:EnableCallbacks", 1 )
+        caPutValue( streamPvName + ":Proc:NDArrayPort", upStreamPort )
+        upStreamPort = streamName + ":Proc"
+    else:
+        caPutValue( streamPvName + ":Proc:EnableCallbacks", 0 )
 
     if overEnabled:
         # Use Overlays
         caPutValue( streamPvName + ":Over:EnableCallbacks", 1 )
         caPutValue( streamPvName + ":Over:NDArrayPort", upStreamPort )
         upStreamPort = streamName + ":Over"
+    else:
+        caPutValue( streamPvName + ":Over:EnableCallbacks", 0 )
 
     # Make sure we don't have zero size for ROI and crosses
     if  caGetValue( cameraPvName + ":ROI1:SizeX_RBV" ) == 0:
