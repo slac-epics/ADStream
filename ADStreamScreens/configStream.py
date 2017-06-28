@@ -196,10 +196,10 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
         monoOnly		= True
     else: # streamType == TY_STREAM_VIEWER
         defCallbackTime = 0.1
-        minCallbackTime = 0.03333
+        minCallbackTime = 0.0
         defStreamHeight = 560
         defStreamWidth	= 640
-        maxStreamWidth	= min(  960, sourceWidth )
+        maxStreamWidth	= min( 1024, sourceWidth )
         maxStreamHeight = min( 1080, sourceHeight )
         maxBits			= 16
         monoOnly		= False
