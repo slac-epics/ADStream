@@ -1,4 +1,4 @@
-# cross.template - generic cross records to hold common X, Y and color for cross overlays
+# cross.template - generic cross records to hold X and Y position and size for cross overlays
 
 record( longout, "$(P)$(R)Cross$(N):MinX" )
 {
@@ -22,14 +22,45 @@ record( longin, "$(P)$(R)Cross$(N):MinY_RBV" )
 	field( INP,  "$(P)$(R)Cross$(N):MinY" )
 }
 
-record( longout, "$(P)$(R)Cross$(N)Color" )
+record( longout, "$(P)$(R)Cross$(N):Color" )
 {
-	field( FLNK, "$(P)$(R)Cross$(N)Color_RBV" )
+	field( OUT,  "$(P)$(R)Cross$(N):Green" )
+	field( FLNK, "$(P)$(R)Cross$(N):Color_RBV" )
 }
 
-record( longin, "$(P)$(R)Cross$(N)Color_RBV" )
+record( longin, "$(P)$(R)Cross$(N):Color_RBV" )
 {
-	field( INP,  "$(P)$(R)Cross$(N)Color" )
+	field( INP,  "$(P)$(R)Cross$(N):Green_RBV CP" )
+}
+
+record( longout, "$(P)$(R)Cross$(N):Red" )
+{
+	field( FLNK, "$(P)$(R)Cross$(N):Red_RBV" )
+}
+
+record( longin, "$(P)$(R)Cross$(N):Red_RBV" )
+{
+	field( INP,  "$(P)$(R)Cross$(N):Red" )
+}
+
+record( longout, "$(P)$(R)Cross$(N):Green" )
+{
+	field( FLNK, "$(P)$(R)Cross$(N):Green_RBV" )
+}
+
+record( longin, "$(P)$(R)Cross$(N):Green_RBV" )
+{
+	field( INP,  "$(P)$(R)Cross$(N):Green" )
+}
+
+record( longout, "$(P)$(R)Cross$(N):Blue" )
+{
+	field( FLNK, "$(P)$(R)Cross$(N):Blue_RBV" )
+}
+
+record( longin, "$(P)$(R)Cross$(N):Blue_RBV" )
+{
+	field( INP,  "$(P)$(R)Cross$(N):Blue" )
 }
 
 record( longout, "$(P)$(R)Cross$(N):SizeX" )
