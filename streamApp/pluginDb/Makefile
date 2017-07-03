@@ -13,7 +13,6 @@ DB += thumbnailStream.db
 
 # Create and install DB Files for plugin sets
 DB += commonPlugins.db
-DB += pcdsPlugins.db
 
 # Create and install individual plugin DB Files
 DB += pluginColorConvert.db
@@ -34,13 +33,9 @@ DB += pluginTransform.db
 DB_INSTALLS += $(TOP)/streamApp/pluginDb/dataStream.cmd
 DB_INSTALLS += $(TOP)/streamApp/pluginDb/viewerStream.cmd
 DB_INSTALLS += $(TOP)/streamApp/pluginDb/thumbnailStream.cmd
-DB_INSTALLS += $(TOP)/streamApp/pluginDb/MonoBin2Viewer.cmd
-DB_INSTALLS += $(TOP)/streamApp/pluginDb/MonoBin4Viewer.cmd
-DB_INSTALLS += $(TOP)/streamApp/pluginDb/MonoFullViewer.cmd
 
 # Install plugin set cmd scripts
 DB_INSTALLS += $(TOP)/streamApp/pluginDb/commonPlugins.cmd
-DB_INSTALLS += $(TOP)/streamApp/pluginDb/pcdsPlugins.cmd
 
 # Install individual plugin cmd scripts
 DB_INSTALLS += $(TOP)/streamApp/pluginDb/pluginColorConvert.cmd
@@ -64,7 +59,6 @@ DB_INSTALLS += $(TOP)/streamApp/pluginDb/pluginTransform.cmd
 
 # Create and install plugin set archive files
 # ARCHIVE += commonPlugins.archive
-# ARCHIVE += pcdsPlugins.archive
 
 # Create and install individual plugin archive Files
 # ARCHIVE += pluginColorConvert.archive
