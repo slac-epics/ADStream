@@ -185,6 +185,9 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
         maxStreamHeight = sourceHeight
         maxBits			= 16
         monoOnly		= False
+        # TODO: Need to revisit rate vs size in terms of bandwidth
+        # May need to make developer provide overrides to get
+        # both full resolution and full rate
     elif streamType == TY_STREAM_THUMBNAIL:
         defCallbackTime = 0.9
         minCallbackTime = 0.2
@@ -196,11 +199,14 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
         monoOnly		= True
     else: # streamType == TY_STREAM_VIEWER
         defCallbackTime = 0.1
-        minCallbackTime = 0.0
+        minCallbackTime = 0.03333	# Max 30hz
         defStreamHeight = 560
         defStreamWidth	= 640
-        maxStreamWidth	= min( 1024, sourceWidth )
-        maxStreamHeight = min( 1080, sourceHeight )
+        # TODO: Need to revisit rate vs size in terms of bandwidth
+        # Viewing an 1400x1400 12bit image at 30hz is 99% of gigabit capacity
+        # Max 1600x1600 for VIEWER
+        maxStreamWidth	= min( 1600, sourceWidth )
+        maxStreamHeight = min( 1600, sourceHeight )
         maxBits			= 16
         monoOnly		= False
 
