@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 241
-y 1359
+x 207
+y 1794
 w 924
 h 100
 font "helvetica-medium-r-12.0"
@@ -238,6 +238,8 @@ bgColor index 3
 topShadowColor index 2
 botShadowColor index 12
 font "helvetica-medium-r-14.0"
+xPosOffset 100
+yPosOffset 100
 buttonLabel "More"
 numPvs 4
 numDsps 1
@@ -246,6 +248,9 @@ displayFileName {
 }
 menuLabel {
   0 "$(NAME):"
+}
+setPosition {
+  0 "button"
 }
 symbols {
   0 "P=$(P),R=$(NAME):"
