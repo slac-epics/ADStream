@@ -12,8 +12,10 @@ file NDStats.template
     TIMEOUT         = "\$(TIMEOUT=1)",
     NDARRAY_PORT    = "\$(PLUGIN_SRC)",
     NDARRAY_ADDR    = "\$(NDARRAY_ADDR=0)",
-	HIST_SIZE		= "256",
-	NCHANS			= "2048",
+    RATE_SMOOTH		= "\$(RATE_SMOOTH=0.0)",
+    TSE				= "\$(TSE=-2)",
+	HIST_SIZE		= "\$(HIST_SIZE=256)",
+    NCHANS		    = "\$(NCHANS=2048)",
 	}
 }
 
