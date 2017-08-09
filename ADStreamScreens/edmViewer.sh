@@ -5,6 +5,8 @@
 # To use, define the following environment variables
 #   HUTCH   Ex: amo, sxr, xpp, ...
 #   IOC	    EPICS PV prefix for iocAdmin PV's
+#   EVR	    EPICS PV prefix for EVR PV's
+#   CH	    Channel # for EVR camera trigger
 #   P 	    Prefix for Camera PV's
 #   R 	    Region for Camera PV's
 #			Full camera PV prefix: $(P)$(R)
@@ -12,7 +14,7 @@
 #			Full image PV prefix: $(P)$(R)$(IMAGE)
 #	EDM_TOP Path to edm top level camera screen
 # Example:
-# IOC=$IOC P=$P R=$R IMAGE=$IMAGE HUTCH=$HUTCH EDM_TOP=$EDM_TOP EVR=$EVR ADStreamScreens/edmViewer.sh
+# IOC=$IOC P=$P R=$R IMAGE=$IMAGE HUTCH=$HUTCH EDM_TOP=$EDM_TOP EVR=$EVR CH=$CH ADStreamScreens/edmViewer.sh
 
 # Check that requred macros are defined
 if [ -z "$P" -o -z "$R" ]; then
@@ -110,6 +112,7 @@ edm -x -eolc						\
 	-m "P=${P},R=${R}"				\
 	-m "CAM=${P}"					\
 	-m "EVR=${EVR}"					\
+	-m "CH=${CH}"					\
 	-m "HUTCH=${HUTCH}"				\
 	-m "IMAGE=${IMAGE}"				\
 	-m "EDM_TOP=${EDM_TOP}"			\
