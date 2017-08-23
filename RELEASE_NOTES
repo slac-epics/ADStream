@@ -3,6 +3,32 @@
 #  Name: RELEASE_NOTES
 #
 #==============================================================
+R2.3.0      2017-08-22 Bruce Hill
+	Added edmLaunch.sh that takes a CAM prefix, fetches $CAM:LAUNCH_EDM and launchs the edm top screen.
+
+R2.2.0      2017-08-09 Bruce Hill
+	Added CH macro to launcher and ViewerTemplate's
+
+R2.1.0      2017-08-07 Bruce Hill
+	Auto set of BayerConvert, Proc:EnableCallbacks, and Over:EnableCallbacks
+	Made related displays popup relative to button position
+	Added optional macros w/ defaults for pluginStats:
+		HIST_SIZE, NCHANS, RATE_SMOOTH, and TSE
+	Fixed IMAGE_NAME in thumbnailStream to allow names other than THUMBNAIL
+	Removing obsolete pcdsPlugins and Mono*Viewer.cmd files
+	Added more documentation to README.md including
+		details on stream pv's, HW vs SW ROI and binning,
+		and python configStream.py script.
+	Fixed pv names for cross color.
+	Added Red, Green, and Blue pv's and made Color map to Green for mono overlays.
+	Opened up constraints on viewerStreams
+
+R2.0.0	2017-06-16 Bruce Hill
+	Fix typo in variable name
+	Added a configurable STREAM_NELM so we can force streams
+		to have a smaller NELM than the image.
+	Add check and auto-enable for BayerConvert turned off
+
 R1.9.2      2017-05-18 Hugo Slepicka
     Updated to latest ADCore/R2.6-2.2.0
 
