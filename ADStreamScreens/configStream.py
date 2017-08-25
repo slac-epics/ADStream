@@ -151,13 +151,17 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
         caPutValue( sourcePvName + ":EnableCallbacks", 1 )
         pluginType = caGetValue( sourcePvName + ":PluginType_RBV", verbose=False )
 
+    sourceColor		= caGetValue( sourcePvName + ":ColorMode_RBV" )
     if pluginType == "NDPluginProcess":
-        sourceWidth		= caGetValue( sourcePvName + ":ArraySize0_RBV" )
-        sourceHeight	= caGetValue( sourcePvName + ":ArraySize1_RBV" )
+        if sourceColor == 0:
+            sourceWidth		= caGetValue( sourcePvName + ":ArraySize0_RBV" )
+            sourceHeight	= caGetValue( sourcePvName + ":ArraySize1_RBV" )
+        else:
+            sourceWidth		= caGetValue( sourcePvName + ":ArraySize1_RBV" )
+            sourceHeight	= caGetValue( sourcePvName + ":ArraySize2_RBV" )
     else:
         sourceWidth		= caGetValue( sourcePvName + ":ArraySizeX_RBV" )
         sourceHeight	= caGetValue( sourcePvName + ":ArraySizeY_RBV" )
-    sourceColor		= caGetValue( sourcePvName + ":ColorMode_RBV" )
     sourceBits		= caGetValue( sourcePvName + ":BitsPerPixel_RBV" )
 
     streamWidth		= caGetValue( streamPvName + ":StreamWidth" )
@@ -183,7 +187,10 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
         defStreamHeight = sourceHeight
         maxStreamWidth	= sourceWidth
         maxStreamHeight = sourceHeight
-        maxBits			= 16
+        if sourceColor == 0:
+            maxBits			= 16
+        else:
+            maxBits			= 32
         monoOnly		= False
         # TODO: Need to revisit rate vs size in terms of bandwidth
         # May need to make developer provide overrides to get
@@ -207,7 +214,10 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
         # Max 1600x1600 for VIEWER
         maxStreamWidth	= min( 1600, sourceWidth )
         maxStreamHeight = min( 1600, sourceHeight )
-        maxBits			= 16
+        if sourceColor == 0:
+            maxBits			= 16
+        else:
+            maxBits			= 32
         monoOnly		= False
 
     # Check against streamNELM
@@ -256,7 +266,8 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
     # Check for Bayer mode conversion turned off
     if sourceColor == 1: # Bayer
         caPutValue( cameraPvName + ":BayerConvert", 1 ) # RGB1
-        
+
+    # Start w/ ColorCorrect plugin
     if ccEnabled or ( monoOnly and sourceColor >= 1 ):
         # Use CC
         caPutValue( streamPvName + ":CC:EnableCallbacks", 1 )
@@ -292,7 +303,7 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
         if sourceBits > tgtBits:
             scale = scale * ( 2 ** (sourceBits - tgtBits) )
         if verbose:
-            print "sourceBits = %d, tgtBits = %d, scale = %d" % ( sourceBits, tgtBits, scale )
+            print "Binning %ux%u, sourceBits = %d, tgtBits = %d, scale = %d" % ( binning, binning, sourceBits, tgtBits, scale )
         caPutValue( streamPvName + ":ROI:Scale", scale )
         upStreamPort = streamName + ":ROI"
     else:

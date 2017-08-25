@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1004
-y 1114
+x 1012
+y 1162
 w 479
 h 400
 font "helvetica-medium-r-12.0"
@@ -960,5 +960,75 @@ visPv "$(P)$(R)ColorMode_RBV"
 visInvert
 visMin "1"
 visMax "9"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 304
+y 100
+w 68
+h 48
+
+beginGroup
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 304
+y 100
+w 68
+h 20
+controlPv "$(P)$(R)ArraySize1_RBV"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 16
+fgAlarm
+bgColor index 12
+limitsFromDb
+nullColor index 40
+smartRefresh
+useHexPrefix
+newPos
+objType "monitors"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 304
+y 128
+w 68
+h 20
+controlPv "$(P)$(R)ArraySize2_RBV"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 16
+fgAlarm
+bgColor index 12
+limitsFromDb
+nullColor index 40
+smartRefresh
+useHexPrefix
+newPos
+objType "monitors"
+noExecuteClipMask
+endObjectProperties
+
+endGroup
+
+visPv "$(P)$(R)ColorMode_RBV"
+visMin "1"
+visMax "3"
 endObjectProperties
 
