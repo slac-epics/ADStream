@@ -4,7 +4,7 @@ major 4
 minor 0
 release 1
 x 1924
-y 829
+y 774
 w 428
 h 758
 font "helvetica-bold-r-12.0"
@@ -330,7 +330,7 @@ commandLabel {
   0 "View IMAGE in EDM Viewer"
 }
 command {
-  0 "P=$(CAM) R=: IMAGE=$(IMAGE) HUTCH=$(HUTCH) IOC=$(IOC) ADStreamScreens/edmViewer.sh"
+  0 "P=$(CAM) R=: IMAGE=$(IMAGE) HUTCH=$(HUTCH) IOC=$(IOC) EDM_TOP=$(EDM_TOP) ADStreamScreens/edmViewer.sh"
 }
 execCursor
 endObjectProperties
