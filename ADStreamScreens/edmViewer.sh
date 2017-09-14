@@ -44,7 +44,7 @@ if [ -z "$IOC" ]; then
 	IOC=IOC_None
 fi
 if [ -z "$CH" ]; then
-	CH=0
+	CH=999
 fi
 
 # Check for edm

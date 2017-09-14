@@ -12,6 +12,7 @@ file NDPluginBase.template
     TIMEOUT         = "\$(TIMEOUT=1)",
     NDARRAY_PORT    = "\$(PLUGIN_SRC)",
     NDARRAY_ADDR    = "\$(NDARRAY_ADDR=0)",
+	RATE_SMOOTH		= "\$(RATE_SMOOTH=0.2)"
 	}
 }
 

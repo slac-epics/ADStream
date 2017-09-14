@@ -10,6 +10,10 @@
 ##############################################################################
 # pyca script for python 2.7.2
 
+# TODO: ROI being selected for color images when it shouldn't be
+# Set stream height and width to defeat ROI, but Scaling was left enabled and ROI plugin still in path
+# Also issues w/ OVER added to path for IMAGE2
+
 from psp.Pv import Pv
 import pyca
 import sys
@@ -281,7 +285,8 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
 
     if not sourceBits:
         sourceBits = 16
-    tgtBits = sourceBits
+    #tgtBits = sourceBits
+    tgtBits = maxBits
     if  tgtBits > maxBits:
         tgtBits = maxBits
 
@@ -293,7 +298,6 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
         caPutValue( streamPvName + ":ROI:EnableY", 1 )
         caPutValue( streamPvName + ":ROI:BinX", binning )
         caPutValue( streamPvName + ":ROI:BinY", binning )
-        caPutValue( streamPvName + ":ROI:EnableScale", 1 )
         if  tgtBits == 8:
             caPutValue( streamPvName + ":ROI:DataTypeOut", "UInt8" )
         else:
@@ -302,9 +306,14 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
         scale = binning * binning
         if sourceBits > tgtBits:
             scale = scale * ( 2 ** (sourceBits - tgtBits) )
+        scale = binning * binning * ( 2 ** (sourceBits - tgtBits) )
         if verbose:
-            print "Binning %ux%u, sourceBits = %d, tgtBits = %d, scale = %d" % ( binning, binning, sourceBits, tgtBits, scale )
-        caPutValue( streamPvName + ":ROI:Scale", scale )
+            print "Binning %ux%u, sourceBits = %d, tgtBits = %d, scale = %f" % ( binning, binning, sourceBits, tgtBits, scale )
+        if scale >= 2:
+            caPutValue( streamPvName + ":ROI:EnableScale", 1 )
+            caPutValue( streamPvName + ":ROI:Scale", scale )
+        else:
+            caPutValue( streamPvName + ":ROI:EnableScale", 0 )
         upStreamPort = streamName + ":ROI"
     else:
         caPutValue( streamPvName + ":ROI:EnableCallbacks", 0 )
