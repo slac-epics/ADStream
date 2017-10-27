@@ -3,7 +3,9 @@ include $(TOP)/configure/CONFIG
 #----------------------------------------
 #  ADD MACRO DEFINITIONS AFTER THIS LINE
 
-# Install cross template
+# Install box and cross templates and DB files
+DB += boxLimits.template
+DB += crossLimits.template
 DB += cross.db
 
 # Create and install image stream DB Files

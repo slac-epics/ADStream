@@ -85,36 +85,6 @@ record( longin, "$(P)$(R)Cross$(N):SizeY_RBV" )
 	field( INP,  "$(P)$(R)Cross$(N):SizeY" )
 }
 
-record( dfanout, "$(P)$(R)Cross_HOPR_X" )
-{
-	field( OMSL, "closed_loop" )
-	field( SELM, "All" )
-	field( DOL,  "$(P)$(R)ArraySizeX_RBV CPP MS" )
-	field( OUTA, "$(P)$(R)Cross1:MinX.HOPR PP MS" )
-	field( OUTB, "$(P)$(R)Cross2:MinX.HOPR PP MS" )
-	field( OUTC, "$(P)$(R)Cross3:MinX.HOPR PP MS" )
-	field( OUTD, "$(P)$(R)Cross4:MinX.HOPR PP MS" )
-	field( OUTE, "$(P)$(R)Cross1:SizeX.HOPR PP MS" )
-	field( OUTF, "$(P)$(R)Cross2:SizeX.HOPR PP MS" )
-	field( OUTG, "$(P)$(R)Cross3:SizeX.HOPR PP MS" )
-	field( OUTH, "$(P)$(R)Cross4:SizeX.HOPR PP MS" )
-}
-
-record( dfanout, "$(P)$(R)Cross_HOPR_Y" )
-{
-	field( OMSL, "closed_loop" )
-	field( SELM, "All" )
-	field( DOL,  "$(P)$(R)ArraySizeY_RBV CPP MS" )
-	field( OUTA, "$(P)$(R)Cross1:MinY.HOPR PP MS" )
-	field( OUTB, "$(P)$(R)Cross2:MinY.HOPR PP MS" )
-	field( OUTC, "$(P)$(R)Cross3:MinY.HOPR PP MS" )
-	field( OUTD, "$(P)$(R)Cross4:MinY.HOPR PP MS" )
-	field( OUTE, "$(P)$(R)Cross1:SizeY.HOPR PP MS" )
-	field( OUTF, "$(P)$(R)Cross2:SizeY.HOPR PP MS" )
-	field( OUTG, "$(P)$(R)Cross3:SizeY.HOPR PP MS" )
-	field( OUTH, "$(P)$(R)Cross4:SizeY.HOPR PP MS" )
-}
-
 # Support old names that don't follow the AD naming convention
 alias( "$(P)$(R)Cross$(N):MinX",		"$(P)$(R)Cross$(N)X"		)
 alias( "$(P)$(R)Cross$(N):MinX_RBV",	"$(P)$(R)Cross$(N)X_RBV"	)

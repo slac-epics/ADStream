@@ -1,0 +1,34 @@
+# boxLimits.template
+# Monitors camera image size and writes it to the
+# box limits
+
+record( dfanout, "$(P)$(R)Box_HOPR_X" )
+{
+	field( OMSL, "closed_loop" )
+	field( SELM, "All" )
+	field( DOL,  "$(P)$(R)ArraySizeX_RBV CPP MS" )
+	field( OUTA, "$(P)$(R)ROI1:MinX.HOPR PP MS" )
+	field( OUTB, "$(P)$(R)ROI2:MinX.HOPR PP MS" )
+	field( OUTC, "$(P)$(R)ROI3:MinX.HOPR PP MS" )
+	field( OUTD, "$(P)$(R)ROI4:MinX.HOPR PP MS" )
+	field( OUTE, "$(P)$(R)ROI1:SizeX.HOPR PP MS" )
+	field( OUTF, "$(P)$(R)ROI2:SizeX.HOPR PP MS" )
+	field( OUTG, "$(P)$(R)ROI3:SizeX.HOPR PP MS" )
+	field( OUTH, "$(P)$(R)ROI4:SizeX.HOPR PP MS" )
+}
+
+record( dfanout, "$(P)$(R)Box_HOPR_Y" )
+{
+	field( OMSL, "closed_loop" )
+	field( SELM, "All" )
+	field( DOL,  "$(P)$(R)ArraySizeY_RBV CPP MS" )
+	field( OUTA, "$(P)$(R)ROI1:MinY.HOPR PP MS" )
+	field( OUTB, "$(P)$(R)ROI2:MinY.HOPR PP MS" )
+	field( OUTC, "$(P)$(R)ROI3:MinY.HOPR PP MS" )
+	field( OUTD, "$(P)$(R)ROI4:MinY.HOPR PP MS" )
+	field( OUTE, "$(P)$(R)ROI1:SizeY.HOPR PP MS" )
+	field( OUTF, "$(P)$(R)ROI2:SizeY.HOPR PP MS" )
+	field( OUTG, "$(P)$(R)ROI3:SizeY.HOPR PP MS" )
+	field( OUTH, "$(P)$(R)ROI4:SizeY.HOPR PP MS" )
+}
+
