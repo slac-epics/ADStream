@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 870
-y 1784
+x 50
+y 87
 w 780
 h 191
 font "helvetica-medium-r-12.0"
@@ -253,7 +253,6 @@ fineValue "1"
 invisible
 rate 0.1
 font "helvetica-bold-r-10.0"
-limitsFromDb
 endObjectProperties
 
 # (Up/Down Button)
@@ -277,7 +276,6 @@ fineValue "1"
 invisible
 rate 0.1
 font "helvetica-bold-r-10.0"
-limitsFromDb
 endObjectProperties
 
 # (Static Text)
@@ -341,7 +339,6 @@ fineValue "1"
 invisible
 rate 0.1
 font "helvetica-bold-r-10.0"
-limitsFromDb
 endObjectProperties
 
 # (Up/Down Button)
@@ -365,7 +362,6 @@ fineValue "1"
 invisible
 rate 0.1
 font "helvetica-bold-r-10.0"
-limitsFromDb
 endObjectProperties
 
 # (Static Text)
