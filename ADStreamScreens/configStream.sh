@@ -17,8 +17,9 @@ else
 fi
 
 # Setup pyca environment
-export PSPKG_RELEASE=controls-basic-0.0.2
-source $PSPKG_ROOT/etc/set_env.sh
+#export PSPKG_RELEASE=controls-basic-0.0.2
+export PSPKG_RELEASE=pyca-psp-0.0.1
+source $PSPKG_ROOT/etc/add_env_pkg.sh
 
 # echo Reconfiguring stream $CAM_PV:$IMAGE ...
 python ADStreamScreens/configStream.py --cameraPv $CAM_PV --stream $IMAGE
