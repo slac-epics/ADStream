@@ -43,9 +43,16 @@ fi
 if [ -z "$IOC" ]; then
 	IOC=IOC_None
 fi
+if [ -z "$CH" ]; then
+	CH=0
+fi
 
-# Setup edm environment
-source /reg/g/pcds/setup/epicsenv-3.14.12.sh
+# Check for edm
+which edm > /dev/null 2> /dev/null
+if [ $? -ne 0 ]; then
+	# Setup edm environment
+	source $SETUP_SITE_TOP/epicsenv-cur.sh
+fi
 
 echo Creating custom edm viewer for ${P}${R}${IMAGE} ...
 set verbose
