@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 30
-y 1372
+x 44
+y 1140
 w 872
 h 408
 font "helvetica-medium-r-12.0"
@@ -47,126 +47,6 @@ displayFileName {
   0 "ADStreamScreens/emb-adjust.edl"
 }
 menuLabel {
-  0 "ROI1"
-}
-symbols {
-  0 "ADJ=ROI1"
-}
-noScroll
-endObjectProperties
-
-# (Embedded Window)
-object activePipClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 436
-y 8
-w 424
-h 92
-fgColor index 14
-bgColor index 0
-topShadowColor index 0
-botShadowColor index 14
-displaySource "menu"
-filePv "LOC\\\\emb-adj=0"
-file "ADStreamScreens/emb-adjust.edl"
-numDsps 1
-displayFileName {
-  0 "ADStreamScreens/emb-adjust.edl"
-}
-menuLabel {
-  0 "ROI2"
-}
-symbols {
-  0 "ADJ=ROI2"
-}
-noScroll
-endObjectProperties
-
-# (Embedded Window)
-object activePipClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 8
-y 104
-w 424
-h 92
-fgColor index 14
-bgColor index 0
-topShadowColor index 0
-botShadowColor index 14
-displaySource "menu"
-filePv "LOC\\\\emb-adj=0"
-file "ADStreamScreens/emb-adjust.edl"
-numDsps 1
-displayFileName {
-  0 "ADStreamScreens/emb-adjust.edl"
-}
-menuLabel {
-  0 "ROI3"
-}
-symbols {
-  0 "ADJ=ROI3"
-}
-noScroll
-endObjectProperties
-
-# (Embedded Window)
-object activePipClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 436
-y 104
-w 424
-h 92
-fgColor index 14
-bgColor index 0
-topShadowColor index 0
-botShadowColor index 14
-displaySource "menu"
-filePv "LOC\\\\emb-adj=0"
-file "ADStreamScreens/emb-adjust.edl"
-numDsps 1
-displayFileName {
-  0 "ADStreamScreens/emb-adjust.edl"
-}
-menuLabel {
-  0 "ROI4"
-}
-symbols {
-  0 "ADJ=ROI4"
-}
-noScroll
-endObjectProperties
-
-# (Embedded Window)
-object activePipClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 8
-y 208
-w 424
-h 92
-fgColor index 14
-bgColor index 0
-topShadowColor index 0
-botShadowColor index 14
-displaySource "menu"
-filePv "LOC\\\\emb-adj=0"
-file "ADStreamScreens/emb-adjust.edl"
-numDsps 1
-displayFileName {
-  0 "ADStreamScreens/emb-adjust.edl"
-}
-menuLabel {
   0 "Cross1"
 }
 symbols {
@@ -182,7 +62,7 @@ major 4
 minor 1
 release 0
 x 436
-y 208
+y 8
 w 424
 h 92
 fgColor index 14
@@ -212,7 +92,7 @@ major 4
 minor 1
 release 0
 x 8
-y 304
+y 104
 w 424
 h 92
 fgColor index 14
@@ -242,7 +122,7 @@ major 4
 minor 1
 release 0
 x 436
-y 304
+y 104
 w 424
 h 92
 fgColor index 14
@@ -261,6 +141,126 @@ menuLabel {
 }
 symbols {
   0 "ADJ=Cross4"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 436
+y 304
+w 424
+h 92
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
+displaySource "menu"
+filePv "LOC\\\\emb-adj=0"
+file "ADStreamScreens/emb-adjust.edl"
+numDsps 1
+displayFileName {
+  0 "ADStreamScreens/emb-adjust.edl"
+}
+menuLabel {
+  0 "ROI4"
+}
+symbols {
+  0 "ADJ=ROI4"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 8
+y 304
+w 424
+h 92
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
+displaySource "menu"
+filePv "LOC\\\\emb-adj=0"
+file "ADStreamScreens/emb-adjust.edl"
+numDsps 1
+displayFileName {
+  0 "ADStreamScreens/emb-adjust.edl"
+}
+menuLabel {
+  0 "ROI3"
+}
+symbols {
+  0 "ADJ=ROI3"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 436
+y 208
+w 424
+h 92
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
+displaySource "menu"
+filePv "LOC\\\\emb-adj=0"
+file "ADStreamScreens/emb-adjust.edl"
+numDsps 1
+displayFileName {
+  0 "ADStreamScreens/emb-adjust.edl"
+}
+menuLabel {
+  0 "ROI2"
+}
+symbols {
+  0 "ADJ=ROI2"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 8
+y 208
+w 424
+h 92
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
+displaySource "menu"
+filePv "LOC\\\\emb-adj=0"
+file "ADStreamScreens/emb-adjust.edl"
+numDsps 1
+displayFileName {
+  0 "ADStreamScreens/emb-adjust.edl"
+}
+menuLabel {
+  0 "ROI1"
+}
+symbols {
+  0 "ADJ=ROI1"
 }
 noScroll
 endObjectProperties
