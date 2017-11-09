@@ -42,8 +42,8 @@ file NDStdArrays.template
     ADDR            = "\$(ADDR=0)",
     TIMEOUT         = "\$(TIMEOUT=1)",
     TSE             = "\$(TSE=-2)",
-    ENABLED         = "1",
-    NDARRAY_PORT    = "\$(CAM_PORT)",
+    ENABLED         = "\$(ENABLED=1)"
+    NDARRAY_PORT    = "\$(IMAGE_NAME):ROI",
     NDARRAY_ADDR    = "\$(NDARRAY_ADDR=0)",
     TYPE            = "Int8",
     FTVL            = "CHAR",
@@ -134,7 +134,7 @@ file NDOverlay.template
     ADDR            = "\$(ADDR=0)",
     TIMEOUT         = "\$(TIMEOUT=1)",
     TSE             = "\$(TSE=-2)",
-    ENABLED         = "1",
+    ENABLED         = "\$(ENABLED=0)"
     NDARRAY_PORT    = "\$(CAM_PORT)",
     NDARRAY_ADDR    = "\$(NDARRAY_ADDR=0)",
     }
