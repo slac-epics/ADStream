@@ -2,6 +2,7 @@
 
 # Configure the plugins
 NDStdArraysConfigure(    "$(IMAGE_NAME)",     $(QSIZE), 0, "$(CAM_PORT)", 0, -1 )
+NDPvaConfigure(          "$(IMAGE_NAME):Pva", $(QSIZE), 0, "$(CAM_PORT)", 0, "$(IMAGE_NAME):Pva:Image", 0, 0, 0 )
 NDColorConvertConfigure( "$(IMAGE_NAME):CC",  $(QSIZE), 0, "$(CAM_PORT)", 0 )
 NDROIConfigure(          "$(IMAGE_NAME):ROI", $(QSIZE), 0, "$(CAM_PORT)", 0 )
 NDOverlayConfigure(      "$(IMAGE_NAME):Over", 16,      0, "$(CAM_PORT)", 0, 8 )

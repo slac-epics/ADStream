@@ -1,0 +1,20 @@
+#
+# pluginPva.substitutions
+#
+
+file NDPva.template
+{
+	{
+    PORT            = "Pva\$(N)",
+    P               = "$(CAM):",
+	R				= "$(PORT):",
+    ADDR            = "\$(ADDR=0)",
+    ENABLED         = "\$(ENABLED=0)",
+    NDARRAY_PORT    = "\$(PLUGIN_SRC)",
+    NDARRAY_ADDR    = "\$(NDARRAY_ADDR=0)",
+    RATE_SMOOTH		= "\$(RATE_SMOOTH=0.0)",
+    TIMEOUT         = "\$(TIMEOUT=1)",
+    TSE				= "\$(TSE=-2)",
+	}
+}
+
