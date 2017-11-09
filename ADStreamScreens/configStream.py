@@ -70,7 +70,7 @@ def stringToTuple( strValue ):
     newByteArray = bytearray( strValue, 'ascii', 'ignore' )
     return tuple(newByteArray)
 
-def caGetValue( pvName, verbose=True, timeout=0.1 ):
+def caGetValue( pvName, default=None, verbose=True, timeout=0.1 ):
     try:
         # See if this PV exists
         pv	= Pv( pvName )
@@ -82,7 +82,7 @@ def caGetValue( pvName, verbose=True, timeout=0.1 ):
             print "Unable to connect to PV: %s" % pvName
         if showCAErrors:
             print >> sys.stderr, "failed: pyca exception: ", msg
-        return None
+        return default
 
 
 def caPutArray( pvName, value, timeout=-1.0):
@@ -129,7 +129,8 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
     try:
         streamTypePv = Pv( streamPvName + ":StreamType" )
         streamTypePv.connect(0.5)
-        streamTypePv.get( timeout=1.0 )
+        streamTypePv.get( timeout=0.5 )
+        streamType = streamTypePv.value
     except Exception, msg:
         if verbose:
             print "Stream %s not found." % streamName
@@ -173,14 +174,14 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
     streamRate		= caGetValue( streamPvName + ":StreamRate" )
     avgEnabled		= caGetValue( streamPvName + ":Proc:EnableFilter", verbose=False )
     ccEnabled		= False # TODO: caGetValue( streamPvName + ":UseCC" )
-    cross1Enabled	= caGetValue( streamPvName + ":Cross1:Use" )
-    cross2Enabled	= caGetValue( streamPvName + ":Cross2:Use" )
-    cross3Enabled	= caGetValue( streamPvName + ":Cross3:Use" )
-    cross4Enabled	= caGetValue( streamPvName + ":Cross4:Use" )
-    box1Enabled		= caGetValue( streamPvName + ":Box1:Use" )
-    box2Enabled		= caGetValue( streamPvName + ":Box2:Use" )
-    box3Enabled		= caGetValue( streamPvName + ":Box3:Use" )
-    box4Enabled		= caGetValue( streamPvName + ":Box4:Use" )
+    cross1Enabled	= caGetValue( streamPvName + ":Cross1:Use", default=False )
+    cross2Enabled	= caGetValue( streamPvName + ":Cross2:Use", default=False )
+    cross3Enabled	= caGetValue( streamPvName + ":Cross3:Use", default=False )
+    cross4Enabled	= caGetValue( streamPvName + ":Cross4:Use", default=False )
+    box1Enabled		= caGetValue( streamPvName + ":Box1:Use",   default=False )
+    box2Enabled		= caGetValue( streamPvName + ":Box2:Use",   default=False )
+    box3Enabled		= caGetValue( streamPvName + ":Box3:Use",   default=False )
+    box4Enabled		= caGetValue( streamPvName + ":Box4:Use",   default=False )
     overEnabled     = ( cross1Enabled | cross2Enabled | cross3Enabled | cross4Enabled |
                         box1Enabled   | box2Enabled   | box3Enabled   | box4Enabled   )
 
@@ -211,8 +212,8 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
     else: # streamType == TY_STREAM_VIEWER
         defCallbackTime = 0.1
         minCallbackTime = 0.03333	# Max 30hz
-        defStreamHeight = 560
-        defStreamWidth	= 640
+        defStreamHeight = 600
+        defStreamWidth	= 800
         # TODO: Need to revisit rate vs size in terms of bandwidth
         # Viewing an 1400x1400 12bit image at 30hz is 99% of gigabit capacity
         # Max 1600x1600 for VIEWER
@@ -285,7 +286,6 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
 
     if not sourceBits:
         sourceBits = 16
-    #tgtBits = sourceBits
     tgtBits = maxBits
     if  tgtBits > maxBits:
         tgtBits = maxBits
@@ -394,7 +394,7 @@ if __name__ == "__main__":
     streamName	 = options.stream
     try:
         camSizeXPv = Pv( cameraPvName + ":ArraySizeX_RBV" )
-        camSizeXPv.connect(0.1)
+        camSizeXPv.connect(1.0)
         camSizeXPv.get( timeout=1.0 )
     except Exception, msg:
         print "Camera not accessible: ", msg
