@@ -2,6 +2,7 @@
 file NDPluginBase.tpl-arch
 {
     {   P = "$(CAM):",	R = "$(IMAGE_NAME):"		}
+    {   P = "$(CAM):",	R = "$(IMAGE_NAME):Pva:"	}
     {   P = "$(CAM):",	R = "$(IMAGE_NAME):ROI:"	}
     {   P = "$(CAM):",	R = "$(IMAGE_NAME):CC:"		}
     {   P = "$(CAM):",	R = "$(IMAGE_NAME):Proc:"	}
