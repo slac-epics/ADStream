@@ -31,6 +31,7 @@ def printPvNameValue( pvName ):
         pv = Pv( pvName )
         pv.connect(0.1)
         pv.get()
+        pv.get_data( False, 0.1, None )
         if isinstance( pv.value, str ):
             print "%s \"%-.30s\"" % ( pv.name, pv.value )
         else:
@@ -75,7 +76,8 @@ def caGetValue( pvName, default=None, verbose=True, timeout=0.1 ):
         # See if this PV exists
         pv	= Pv( pvName )
         pv.connect( timeout )
-        pv.get()
+        pv.get( timeout=timeout )
+        pv.get_data( False, timeout, None )
         return pv.value
     except Exception, msg:
         if verbose:
@@ -91,6 +93,7 @@ def caPutArray( pvName, value, timeout=-1.0):
         # See if this PV exists
         pv	= Pv( pvName )
         pv.connect( 1.0 )
+        pv.get_data( False, timeout, None )
 
         # Convert value to the appropriate type for this PV
         # Assumption is that PV is a waveform record
@@ -130,6 +133,7 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
         streamTypePv = Pv( streamPvName + ":StreamType" )
         streamTypePv.connect(0.5)
         streamTypePv.get( timeout=0.5 )
+        streamTypePv.get_data( False, 0.5, None )
         streamType = streamTypePv.value
     except Exception, msg:
         if verbose:
@@ -396,6 +400,7 @@ if __name__ == "__main__":
         camSizeXPv = Pv( cameraPvName + ":ArraySizeX_RBV" )
         camSizeXPv.connect(1.0)
         camSizeXPv.get( timeout=1.0 )
+        #camSizeX = camSizeXPv.get_data( False, 1.0, None )
     except Exception, msg:
         print "Camera not accessible: ", msg
         sys.exit()

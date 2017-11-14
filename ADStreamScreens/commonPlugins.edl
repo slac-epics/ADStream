@@ -3,10 +3,10 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 2175
-y 1100
+x 980
+y 1111
 w 936
-h 872
+h 624
 font "helvetica-medium-r-12.0"
 ctlFont "helvetica-medium-r-12.0"
 btnFont "helvetica-medium-r-14.0"
@@ -22,7 +22,7 @@ botShadowColor index 13
 title "Common Plugins"
 showGrid
 snapToGrid
-gridSize 4
+gridSize 2
 endScreenProperties
 
 # (Rectangle)
