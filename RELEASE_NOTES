@@ -3,6 +3,15 @@
 #  Name: RELEASE_NOTES
 #
 #==============================================================
+R2.4.0      2017-11-20 Bruce Hill
+	Added a V4 NDPva plugin to each stream type.
+	Lengthened default timeout from 0.1 to 0.5 sec to reduce failed connections.
+	Fixed a number of issues related to color cameras.
+	Made ROI scaling only be used as needed to prevent exceeding max bitsPerPixel
+	Changed some defaults so initial bootup has reasonable stream plugin processing.
+	Cleanup box and cross limits and overlay substitutions.
+	Update to ADCore/R2.6-2.4.0
+
 R2.3.0      2017-08-22 Bruce Hill
 	Added edmLaunch.sh that takes a CAM prefix, fetches $CAM:LAUNCH_EDM and launchs the edm top screen.
 
