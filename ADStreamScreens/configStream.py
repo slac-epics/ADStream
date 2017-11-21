@@ -29,9 +29,9 @@ TY_STREAM_THUMBNAIL	= 2
 def printPvNameValue( pvName ):
     try:
         pv = Pv( pvName )
-        pv.connect(0.1)
+        pv.connect(0.5)
         pv.get()
-        pv.get_data( False, 0.1, None )
+        pv.get_data( False, 0.5, None )
         if isinstance( pv.value, str ):
             print "%s \"%-.30s\"" % ( pv.name, pv.value )
         else:
@@ -71,7 +71,7 @@ def stringToTuple( strValue ):
     newByteArray = bytearray( strValue, 'ascii', 'ignore' )
     return tuple(newByteArray)
 
-def caGetValue( pvName, default=None, verbose=True, timeout=0.1 ):
+def caGetValue( pvName, default=None, verbose=True, timeout=0.5 ):
     try:
         # See if this PV exists
         pv	= Pv( pvName )
@@ -87,7 +87,7 @@ def caGetValue( pvName, default=None, verbose=True, timeout=0.1 ):
         return default
 
 
-def caPutArray( pvName, value, timeout=-1.0):
+def caPutArray( pvName, value, timeout=1.0):
     try:
         tmo = float(timeout)
         # See if this PV exists
@@ -199,7 +199,7 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
         if sourceColor == 0:
             maxBits			= 16
         else:
-            maxBits			= 32
+            maxBits			= 24
         monoOnly		= False
         # TODO: Need to revisit rate vs size in terms of bandwidth
         # May need to make developer provide overrides to get
@@ -226,7 +226,7 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
         if sourceColor == 0:
             maxBits			= 16
         else:
-            maxBits			= 32
+            maxBits			= 24
         monoOnly		= False
 
     # Check against streamNELM
@@ -291,8 +291,6 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
     if not sourceBits:
         sourceBits = 16
     tgtBits = maxBits
-    if  tgtBits > maxBits:
-        tgtBits = maxBits
 
     if binning > 1 or tgtBits < sourceBits:
         # Use ROI
@@ -310,7 +308,6 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
         scale = binning * binning
         if sourceBits > tgtBits:
             scale = scale * ( 2 ** (sourceBits - tgtBits) )
-        scale = binning * binning * ( 2 ** (sourceBits - tgtBits) )
         if verbose:
             print "Binning %ux%u, sourceBits = %d, tgtBits = %d, scale = %f" % ( binning, binning, sourceBits, tgtBits, scale )
         if scale >= 2:
