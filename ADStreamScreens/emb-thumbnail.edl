@@ -105,7 +105,7 @@ commandLabel {
   0 "Create and popup edm viewer"
 }
 command {
-  0 "HUTCH=$(HUTCH) IOC=$(IOC) P=$(CAM) R=: IMAGE=$(IMAGE) EVR=$(EVR) EDM_TOP=$(EDM_TOP) ADStreamScreens/edmViewer.sh"
+  0 "HUTCH=$(HUTCH) IOC=$(IOC) P=$(CAM) R=: IMAGE=$(IMAGE) EVR=$(EVR) CH=$(CH) EDM_TOP=$(EDM_TOP) ADStreamScreens/edmViewer.sh"
 }
 endObjectProperties
 
