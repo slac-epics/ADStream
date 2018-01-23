@@ -3,6 +3,9 @@
 #  Name: RELEASE_NOTES
 #
 #==============================================================
+R2.5.0      2018-1-22 Bruce Hill
+	Fixed missing CH macro in emb-thumbnail.edl
+
 R2.4.0      2017-11-20 Bruce Hill
 	Added a V4 NDPva plugin to each stream type.
 	Lengthened default timeout from 0.1 to 0.5 sec to reduce failed connections.
