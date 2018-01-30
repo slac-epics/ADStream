@@ -3,6 +3,9 @@
 #  Name: RELEASE_NOTES
 #
 #==============================================================
+R2.5.1      2018-1-22 Bruce Hill
+	Updated to ADCore/R3.1-1.0.0
+
 R2.5.0      2018-1-22 Bruce Hill
 	Fixed missing CH macro in emb-thumbnail.edl
 
