@@ -3,6 +3,9 @@
 #  Name: RELEASE_NOTES
 #
 #==============================================================
+R2.5.4      2018-3-19 Bruce Hill
+	Updated to ADCore/R3.1-2.1.1
+
 R2.5.3      2018-3-19 Bruce Hill
 	Updated to ADCore/R3.1-2.1.0 for qsrv fix
 
