@@ -59,6 +59,22 @@ record( ao, "$(P)$(R)StreamRate" )
     info( autosaveFields, "VAL" )
 }
 
+# Set FLNK for the stream's stdArray ArrayData to update the timestamp
+record( waveform, "$(P)$(R)ArrayData" )
+{
+	field( FLNK, "$(P)$(R)StreamTimeStampStr" )
+}
+
+# Stream Timestamp formatted as a string
+record( stringin, "$(P)$(R)StreamTimeStampStr" )
+{
+	field( DESC,	"Image Capture Time" )
+	field( DTYP,	"Soft Timestamp" )
+	field( TSEL,	"$(P)$(R)ArrayData.TIME")
+	field( INP,		"@%Y-%m-%d %H:%M:%S.%03f" )
+    info( autosaveFields, "INP" )
+}
+
 # May want to drop this seq record
 record( seq, "$(P)$(R)ResetStream" )
 {
