@@ -7,10 +7,10 @@
 #	PLUGIN_SRC	- Which port should this plugin get its data from
 
 # Configure the plugin
-# NDOverlayConfigure( portName, queueSize, blockingCallbacks, dataSrcPortName, addr, maxOverlays, maxBuffers, maxMemory )
+# NDOverlayConfigure( portName, queueSize, blockingCallbacks, dataSrcPortName, addr, maxOverlays, maxBuffers, maxMemory, priority, stackSize, maxThreads )
 # Set maxBuffers to 0 for unlimited buffers
 # Set maxMemory  to 0 for unlimited memory allocation
-NDOverlayConfigure( "Over$(N)", 16, 0, "$(PLUGIN_SRC)", 0, 8 )
+NDOverlayConfigure( "Over$(N)", 16, 0, "$(PLUGIN_SRC)", 0, 8, 0, 0, 0, 0, $(MAX_THREADS=5) ))
 
 # Load the plugin records
 dbLoadRecords( "db/pluginOverlay.db",  "CAM=$(CAM_PV),CAM_PORT=$(CAM_PORT),PLUGIN_SRC=$(PLUGIN_SRC),N=$(N)" )
