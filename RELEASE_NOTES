@@ -3,6 +3,9 @@
 #  Name: RELEASE_NOTES
 #
 #==============================================================
+R2.6.1      2018-8-28 Bruce Hill
+	Use shorter timestamp format for StreamTimeStampStr
+
 R2.6.0      2018-8-28 Bruce Hill
 	Modified plugin config calls to allow specifing MAX_THREADS
 	Add a StreamTimeStampStr record w/ a formatted timeStamp for gui display
