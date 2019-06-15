@@ -3,83 +3,26 @@
 #-
 #- This script creates, configures, and loads db records for our
 #- default set of plugins
-epicsEnvSet( "QSIZE", "5" )
 
-#- Create a couple of Color Conversion plugins
-epicsEnvSet( "PLUGIN_SRC", "$(CAM_PORT)" )
-epicsEnvSet( "N", "1" )
-< db/pluginColorConvert.cmd
-epicsEnvSet( "N", "2" )
-< db/pluginColorConvert.cmd
+dbLoadRecords( "db/commonPlugins.db", "CAM=$(CAM_PV),CAM_PORT=$(CAM_PORT),XSIZE=$(IMAGE_XSIZE),YSIZE=$(IMAGE_YSIZE)" )
 
-#- Create an HDF5 File plugin, set it to get data from the camera
-epicsEnvSet( "PLUGIN_SRC", "$(CAM_PORT)" )
-epicsEnvSet( "N", "1" )
-< db/pluginHDF5.cmd
-
-#- Create a JPEG File plugin, set it to get data from the camera
-epicsEnvSet( "PLUGIN_SRC", "$(CAM_PORT)" )
-epicsEnvSet( "N", "1" )
-< db/pluginJPEG.cmd
-
-#- GraphicsMagick not supported in areaDetector 1.9 for RHEL due to compiler issues
-#- Create a Magick plugin, set it to get data from the camera
-#-epicsEnvSet( "PLUGIN_SRC", "$(CAM_PORT)" )
-#-epicsEnvSet( "N", "1" )
-#-< db/pluginMagick.cmd
-
-#- Create a NetCDF plugin, set it to get data from the camera
-epicsEnvSet( "PLUGIN_SRC", "$(CAM_PORT)" )
-epicsEnvSet( "N", "1" )
-< db/pluginNetCDF.cmd
-
-#- Create a Nexus plugin, set it to get data from the camera
-epicsEnvSet( "PLUGIN_SRC", "$(CAM_PORT)" )
-epicsEnvSet( "N", "1" )
-< db/pluginNexus.cmd
-
-#- Create an Overlay plugin, set it to get data from the camera
-epicsEnvSet( "PLUGIN_SRC", "$(CAM_PORT)" )
-epicsEnvSet( "N", "1" )
-< db/pluginOverlay.cmd
-
-#- Create a Process plugin, set it to get data from the camera
-epicsEnvSet( "PLUGIN_SRC", "$(CAM_PORT)" )
-epicsEnvSet( "N", "1" )
-< db/pluginProcess.cmd
-
-#- Create 4 ROI plugins
-#- Set them to get data from the camera
-epicsEnvSet( "PLUGIN_SRC", "$(CAM_PORT)" )
-epicsEnvSet( "N", "1" )
-< db/pluginROI.cmd
-epicsEnvSet( "N", "2" )
-< db/pluginROI.cmd
-epicsEnvSet( "N", "3" )
-< db/pluginROI.cmd
-epicsEnvSet( "N", "4" )
-< db/pluginROI.cmd
-
-#- Create 5 Statistics plugins
-epicsEnvSet( "PLUGIN_SRC", "$(CAM_PORT)" )
-epicsEnvSet( "N", "1" )
-< db/pluginStats.cmd
-epicsEnvSet( "N", "2" )
-< db/pluginStats.cmd
-epicsEnvSet( "N", "3" )
-< db/pluginStats.cmd
-epicsEnvSet( "N", "4" )
-< db/pluginStats.cmd
-epicsEnvSet( "N", "5" )
-< db/pluginStats.cmd
-
-#- Create a TIFF plugin, set it to get data from the camera
-epicsEnvSet( "PLUGIN_SRC", "$(CAM_PORT)" )
-epicsEnvSet( "N", "1" )
-< db/pluginTIFF.cmd
-
-#- Create a Transform plugin, set it to get data from the camera
-epicsEnvSet( "PLUGIN_SRC", "$(CAM_PORT)" )
-epicsEnvSet( "N", "1" )
-< db/pluginTransform.cmd
+NDColorConvertConfigure("CC1",     "$(QSIZE)", 0, "$(CAM_PORT)", 0, 0, 0, 0, 0, $(MAX_THREADS=5) ))
+NDColorConvertConfigure("CC2",     "$(QSIZE)", 0, "$(CAM_PORT)", 0, 0, 0, 0, 0, $(MAX_THREADS=5) ))
+NDFileHDF5Configure(    "HDF51",   "$(QSIZE)", 0, "$(CAM_PORT)", 0, 0, 0 )
+NDFileJPEGConfigure(    "JPEG1",   "$(QSIZE)", 0, "$(CAM_PORT)", 0, 0, 0 )
+NDFileNetCDFConfigure(  "NetCDF1", "$(QSIZE)", 0, "$(CAM_PORT)", 0, 0, 0 )
+NDFileNexusConfigure(   "Nexus1",  "$(QSIZE)", 0, "$(CAM_PORT)", 0, 0, 0 )
+NDOverlayConfigure(     "Over1",   "$(QSIZE)", 0, "$(CAM_PORT)", 0, 8, 0, 0, 0, 0, $(MAX_THREADS=5) ))
+NDProcessConfigure(     "Proc1",   "$(QSIZE)", 0, "$(CAM_PORT)", 0 )
+NDROIConfigure(         "ROI1",    "$(QSIZE)", 0, "$(CAM_PORT)", 0, 0, 0, 0, 0, $(MAX_THREADS=5) )
+NDROIConfigure(         "ROI2",    "$(QSIZE)", 0, "$(CAM_PORT)", 0, 0, 0, 0, 0, $(MAX_THREADS=5) )
+NDROIConfigure(         "ROI3",    "$(QSIZE)", 0, "$(CAM_PORT)", 0, 0, 0, 0, 0, $(MAX_THREADS=5) )
+NDROIConfigure(         "ROI4",    "$(QSIZE)", 0, "$(CAM_PORT)", 0, 0, 0, 0, 0, $(MAX_THREADS=5) )
+NDStatsConfigure(       "Stats1",  "$(QSIZE)", 0, "$(CAM_PORT)", 0, 0, 0, 0, 0, $(MAX_THREADS=5) )
+NDStatsConfigure(       "Stats2",  "$(QSIZE)", 0, "$(CAM_PORT)", 0, 0, 0, 0, 0, $(MAX_THREADS=5) )
+NDStatsConfigure(       "Stats3",  "$(QSIZE)", 0, "$(CAM_PORT)", 0, 0, 0, 0, 0, $(MAX_THREADS=5) )
+NDStatsConfigure(       "Stats4",  "$(QSIZE)", 0, "$(CAM_PORT)", 0, 0, 0, 0, 0, $(MAX_THREADS=5) )
+NDStatsConfigure(       "Stats5",  "$(QSIZE)", 0, "$(CAM_PORT)", 0, 0, 0, 0, 0, $(MAX_THREADS=5) )
+NDFileTIFFConfigure(    "TIFF1",   "$(QSIZE)", 0, "$(CAM_PORT)", 0, 0, 0 )
+NDTransformConfigure(   "Trans1",  "$(QSIZE)", 0, "$(CAM_PORT)", 0, 0, 0, 0, 0, $(MAX_THREADS=5) )
 

@@ -1,5 +1,219 @@
 # commonPlugins.substitutions
-# TODO: Combine all the substitution files for the plugins in commonPlugins.cmd
-# here to create one commonPlugins.db
-#
+
+file pluginColorConvert.db
+{
+	{
+		ADDR		= "\$(ADDR=0)",
+		NDARRAY_ADDR= "\$(NDARRAY_ADDR=0)",
+		TIMEOUT 	= "\$(TIMEOUT=1)",
+		CAM			= "\$(CAM)",
+		CAM_PORT	= "\$(CAM_PORT)",
+		PLUGIN_SRC  = "\$(CAM_PORT)",
+		N			= "1"
+	}
+	{
+		ADDR		= "\$(ADDR=0)",
+		NDARRAY_ADDR= "\$(NDARRAY_ADDR=0)",
+		TIMEOUT 	= "\$(TIMEOUT=1)",
+		CAM			= "\$(CAM)",
+		CAM_PORT	= "\$(CAM_PORT)",
+		PLUGIN_SRC  = "\$(CAM_PORT)",
+		N			= "2"
+	}
+}
+
+file pluginHDF5.db
+{
+	{
+		ADDR		= "\$(ADDR=0)",
+		NDARRAY_ADDR= "\$(NDARRAY_ADDR=0)",
+		TIMEOUT 	= "\$(TIMEOUT=1)",
+		CAM			= "\$(CAM)",
+		CAM_PORT	= "\$(CAM_PORT)",
+		PLUGIN_SRC  = "\$(CAM_PORT)",
+		N			= "1"
+	}
+}
+
+file pluginJPEG.db
+{
+	{
+		ADDR		= "\$(ADDR=0)",
+		NDARRAY_ADDR= "\$(NDARRAY_ADDR=0)",
+		TIMEOUT 	= "\$(TIMEOUT=1)",
+		CAM			= "\$(CAM)",
+		CAM_PORT	= "\$(CAM_PORT)",
+		PLUGIN_SRC  = "\$(CAM_PORT)",
+		N			= "1"
+	}
+}
+
+file pluginNetCDF.db
+{
+	{
+		ADDR		= "\$(ADDR=0)",
+		NDARRAY_ADDR= "\$(NDARRAY_ADDR=0)",
+		TIMEOUT 	= "\$(TIMEOUT=1)",
+		CAM			= "\$(CAM)",
+		CAM_PORT	= "\$(CAM_PORT)",
+		PLUGIN_SRC  = "\$(CAM_PORT)",
+		N			= "1"
+	}
+}
+
+file pluginNexus.db
+{
+	{
+		ADDR		= "\$(ADDR=0)",
+		NDARRAY_ADDR= "\$(NDARRAY_ADDR=0)",
+		TIMEOUT 	= "\$(TIMEOUT=1)",
+		CAM			= "\$(CAM)",
+		CAM_PORT	= "\$(CAM_PORT)",
+		PLUGIN_SRC  = "\$(CAM_PORT)",
+		N			= "1"
+	}
+}
+
+file pluginOverlay.db
+{
+	{
+		ADDR		= "\$(ADDR=0)",
+		NDARRAY_ADDR= "\$(NDARRAY_ADDR=0)",
+		RATE_SMOOTH  	= "\$(RATE_SMOOTH=0.2)",
+		TIMEOUT 	= "\$(TIMEOUT=1)",
+		CAM			= "\$(CAM)",
+		CAM_PORT	= "\$(CAM_PORT)",
+		PLUGIN_SRC  = "\$(CAM_PORT)",
+		N			= "1"
+	}
+}
+
+file pluginProcess.db
+{
+	{
+		ADDR		= "\$(ADDR=0)",
+		NDARRAY_ADDR= "\$(NDARRAY_ADDR=0)",
+		TIMEOUT 	= "\$(TIMEOUT=1)",
+		CAM			= "\$(CAM)",
+		CAM_PORT	= "\$(CAM_PORT)",
+		PLUGIN_SRC  = "\$(CAM_PORT)",
+		N			= "1"
+	}
+}
+
+file pluginROI.db
+{
+	{
+		ADDR		= "\$(ADDR=0)",
+		NDARRAY_ADDR= "\$(NDARRAY_ADDR=0)",
+		TIMEOUT 	= "\$(TIMEOUT=1)",
+		CAM			= "\$(CAM)",
+		CAM_PORT	= "\$(CAM_PORT)",
+		PLUGIN_SRC  = "\$(CAM_PORT)",
+		N			= "1"
+	}
+	{
+		ADDR		= "\$(ADDR=0)",
+		NDARRAY_ADDR= "\$(NDARRAY_ADDR=0)",
+		TIMEOUT 	= "\$(TIMEOUT=1)",
+		CAM			= "\$(CAM)",
+		CAM_PORT	= "\$(CAM_PORT)",
+		PLUGIN_SRC  = "\$(CAM_PORT)",
+		N			= "2"
+	}
+	{
+		ADDR		= "\$(ADDR=0)",
+		NDARRAY_ADDR= "\$(NDARRAY_ADDR=0)",
+		TIMEOUT 	= "\$(TIMEOUT=1)",
+		CAM			= "\$(CAM)",
+		CAM_PORT	= "\$(CAM_PORT)",
+		PLUGIN_SRC  = "\$(CAM_PORT)",
+		N			= "3"
+	}
+	{
+		ADDR		= "\$(ADDR=0)",
+		NDARRAY_ADDR= "\$(NDARRAY_ADDR=0)",
+		TIMEOUT 	= "\$(TIMEOUT=1)",
+		CAM			= "\$(CAM)",
+		CAM_PORT	= "\$(CAM_PORT)",
+		PLUGIN_SRC  = "\$(CAM_PORT)",
+		N			= "4"
+	}
+}
+
+file pluginStats.db
+{
+	{
+		ADDR		= "\$(ADDR=0)",
+		NDARRAY_ADDR= "\$(NDARRAY_ADDR=0)",
+		RATE_SMOOTH = "\$(RATE_SMOOTH=0.2)",
+		TIMEOUT 	= "\$(TIMEOUT=1)",
+		CAM			= "\$(CAM)",
+		CAM_PORT	= "\$(CAM_PORT)",
+		PLUGIN_SRC  = "\$(CAM_PORT)",
+		N			= "1"
+	}
+	{
+		ADDR		= "\$(ADDR=0)",
+		NDARRAY_ADDR= "\$(NDARRAY_ADDR=0)",
+		TIMEOUT 	= "\$(TIMEOUT=1)",
+		CAM			= "\$(CAM)",
+		CAM_PORT	= "\$(CAM_PORT)",
+		PLUGIN_SRC  = "\$(CAM_PORT)",
+		N			= "2"
+	}
+	{
+		ADDR		= "\$(ADDR=0)",
+		NDARRAY_ADDR= "\$(NDARRAY_ADDR=0)",
+		TIMEOUT 	= "\$(TIMEOUT=1)",
+		CAM			= "\$(CAM)",
+		CAM_PORT	= "\$(CAM_PORT)",
+		PLUGIN_SRC  = "\$(CAM_PORT)",
+		N			= "3"
+	}
+	{
+		ADDR		= "\$(ADDR=0)",
+		NDARRAY_ADDR= "\$(NDARRAY_ADDR=0)",
+		TIMEOUT 	= "\$(TIMEOUT=1)",
+		CAM			= "\$(CAM)",
+		CAM_PORT	= "\$(CAM_PORT)",
+		PLUGIN_SRC  = "\$(CAM_PORT)",
+		N			= "4"
+	}
+	{
+		ADDR		= "\$(ADDR=0)",
+		NDARRAY_ADDR= "\$(NDARRAY_ADDR=0)",
+		TIMEOUT 	= "\$(TIMEOUT=1)",
+		CAM			= "\$(CAM)",
+		CAM_PORT	= "\$(CAM_PORT)",
+		PLUGIN_SRC  = "\$(CAM_PORT)",
+		N			= "5"
+	}
+}
+
+file pluginTIFF.db
+{
+	{
+		ADDR		= "\$(ADDR=0)",
+		NDARRAY_ADDR= "\$(NDARRAY_ADDR=0)",
+		TIMEOUT 	= "\$(TIMEOUT=1)",
+		CAM			= "\$(CAM)",
+		CAM_PORT	= "\$(CAM_PORT)",
+		PLUGIN_SRC  = "\$(CAM_PORT)",
+		N			= "1"
+	}
+}
+
+file pluginTransform.db
+{
+	{
+		ADDR		= "\$(ADDR=0)",
+		NDARRAY_ADDR= "\$(NDARRAY_ADDR=0)",
+		TIMEOUT 	= "\$(TIMEOUT=1)",
+		CAM			= "\$(CAM)",
+		CAM_PORT	= "\$(CAM_PORT)",
+		PLUGIN_SRC  = "\$(CAM_PORT)",
+		N			= "1"
+	}
+}
 
