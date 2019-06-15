@@ -77,6 +77,18 @@ DB_INSTALLS += $(TOP)/streamApp/pluginDb/pluginTransform.cmd
 # ARCHIVE += pluginTIFF.archive
 # ARCHIVE += pluginTransform.archive
 
+$(COMMON_DIR)/commonPlugins.db: $(INSTALL_DB)/pluginColorConvert.db
+$(COMMON_DIR)/commonPlugins.db: $(INSTALL_DB)/pluginHDF5.db
+$(COMMON_DIR)/commonPlugins.db: $(INSTALL_DB)/pluginJPEG.db
+$(COMMON_DIR)/commonPlugins.db: $(INSTALL_DB)/pluginNetCDF.db
+$(COMMON_DIR)/commonPlugins.db: $(INSTALL_DB)/pluginNexus.db
+$(COMMON_DIR)/commonPlugins.db: $(INSTALL_DB)/pluginOverlay.db
+$(COMMON_DIR)/commonPlugins.db: $(INSTALL_DB)/pluginProcess.db
+$(COMMON_DIR)/commonPlugins.db: $(INSTALL_DB)/pluginROI.db
+$(COMMON_DIR)/commonPlugins.db: $(INSTALL_DB)/pluginStats.db
+$(COMMON_DIR)/commonPlugins.db: $(INSTALL_DB)/pluginTIFF.db
+$(COMMON_DIR)/commonPlugins.db: $(INSTALL_DB)/pluginTransform.db
+
 include $(TOP)/configure/RULES
 #----------------------------------------
 #  ADD RULES AFTER THIS LINE
