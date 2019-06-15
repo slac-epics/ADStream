@@ -3,6 +3,9 @@
 #  Name: RELEASE_NOTES
 #
 #==============================================================
+R2.7.0      2019-06-14 Bruce Hill
+	Cut st.cmd output by pre-building commonPlugins.db
+
 R2.6.3      2019-06-12 Bruce Hill
 	Update to ADCore/R3.1-2.3.3
 	Change comments to begin w/ #- to inhibit iocsh echoing
