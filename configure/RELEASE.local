@@ -35,8 +35,6 @@ EPICS_BASE              = $(EPICS_SITE_TOP)/base/$(BASE_MODULE_VERSION)
 # Check for undefined EPICS_BASE
 -include $(TOP)/../../EPICS_BASE.check
 
-MY_MODULES	= /reg/neh/home/bhill/git-wa-neh/modules
+#MY_MODULES	= /reg/neh/home/bhill/git-wa-neh/modules
 #MY_MODULES	= /reg/neh/home/bhill/wa2/trunk/pcds/epics/modules
 #ADCORE		= $(MY_MODULES)/ADCore-git
-ASYN		= $(EPICS_MODULES)/asyn/R4.32-1.0.0
-#DIAG_TIMER	= $(MY_MODULES)/diagTimer/current
