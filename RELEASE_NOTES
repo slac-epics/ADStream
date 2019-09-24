@@ -3,6 +3,9 @@
 #  Name: RELEASE_NOTES
 #
 #==============================================================
+R2.7.1      2019-06-14 Bruce Hill
+	Removed unwanted macros from RELEASE.local
+
 R2.7.0      2019-06-14 Bruce Hill
 	Cut st.cmd output by pre-building commonPlugins.db
 
@@ -168,7 +171,6 @@ R1.0.0		2016-03-26 Bruce Hill
 
 R0.9.3		2016-03-11 Bruce Hill
 	Fixed some issues w/ the automatic edmViewer creation and reconfig.
-	Rolled back to asyn/R4.23-0.5.0 till EDT SER works w/ newer asyn.
 
 R0.9.2		2016-03-04 Bruce Hill
 	Bumped ADCore up to R2.1-0.4.1 and removed ffmpegServer dependency
