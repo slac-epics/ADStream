@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1012
-y 1162
+x 988
+y 1121
 w 479
 h 400
 font "helvetica-medium-r-12.0"
@@ -178,33 +178,6 @@ useDisplayBg
 value {
   "Rate"
 }
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 96
-y 160
-w 80
-h 20
-controlPv "$(P)$(R)ArrayRate_RBV"
-format "decimal"
-font "helvetica-bold-r-12.0"
-fontAlign "center"
-fgColor index 15
-fgAlarm
-bgColor index 12
-nullColor index 32
-smartRefresh
-fastUpdate
-useHexPrefix
-showUnits
-newPos
-objType "controls"
-noExecuteClipMask
 endObjectProperties
 
 # (Menu Button)
@@ -1030,5 +1003,64 @@ endGroup
 visPv "$(P)$(R)ColorMode_RBV"
 visMin "1"
 visMax "3"
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 92
+y 156
+w 88
+h 28
+fgColor index 14
+bgColor index 0
+topShadowColor index 45
+botShadowColor index 47
+font "helvetica-medium-r-18.0"
+invisible
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "historyScreens/histViewer.edl"
+}
+menuLabel {
+  0 "History"
+}
+symbols {
+  0 "SIG=$(P)$(R)ArrayRate_RBV,DUR=LAST_N"
+}
+replaceSymbols {
+  0 1
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 96
+y 160
+w 80
+h 20
+controlPv "$(P)$(R)ArrayRate_RBV"
+format "decimal"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 15
+fgAlarm
+bgColor index 12
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+showUnits
+newPos
+objType "controls"
+noExecuteClipMask
 endObjectProperties
 
