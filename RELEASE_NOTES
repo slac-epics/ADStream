@@ -3,6 +3,9 @@
 #  Name: RELEASE_NOTES
 #
 #==============================================================
+R2.7.2		2020-03-03 Bruce Hill
+	Update to ADCore/R3.1-2.3.4
+
 R2.7.1      2019-06-14 Bruce Hill
 	Removed unwanted macros from RELEASE.local
 
