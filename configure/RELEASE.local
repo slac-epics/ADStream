@@ -19,7 +19,7 @@
 # Don't set your version to anything such as "test" that
 # could match a directory name.
 # ==========================================================
-ADCORE_MODULE_VERSION		= R3.1-2.3.4
+ADCORE_MODULE_VERSION		= R3.1-2.3.1
 
 # ==========================================================
 # Define module paths using pattern
