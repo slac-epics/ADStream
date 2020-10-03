@@ -3,6 +3,9 @@
 #  Name: RELEASE_NOTES
 #
 #==============================================================
+R2.7.4  2020-10-02 Bruce Hill
+	Update to ADCore/R3.1-2.3.5
+
 R2.7.3  2020-05-20 Bruce Hill
 	Create a release for ADCore/R3.1-2.3.1
 
