@@ -14,11 +14,11 @@ fgColor index 14
 bgColor index 3
 textColor index 14
 ctlFgColor1 index 25
-ctlFgColor2 index 25
-ctlBgColor1 index 3
-ctlBgColor2 index 3
+ctlFgColor2 index 15
+ctlBgColor1 index 5
+ctlBgColor2 index 12
 topShadowColor index 1
-botShadowColor index 11
+botShadowColor index 13
 title "$(CAM):$(IMAGE)"
 showGrid
 snapToGrid
