@@ -1,9 +1,10 @@
 #!/bin/bash
-#
-# EDM Viewer launch script
+# edmViewer.sh
+# EDM Camera Viewer launch script
+# Creates and launches a custom edm viewer based on image characteristics
 #
 # To use, define the following environment variables
-#   HUTCH   Ex: amo, sxr, xpp, ...
+#   HUTCH   Ex: sys0, amo, sxr, xpp, ...
 #   IOC	    EPICS PV prefix for iocAdmin PV's
 #   EVR	    EPICS PV prefix for EVR PV's
 #   CH	    Channel # for EVR camera trigger
@@ -27,11 +28,13 @@ if [ -z "$IMAGE" ]; then
 	echo "Typical IMAGE: IMAGE, IMAGE1, IMAGE2, ..."
 	exit
 fi
-if [ -z "$EDM_TOP" ]; then
-	echo "Please define EDM_TOP macro!"
-	# Default to gige
-	EDM_TOP=gigeScreens/gigeTop.edl
-fi
+
+# TODO: Can we get these from a PV?
+# IOC=$(caget -t -S ${P}${R}IOC_PV)
+# EVR=$(caget -t -S ${P}${R}EVR_PV)
+# CH=$(caget -t -S ${P}${R}TRIG_CH)
+# EDM_TOP=$(caget -t -S ${P}${R}EDM_TOP)
+# HUTCH=$(caget -t -S ${P}${R}HUTCH)
 
 # Providing defaults for these macros
 if [ -z "$EVR" ]; then
@@ -40,18 +43,46 @@ fi
 if [ -z "$HUTCH" ]; then
 	HUTCH=tst
 fi
+# Find the directory w/ edm screen soft links
+SCREEN_LINKS=.
 if [ -z "$IOC" ]; then
 	IOC=IOC_None
+else
+	APP_DIR=$(caget -t -S ${IOC}:APP_DIR)
+	if [ -z "$APP_DIR" ]; then
+		APP_DIR=$(caget -t -S ${IOC}:APP_DIR1)
+		APP_DIR=${APP_DIR}$(caget -t -S ${IOC}:APP_DIR2)
+	fi
+	SCREEN_LINKS=${APP_DIR}/screenLinks
 fi
 if [ -z "$CH" ]; then
 	CH=999
 fi
 
-# Check for edm
-which edm > /dev/null 2> /dev/null
-if [ $? -ne 0 ]; then
-	# Setup edm environment
-	source $SETUP_SITE_TOP/epicsenv-cur.sh
+if [ -z "$EDM_TOP" ]; then
+	# Default to gige
+	EDM_TOP=${SCREEN_LINKS}/gigeScreens/gigeTop.edl
+	if [ ! -z "IOC" ];
+	echo EDM_TOP macro defaults $EDM_TOP
+fi
+
+# Make sure edm is setup
+if [ ! -e "$(which edm 2> /dev/null)" -o -z "$EDMOBJECTS" ]; then
+	if [ -z "$SETUP_SITE_TOP" ]; then
+		if [ -d /reg/g/pcds/setup ]; then
+			SETUP_SITE_TOP=/reg/g/pcds/setup
+		fi
+	fi
+	if [ -f $SETUP_SITE_TOP/epicsenv-cur.sh ]; then
+		# Setup PCDS edm environment
+		source $SETUP_SITE_TOP/epicsenv-cur.sh
+	fi
+fi
+if [ ! -e "$(which edm 2> /dev/null)" -o -z "$EDMOBJECTS" ]; then
+	if [ -f ${TOOLS}/script/ENVS.bash ]; then
+		# Setup LCLS edm environment
+		source ${TOOLS}/script/ENVS.bash 
+	fi
 fi
 
 echo Creating custom edm viewer for ${P}${R}${IMAGE} ...
