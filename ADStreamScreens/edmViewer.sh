@@ -62,8 +62,10 @@ fi
 if [ -z "$EDM_TOP" ]; then
 	# Default to gige
 	EDM_TOP=${SCREEN_LINKS}/gigeScreens/gigeTop.edl
-	if [ ! -z "IOC" ];
-	echo EDM_TOP macro defaults $EDM_TOP
+	if [ ! -f $EDM_TOP ]; then
+		echo Nonexistent EDM_TOP: $EDM_TOP
+		echo Please set EDM_TOP env variable to viable edm screen.
+	fi
 fi
 
 # Make sure edm is setup
