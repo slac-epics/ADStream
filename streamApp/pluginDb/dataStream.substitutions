@@ -1,37 +1,5 @@
 # dataStream.substitutions
 
-file streamLogic.template
-{
-    {
-    P           = "\$(CAM):",
-    R           = "\$(IMAGE_NAME):",
-    TYPE        = "0",
-    RATE        = "\$(RATE=0)",
-    WIDTH       = "\$(WIDTH=0)",
-    HEIGHT      = "\$(HEIGHT=0)",
-    }
-}
-
-file streamBox.template
-{
-    pattern
-    {   N,  P,          R                   }
-    {   1,  "\$(CAM):",  "\$(IMAGE_NAME):"  }
-    {   2,  "\$(CAM):",  "\$(IMAGE_NAME):"  }
-    {   3,  "\$(CAM):",  "\$(IMAGE_NAME):"  }
-    {   4,  "\$(CAM):",  "\$(IMAGE_NAME):"  }
-}
-
-file streamCross.template
-{
-    pattern
-    {   N,  P,           R                  }
-    {   1,  "\$(CAM):",  "\$(IMAGE_NAME):"  }
-    {   2,  "\$(CAM):",  "\$(IMAGE_NAME):"  }
-    {   3,  "\$(CAM):",  "\$(IMAGE_NAME):"  }
-    {   4,  "\$(CAM):",  "\$(IMAGE_NAME):"  }
-}
-
 # stdArray Plugin
 file NDStdArrays.template
 {
@@ -153,4 +121,38 @@ file NDOverlayN.template
     { 5,    $(IMAGE_NAME):Over,  $(CAM):, $(IMAGE_NAME):Cross2:, Cross2, 0,     $(IMAGE_NAME):Over: }
     { 6,    $(IMAGE_NAME):Over,  $(CAM):, $(IMAGE_NAME):Cross3:, Cross3, 0,     $(IMAGE_NAME):Over: }
     { 7,    $(IMAGE_NAME):Over,  $(CAM):, $(IMAGE_NAME):Cross4:, Cross4, 0,     $(IMAGE_NAME):Over: }
+}
+
+file streamLogic.template
+{
+    {
+    P           = "\$(CAM):",
+    R           = "\$(IMAGE_NAME):",
+    TYPE        = "0",
+    RATE        = "\$(RATE=0)",
+    WIDTH       = "\$(WIDTH=0)",
+    HEIGHT      = "\$(HEIGHT=0)",
+    MINCB_HIGH  = "0.001",
+    MINCB_HSV   = "MINOR",
+    }
+}
+
+file streamBox.template
+{
+    pattern
+    {   N,  P,          R                   }
+    {   1,  "\$(CAM):",  "\$(IMAGE_NAME):"  }
+    {   2,  "\$(CAM):",  "\$(IMAGE_NAME):"  }
+    {   3,  "\$(CAM):",  "\$(IMAGE_NAME):"  }
+    {   4,  "\$(CAM):",  "\$(IMAGE_NAME):"  }
+}
+
+file streamCross.template
+{
+    pattern
+    {   N,  P,           R                  }
+    {   1,  "\$(CAM):",  "\$(IMAGE_NAME):"  }
+    {   2,  "\$(CAM):",  "\$(IMAGE_NAME):"  }
+    {   3,  "\$(CAM):",  "\$(IMAGE_NAME):"  }
+    {   4,  "\$(CAM):",  "\$(IMAGE_NAME):"  }
 }

@@ -65,6 +65,16 @@ record( waveform, "$(P)$(R)ArrayData" )
 	field( FLNK, "$(P)$(R)StreamTimeStampStr" )
 }
 
+# Set LOW and LSV for MinCallbackTime
+# Default to 0 for Thumbnail and ViewerStream.
+# Allows DataStream to set MINOR status for non-zero delays.
+record(ao, "$(CAM):$(IMAGE_NAME):MinCallbackTime")
+{
+	field( HIGH, "$(MINCB_HIGH=0)" )
+	field( HSV, "$(MINCB_HSV=NO_ALARM)" )
+    info( autosaveFields, "HIGH HSV VAL" )
+}
+
 # TODO: Move this to ADCore so it can be shown on NDPluginBase screen
 # Stream Timestamp formatted as a string
 record( stringin, "$(P)$(R)StreamTimeStampStr" )
