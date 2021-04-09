@@ -3,6 +3,9 @@
 #  Name: RELEASE_NOTES
 #
 #==============================================================
+R2.8.0 2021-02-04 Bruce Hill
+	Set HIGH alarm for non-zero DataStream delay.
+
 R2.7.5  2020-11-11 Bruce Hill
 	Add test for valid screen path in EDM_TOP env var
 	Tweak ImagePlugin default colors
