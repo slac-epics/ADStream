@@ -5,6 +5,7 @@
 file NDStats.template
 {
 	{
+    TS_PORT         = "Stats\$(N)_TS",
     PORT            = "Stats\$(N)",
     P               = "$(CAM):",
 	R				= "$(PORT):",
