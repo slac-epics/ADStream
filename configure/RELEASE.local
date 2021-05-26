@@ -19,7 +19,7 @@
 # Don't set your version to anything such as "test" that
 # could match a directory name.
 # ==========================================================
-ADCORE_MODULE_VERSION		= R3.9-1.0.1
+ADCORE_MODULE_VERSION		= R3.9-1.0.2
 
 # ==========================================================
 # Define module paths using pattern
@@ -35,6 +35,6 @@ EPICS_BASE              = $(EPICS_SITE_TOP)/base/$(BASE_MODULE_VERSION)
 # Check for undefined EPICS_BASE
 -include $(TOP)/../../EPICS_BASE.check
 
-#MY_MODULES	= /reg/neh/home/bhill/git-wa-neh/modules
+#MY_MODULES	= /cds/group/pcds/epics-dev/bhill/modules
 #MY_MODULES	= /reg/neh/home/bhill/wa2/trunk/pcds/epics/modules
 #ADCORE		= $(MY_MODULES)/ADCore-git
