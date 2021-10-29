@@ -155,7 +155,7 @@ file pluginStats.db
 	}
 	{
 		ADDR		= "\$(ADDR=0)",
-		NDARRAY_ADDR= "\$(NDARRAY_ADDR=1)",
+		NDARRAY_ADDR= "\$(NDARRAY_ADDR=0)",
 		TIMEOUT 	= "\$(TIMEOUT=1)",
 		CAM			= "\$(CAM)",
 		CAM_PORT	= "\$(CAM_PORT)",
@@ -164,7 +164,7 @@ file pluginStats.db
 	}
 	{
 		ADDR		= "\$(ADDR=0)",
-		NDARRAY_ADDR= "\$(NDARRAY_ADDR=2)",
+		NDARRAY_ADDR= "\$(NDARRAY_ADDR=0)",
 		TIMEOUT 	= "\$(TIMEOUT=1)",
 		CAM			= "\$(CAM)",
 		CAM_PORT	= "\$(CAM_PORT)",
@@ -173,7 +173,7 @@ file pluginStats.db
 	}
 	{
 		ADDR		= "\$(ADDR=0)",
-		NDARRAY_ADDR= "\$(NDARRAY_ADDR=3)",
+		NDARRAY_ADDR= "\$(NDARRAY_ADDR=0)",
 		TIMEOUT 	= "\$(TIMEOUT=1)",
 		CAM			= "\$(CAM)",
 		CAM_PORT	= "\$(CAM_PORT)",
@@ -182,7 +182,7 @@ file pluginStats.db
 	}
 	{
 		ADDR		= "\$(ADDR=0)",
-		NDARRAY_ADDR= "\$(NDARRAY_ADDR=4)",
+		NDARRAY_ADDR= "\$(NDARRAY_ADDR=0)",
 		TIMEOUT 	= "\$(TIMEOUT=1)",
 		CAM			= "\$(CAM)",
 		CAM_PORT	= "\$(CAM_PORT)",
