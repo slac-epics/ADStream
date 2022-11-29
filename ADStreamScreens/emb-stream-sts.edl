@@ -331,7 +331,7 @@ setPosition {
   0 "button"
 }
 symbols {
-  0 "P=$(P),R=$(R),IMAGE=$(IMAGE),HUTCH=$(HUTCH),CAM=$(CAM),IOC=$(IOC),EVR=$(EVR),EDM_TOP=$(EDM_TOP)"
+  0 "P=$(P),R=$(R),IMAGE=$(IMAGE),HUTCH=$(HUTCH),CAM=$(CAM),IOC=$(IOC),EDM_TOP=$(EDM_TOP)"
 }
 replaceSymbols {
   0 1

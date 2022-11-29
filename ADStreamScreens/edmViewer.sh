@@ -6,14 +6,17 @@
 # To use, define the following environment variables
 #   HUTCH   Ex: sys0, amo, sxr, xpp, ...
 #   IOC	    EPICS PV prefix for iocAdmin PV's
-#   EVR	    EPICS PV prefix for EVR PV's
-#   CH	    Channel # for EVR camera trigger
+#   CH	    Channel # for camera trigger
 #   P 	    Prefix for Camera PV's
 #   R 	    Region for Camera PV's
 #			Full camera PV prefix: $(P)$(R)
 #	IMAGE	Image name
 #			Full image PV prefix: $(P)$(R)$(IMAGE)
 #	EDM_TOP Path to edm top level camera screen
+#	Optional PVs depending on if you have an EVR or TPR
+#   EVR	    EPICS PV prefix for EVR PV's
+#   TPR_PV  EPICS PV prefix for TPR master PV's
+#   TPS_PV  EPICS PV prefix for TPR slave  PV's
 # Example:
 # IOC=$IOC P=$P R=$R IMAGE=$IMAGE HUTCH=$HUTCH EDM_TOP=$EDM_TOP EVR=$EVR CH=$CH ADStreamScreens/edmViewer.sh
 
@@ -32,6 +35,8 @@ fi
 # TODO: Can we get these from a PV?
 # IOC=$(caget -t -S ${P}${R}IOC_PV)
 # EVR=$(caget -t -S ${P}${R}EVR_PV)
+# TPR_PV=$(caget -t -S ${P}${R}TPR_PV)
+# TPS_PV=$(caget -t -S ${P}${R}TPS_PV)
 # CH=$(caget -t -S ${P}${R}TRIG_CH)
 # EDM_TOP=$(caget -t -S ${P}${R}EDM_TOP)
 # HUTCH=$(caget -t -S ${P}${R}HUTCH)
@@ -39,6 +44,12 @@ fi
 # Providing defaults for these macros
 if [ -z "$EVR" ]; then
 	EVR=EVR_None
+fi
+if [ -z "$TPR_PV" ]; then
+	TPR_PV=TPR_None
+fi
+if [ -z "$TPS_PV" ]; then
+	TPS_PV=TPR_None
 fi
 if [ -z "$HUTCH" ]; then
 	HUTCH=tst
@@ -152,6 +163,8 @@ edm -x -eolc						\
 	-m "P=${P},R=${R}"				\
 	-m "CAM=${P}"					\
 	-m "EVR=${EVR}"					\
+	-m "TPR_PV=${TPR_PV}"			\
+	-m "TPS_PV=${TPS_PV}"			\
 	-m "CH=${CH}"					\
 	-m "HUTCH=${HUTCH}"				\
 	-m "IMAGE=${IMAGE}"				\

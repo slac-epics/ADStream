@@ -488,7 +488,7 @@ menuLabel {
   0 "Embedded Image Status"
 }
 symbols {
-  0 "P=$(P)$(R)DATA1,R=:,IMAGE=DATA1,HUTCH=$(HUTCH),CAM=$(CAM),IOC=$(IOC),EVR=$(EVR)"
+  0 "P=$(P)$(R)DATA1,R=:,IMAGE=DATA1,HUTCH=$(HUTCH),CAM=$(CAM),IOC=$(IOC)"
 }
 replaceSymbols {
   0 1
@@ -524,7 +524,7 @@ menuLabel {
   0 "Embedded Image Status"
 }
 symbols {
-  0 "P=$(P)$(R)IMAGE1,R=:,IMAGE=IMAGE1,HUTCH=$(HUTCH),CAM=$(CAM),IOC=$(IOC),EVR=$(EVR)"
+  0 "P=$(P)$(R)IMAGE1,R=:,IMAGE=IMAGE1,HUTCH=$(HUTCH),CAM=$(CAM),IOC=$(IOC)"
 }
 replaceSymbols {
   0 1
@@ -560,7 +560,7 @@ menuLabel {
   0 "Embedded Image Status"
 }
 symbols {
-  0 "P=$(P)$(R)IMAGE3,R=:,IMAGE=IMAGE3,HUTCH=$(HUTCH),CAM=$(CAM),IOC=$(IOC),EVR=$(EVR)"
+  0 "P=$(P)$(R)IMAGE3,R=:,IMAGE=IMAGE3,HUTCH=$(HUTCH),CAM=$(CAM),IOC=$(IOC)"
 }
 replaceSymbols {
   0 1
@@ -596,7 +596,7 @@ menuLabel {
   0 "Embedded Image Status"
 }
 symbols {
-  0 "P=$(P)$(R)DATA2,R=:,IMAGE=DATA2,HUTCH=$(HUTCH),CAM=$(CAM),IOC=$(IOC),EVR=$(EVR)"
+  0 "P=$(P)$(R)DATA2,R=:,IMAGE=DATA2,HUTCH=$(HUTCH),CAM=$(CAM),IOC=$(IOC)"
 }
 replaceSymbols {
   0 1
@@ -632,7 +632,7 @@ menuLabel {
   0 "Embedded Image Status"
 }
 symbols {
-  0 "P=$(P)$(R)IMAGE2,R=:,IMAGE=IMAGE2,HUTCH=$(HUTCH),CAM=$(CAM),IOC=$(IOC),EVR=$(EVR)"
+  0 "P=$(P)$(R)IMAGE2,R=:,IMAGE=IMAGE2,HUTCH=$(HUTCH),CAM=$(CAM),IOC=$(IOC)"
 }
 replaceSymbols {
   0 1
@@ -668,7 +668,7 @@ menuLabel {
   0 "Embedded Image Status"
 }
 symbols {
-  0 "P=$(P)$(R)THUMBNAIL,R=:,IMAGE=THUMBNAIL,HUTCH=$(HUTCH),CAM=$(CAM),IOC=$(IOC),EVR=$(EVR)"
+  0 "P=$(P)$(R)THUMBNAIL,R=:,IMAGE=THUMBNAIL,HUTCH=$(HUTCH),CAM=$(CAM),IOC=$(IOC)"
 }
 replaceSymbols {
   0 1
