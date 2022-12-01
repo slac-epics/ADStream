@@ -3,6 +3,9 @@
 #  Name: RELEASE_NOTES
 #
 #==============================================================
+R3.1.0	2022-11-28 Bruce Hill
+	Support TPR or EVR in ADStream screens
+
 R3.0.2	2022-02-09 Bruce Hill
 	Update to ADCore/R3.9-1.1.0
 
