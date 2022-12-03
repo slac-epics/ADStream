@@ -16,7 +16,7 @@
 #	Optional PVs depending on if you have an EVR or TPR
 #   EVR	    EPICS PV prefix for EVR PV's
 #   TPR_PV  EPICS PV prefix for TPR master PV's
-#   TPS_PV  EPICS PV prefix for TPR slave  PV's
+#   TPE_PV  EPICS PV prefix for TPR event  PV's
 # Example:
 # IOC=$IOC P=$P R=$R IMAGE=$IMAGE HUTCH=$HUTCH EDM_TOP=$EDM_TOP EVR=$EVR CH=$CH ADStreamScreens/edmViewer.sh
 
@@ -36,7 +36,7 @@ fi
 # IOC=$(caget -t -S ${P}${R}IOC_PV)
 # EVR=$(caget -t -S ${P}${R}EVR_PV)
 # TPR_PV=$(caget -t -S ${P}${R}TPR_PV)
-# TPS_PV=$(caget -t -S ${P}${R}TPS_PV)
+# TPE_PV=$(caget -t -S ${P}${R}TPE_PV)
 # CH=$(caget -t -S ${P}${R}TRIG_CH)
 # EDM_TOP=$(caget -t -S ${P}${R}EDM_TOP)
 # HUTCH=$(caget -t -S ${P}${R}HUTCH)
@@ -48,8 +48,8 @@ fi
 if [ -z "$TPR_PV" ]; then
 	TPR_PV=TPR_None
 fi
-if [ -z "$TPS_PV" ]; then
-	TPS_PV=TPR_None
+if [ -z "$TPE_PV" ]; then
+	TPE_PV=TPR_None
 fi
 if [ -z "$HUTCH" ]; then
 	HUTCH=tst
@@ -164,7 +164,7 @@ edm -x -eolc						\
 	-m "CAM=${P}"					\
 	-m "EVR=${EVR}"					\
 	-m "TPR_PV=${TPR_PV}"			\
-	-m "TPS_PV=${TPS_PV}"			\
+	-m "TPE_PV=${TPE_PV}"			\
 	-m "CH=${CH}"					\
 	-m "HUTCH=${HUTCH}"				\
 	-m "IMAGE=${IMAGE}"				\
