@@ -3,6 +3,9 @@
 #  Name: RELEASE_NOTES
 #
 #==============================================================
+R3.1.1	2022-12-02 Bruce Hill
+	Replace TPS_PV w/ TPE_PV.
+
 R3.1.0	2022-11-28 Bruce Hill
 	Support TPR or EVR in ADStream screens
 
