@@ -173,6 +173,7 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
         sourceHeight	= caGetValue( sourcePvName + ":ArraySizeY_RBV" )
     sourceBits		= caGetValue( sourcePvName + ":BitsPerPixel_RBV" )
 
+    maxThreads		= caGetValue( streamPvName + ":MaxThreads_RBV" )
     streamWidth		= caGetValue( streamPvName + ":StreamWidth" )
     streamHeight	= caGetValue( streamPvName + ":StreamHeight" )
     streamRate		= caGetValue( streamPvName + ":StreamRate" )
@@ -204,6 +205,11 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
         # TODO: Need to revisit rate vs size in terms of bandwidth
         # May need to make developer provide overrides to get
         # both full resolution and full rate
+        if maxThreads > 1:
+            # This stream supports multi-threading so enable it for DATA streams
+            # and also set SortMode to Sorted so images won't get out of order.
+            caPutValue( cameraPvName + ":NumThreads", maxThreads )
+            caPutValue( cameraPvName + ":SortMode", 1 )
     elif streamType == TY_STREAM_THUMBNAIL:
         defCallbackTime = 0.9
         minCallbackTime = 0.2
