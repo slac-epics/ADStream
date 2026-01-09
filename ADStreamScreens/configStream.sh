@@ -16,10 +16,9 @@ else
 	source /afs/slac/g/pcds/config/common_dirs.sh
 fi
 
-# Setup pyca environment
-#export PSPKG_RELEASE=controls-basic-0.0.2
-export PSPKG_RELEASE=pyca-psp-0.0.1
-source $PSPKG_ROOT/etc/add_env_pkg.sh
+# Setup conda environment
+export PCDS_CONDA_VER="${PCDS_CONDA_VER:-6.0.1}"
+source $ENG_TOOLS_SCRIPTS/pcds_conda
 
 # echo Reconfiguring stream $CAM_PV:$IMAGE ...
 python ADStreamScreens/configStream.py --cameraPv $CAM_PV --stream $IMAGE

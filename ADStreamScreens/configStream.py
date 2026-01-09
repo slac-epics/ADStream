@@ -33,17 +33,17 @@ def printPvNameValue( pvName ):
         pv.get()
         pv.get_data( False, 0.5, None )
         if isinstance( pv.value, str ):
-            print "%s \"%-.30s\"" % ( pv.name, pv.value )
+            print(f'{pv.name} "{pv.value:<0.30s}"')
         else:
-            print "%s %-.30s" % ( pv.name, pv.value )
-    except pyca.pyexc, msg:
+            print(f'{pv.name} {pv.value:<.30s}')
+    except pyca.pyexc as msg:
         if showCAErrors:
-            print >> sys.stderr, "failed: pyca exception: ", msg
+            print("failed: pyca exception: ", msg, file=sys.stderr)
         pass
-    except pyca.caexc, msg:
-        print >> sys.stderr, "failed: channel access exception: ", msg
-    except Exception, msg:
-        print >> sys.stderr, "failed:", msg.__class__.__name__, "exception: ", msg
+    except pyca.caexc as msg:
+        print("failed: channel access exception: ", msg, file=sys.stderr)
+    except Exception as msg:
+        print("failed:", msg.__class__.__name__, "exception: ", msg, file=sys.stderr)
 
 def tupleToString( tupleValue ):
     if isinstance( tupleValue, str ):
@@ -65,7 +65,7 @@ def tupleToString( tupleValue ):
 
 def stringToTuple( strValue ):
     if not isinstance( strValue, str ):
-        raise TypeError, "stringToTuple value is not a string"
+        raise TypeError("stringToTuple value is not a string")
 
     # Convert the string to a bytearray
     newByteArray = bytearray( strValue, 'ascii', 'ignore' )
@@ -79,11 +79,11 @@ def caGetValue( pvName, default=None, verbose=True, timeout=0.5 ):
         pv.get( timeout=timeout )
         pv.get_data( False, timeout, None )
         return pv.value
-    except Exception, msg:
+    except Exception as msg:
         if verbose:
-            print "Unable to connect to PV: %s" % pvName
+            print(f"Unable to connect to PV: {pvName}")
         if showCAErrors:
-            print >> sys.stderr, "failed: pyca exception: ", msg
+            print("failed: pyca exception: ", msg, file=sys.stderr)
         return default
 
 
@@ -101,17 +101,17 @@ def caPutArray( pvName, value, timeout=1.0):
             # Convert string values to a tuple
             value = stringToTuple( value )
         if not isinstance( value, tuple ):
-            raise TypeError, "Pv.put Error: value not a tuple for waveform PV"
+            raise TypeError("Pv.put Error: value not a tuple for waveform PV")
         if len(value) != len(pv.value):
-            raise TypeError, "Pv.put Error: Element count mismatch"
+            raise TypeError("Pv.put Error: Element count mismatch")
 
         pv.put_data(value, tmo)
 
-    except Exception, msg:
+    except Exception as msg:
         if verbose:
-            print "Unable to connect to PV:", pvName
+            print("Unable to connect to PV:", pvName)
         if showCAErrors:
-            print >> sys.stderr, "failed: pyca exception: ", msg
+            print("failed: pyca exception: ", msg, file=sys.stderr)
         return
 
 def caPutValue( pvName, value, verbose=True ):
@@ -120,11 +120,11 @@ def caPutValue( pvName, value, verbose=True ):
         pv	= Pv( pvName )
         pv.connect( 1.0 )
         pv.put( value, timeout=1.0 )
-    except Exception, msg:
+    except Exception as msg:
         if verbose:
-            print "Unable to connect to PV:", pvName
+            print("Unable to connect to PV:", pvName)
         if showCAErrors:
-            print >> sys.stderr, "failed: pyca exception: ", msg
+            print("failed: pyca exception: ", msg, file=sys.stderr)
         return
 
 def reconfigStream( cameraPvName, streamName, verbose=False ):
@@ -135,9 +135,9 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
         streamTypePv.get( timeout=0.5 )
         streamTypePv.get_data( False, 0.5, None )
         streamType = streamTypePv.value
-    except Exception, msg:
+    except Exception as msg:
         if verbose:
-            print "Stream %s not found." % streamName
+            print(f"Stream {streamName} not found.")
         return
 
     # Fetch the stream's type and input port
@@ -263,8 +263,8 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
         streamWidth = maxStreamWidth
 
     if verbose:
-        print "%s image is %d x %d, target %d x %d" % ( streamPort,
-                sourceWidth, sourceHeight, streamWidth, streamHeight )
+        print(f"{streamPort} image is {sourceWidth} x {sourceHeight}, "
+              f"target {streamWidth} x {streamHeight}")
 
     binning = 1
     if sourceWidth > streamWidth or sourceHeight > streamHeight:
@@ -276,7 +276,8 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
         binY = int( round( yRatio + 0.4) )
         binning = max( binX, binY )
         if verbose:
-            print "Source/Stream width ratio = %f, height ratio = %f, binning %dx%d" % ( xRatio, yRatio, binning, binning )
+            print(f"Source/Stream width ratio = {xRatio}, "
+                  f"height ratio = {yRatio}, binning {binning}x{binning}")
 
     # Check for Bayer mode conversion turned off
     if sourceColor == 1: # Bayer
@@ -315,7 +316,7 @@ def reconfigStream( cameraPvName, streamName, verbose=False ):
         if sourceBits > tgtBits:
             scale = scale * ( 2 ** (sourceBits - tgtBits) )
         if verbose:
-            print "Binning %ux%u, sourceBits = %d, tgtBits = %d, scale = %f" % ( binning, binning, sourceBits, tgtBits, scale )
+            print("Binning %ux%u, sourceBits = %d, tgtBits = %d, scale = %f" % ( binning, binning, sourceBits, tgtBits, scale ))
         if scale >= 2:
             caPutValue( streamPvName + ":ROI:EnableScale", 1 )
             caPutValue( streamPvName + ":ROI:Scale", scale )
@@ -393,7 +394,7 @@ if __name__ == "__main__":
     options = Options( ['cameraPv', 'stream'], [], ['verbose'] )
     try:
         options.parse()
-    except Exception, msg:
+    except Exception as msg:
         options.usage( str(msg) )
         sys.exit()
 
@@ -404,8 +405,8 @@ if __name__ == "__main__":
         camSizeXPv.connect(1.0)
         camSizeXPv.get( timeout=1.0 )
         #camSizeX = camSizeXPv.get_data( False, 1.0, None )
-    except Exception, msg:
-        print "Camera not accessible: ", msg
+    except Exception as msg:
+        print("Camera not accessible: ", msg)
         sys.exit()
 
     verbose = False
