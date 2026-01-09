@@ -18,7 +18,7 @@ fi
 
 # Setup conda environment
 export PCDS_CONDA_VER="${PCDS_CONDA_VER:-6.0.1}"
-source $ENG_TOOLS_SCRIPTS/scripts/pcds_conda
+source $ENG_TOOLS_SCRIPTS/pcds_conda
 
 # echo Reconfiguring stream $CAM_PV:$IMAGE ...
 python ADStreamScreens/configStream.py --cameraPv $CAM_PV --stream $IMAGE
